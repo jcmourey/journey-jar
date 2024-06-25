@@ -1,0 +1,1688 @@
+{
+    "status": "success",
+    "data": [
+        {
+            "objectID": "series-292174",
+            "country": "usa",
+            "id": "series-292174",
+            "image_url": "https://artworks.thetvdb.com/banners/posters/292174-1.jpg",
+            "name": "Dark Matter",
+            "first_air_time": "2015-06-12",
+            "overview": "The six-person crew of a derelict spaceship awakens from stasis in the farthest reaches of space. Their memories wiped clean, they have no recollection of who they are or how they got on board. The only clue to their identities is a cargo bay full of weaponry and a destination: a remote mining colony that is about to become a war zone. With no idea whose side they are on, they face a deadly decision. Will these amnesiacs turn their backs on history, or will their pasts catch up with them?",
+            "primary_language": "eng",
+            "primary_type": "series",
+            "status": "Ended",
+            "type": "series",
+            "tvdb_id": "292174",
+            "year": "2015",
+            "slug": "dark-matter",
+            "overviews": {
+                "ces": "Seriál podle stejnojmenného komiksu od Josepha Mallozziho a Paula Mullieho (Stargate).\r\n\r\nDark Matter vypráví příběh posádky vesmírné lodi. Všichni se vzbudí z umělého spánku. Nemají žádné vzpomínky, netuší, na jaké misi jsou, a dokonce ani neví, kdo jsou. Posádka začne hledat odpovědi, jakmile loď doletí do cíle - hornické kolonie.",
+                "dan": "Dark Matter handler om 6 personer som vågner efter at være lagt i \"cryogenic stasis\" (kender ikke den danske betegnelse), de har ingen anelse hvem de er, eller hvor de. De finder dog hurtigt ud af at de befinder sig på et rumskib af en art, hvor tingene ikke rigtig fungerer. Ved fælles hjælp må de nu finde ud af hvem de er, og hvad de laver ombord på dette skib, som er ultra avanceret og fyldt med våben. Det er dog lettere sagt end gjort, ikke mindst pga deres noget specielle personligheder.\r\nDe kommer dog hurtigt under angreb og bliver nødsaget til at få gang i motorene ved hjælp fra en android, og finder af den vej pludselig ud af at skibet har en destination, og at de seks meget forskellige personer har en opgave at løse - men hvad er opgaven? hvor skal de hen? og hvem er de?\r\nSerien er baseret på en tegneserie af samme navn fra 2012, som blev udgivet af Dark Horse, men som allerede dengang var ment som et oplæg til en tv-serie. Både tegneserie og tv-serie er nemlig skrevet af Joseph Mallozzi og Paul Mullie, som i øvrigt nok er mest kendt for deres arbejde med Stargate serien, særligt SG1 og Atlantis.",
+                "deu": "Die sechsköpfigen Besatzung eines im Raum treibenden Raumschiffes erwacht aus einer Stasis ohne jegliche Erinnerung. Sie wissen weder, wer sie sind, noch wie sie an Bord des Raumschiffes kamen. Da sich die Umgebung des Raumschiffes als sehr gefährlich erweist, müssen sie schnell lernen, zusammenzuarbeiten. Auf ihrer Reise begegnen ihnen Rachsucht, Verrat und Geheimnisse.",
+                "eng": "The six-person crew of a derelict spaceship awakens from stasis in the farthest reaches of space. Their memories wiped clean, they have no recollection of who they are or how they got on board. The only clue to their identities is a cargo bay full of weaponry and a destination: a remote mining colony that is about to become a war zone. With no idea whose side they are on, they face a deadly decision. Will these amnesiacs turn their backs on history, or will their pasts catch up with them?",
+                "fin": "Kuuden hengen miehistö herää horroksesta hylätyllä avaruusaluksella, joka on syvällä avaruudessa matkalla kaukaiseen kaivossiirtokuntaan lastitilat täynnä aseita. Kukaan ei muista keitä he ovat tai miten he ovat alukselle päätyneet. Ainoa varma tieto on se, että päämääränä olevassa siirtokunnassa syttyy pian sota, ilman aavistusta siitä kenen puolella he ovat. Voiko miehistö kääntää selkänsä omalle menneisyydelle ja aloitaa elämänsä puhtaalta pöydältä? Selviääkö miehistön identiteetti heille itselleen ennen päämäärään saapumista?",
+                "fra": "Lorsque les membres de l'équipage d'un vaisseau spatial abandonné se réveillent après un sommeil forcé, sans aucun souvenir ni de leur identité ni de leur présence à bord, ils doivent alors s'associer et travailler ensemble pour survivre et faire face aux menaces environnantes, aux vengeances, trahisons et secrets cachés.",
+                "heb": "צוותה בן ששת האנשים של חללית נטושה מתעורר מקיפאון בקצה המרוחק ביותר של החלל. זכרונותיהם נמחקו לחלוטין, והם אינם זוכרים מי הם או איך הם עלו על החללית. הרמז היחיד לזהותם הוא מפרץ מלא כלי נשק, ויעד: מושבת כרייה מרוחקת שעומדת להפוך לאזור מלחמה. ללא מושג באיזה צד הם נמצאים, הם עומדים בפני החלטה קטלנית. האם מחלת השיכחה שלהם תשאיר את גבם אל ההיסטוריה, או שעברם ישיג אותם?",
+                "nld": "Aan boord van een vervallen ruimteschip ontwaakt een bemanning van zes huurlingen uit hun hyperslaap, zonder zich te herinneren wie ze zijn of hoe ze aan boord zijn gekomen. Het schip staat onder gezag van een zeer gevaarlijke robot, is afgeladen met wapens en deze groep buitenbeentjes wordt al snel in een intergalactische oorlog gestort.",
+                "por": "Na história, quatro homens e duas mulheres acordam a bordo de uma nave espacial sem qualquer lembrança sobre quem são ou como chegaram ali. A nave pousa em uma colônia mineradora, onde os moradores estão amedrontados com a iminente chegada de mercenários enviados ao local para exterminá-los, a mando de uma corporação que deseja tomar o controle do planeta.",
+                "pt": "A tripulação de uma espaçonave acorda, após um período de inatividade, sem memória tanto da missão quanto das próprias identidades dos membros da equipe. Ao chegarem ao destino — uma colônia de mineração — eles saem em busca de respostas ao mesmo tempo que trabalham juntos para sobreviver.",
+                "rus": "Экипаж заброшенного космического корабля пробуждается от анабиоза, без воспоминаний о том, кто они и как они поднялись на борт. Сталкиваясь с угрозами на каждом шагу, они должны работать вместе, чтобы выжить. Их путешествие наполнено местью, предательством и скрытыми тайнами.",
+                "spa": "Dark Matter, una aventura espacial protagonizada por los tripulantes de una nave a la deriva, que se despiertan de pronto sin saber quiénes son y cómo han llegado hasta allí. A partir de entonces, cada minuto supone un nuevo peligro, y tendrán que colaborar para sobrevivir a un viaje marcado por la venganza, la traición y los secretos.",
+                "tur": "Dark Horse Comics’in aynı adlı çizgi romanından uyarlanan Dark Matter, enkaz halindeki uzay gemisinde hafızasını kaybetmiş halde uyanan ve neden orada olduğuna dair hiçbir fikri olmadan bu sırrı çözmeye çalışan altı kişilik bir mürettebatın hikayesini anlatır.",
+                "zho": "六個人自一艘太空船（Razr，刀鋒）的休眠艙中甦醒，卻沒有任何記憶。經過一連串事件後，他們發現自己是一群作奸犯科被通緝的傭兵及海盜，而且他們已經接了任務要替一間邪惡的星際公司剷除一個不合作的殖民地。他們試圖找回或逃避各自的過去、學習信任彼此、並在各星際勢力的包夾中努力生存。"
+            },
+            "translations": {
+                "deu": "Dark Matter",
+                "eng": "Dark Matter",
+                "fra": "Dark Matter",
+                "heb": "חומר אפל",
+                "nld": "Dark Matter",
+                "por": "Dark Matter",
+                "pt": "Dark Matter",
+                "rus": "Темная материя",
+                "spa": "Dark Matter",
+                "zho": "暗物質"
+            },
+            "network": "SYFY",
+            "remote_ids": [
+                {
+                    "id": "tt4159076",
+                    "type": 2,
+                    "sourceName": "IMDB"
+                },
+                {
+                    "id": "EP02164263",
+                    "type": 3,
+                    "sourceName": "TMS (Zap2It)"
+                },
+                {
+                    "id": "62425",
+                    "type": 12,
+                    "sourceName": "TheMovieDB.com"
+                }
+            ],
+            "thumbnail": "https://artworks.thetvdb.com/banners/posters/292174-1_t.jpg"
+        },
+        {
+            "objectID": "series-393159",
+            "country": "usa",
+            "id": "series-393159",
+            "image_url": "https://artworks.thetvdb.com/banners/v4/series/393159/posters/6617f4dee7fd4.jpg",
+            "name": "Dark Matter (2024)",
+            "first_air_time": "2024-05-08",
+            "overview": "Jason Dessen is abducted into an alternate version of his life. To get back to his true family, he embarks on a harrowing journey to save them from the most terrifying foe imaginable: himself.",
+            "primary_language": "eng",
+            "primary_type": "series",
+            "status": "Upcoming",
+            "type": "series",
+            "tvdb_id": "393159",
+            "year": "2024",
+            "slug": "dark-matter-2022",
+            "overviews": {
+                "deu": "Jason Dessen wird in eine alternative Version seines Lebens entführt. Um zu seiner echten Familie zurückzukehren, begibt er sich auf eine beklemmende Reise, um sie vor dem furchterregendsten Feind überhaupt zu retten: Sich selbst.",
+                "ell": "Ο Τζέισον Ντέσεν απάγεται σε μια εναλλακτική εκδοχή της ζωής του. Για να επιστρέψει στην αληθινή του οικογένεια, ξεκινά ένα οδυνηρό ταξίδι για να τη σώσει από τον πιο τρομακτικό εχθρό: τον εαυτό του.",
+                "eng": "Jason Dessen is abducted into an alternate version of his life. To get back to his true family, he embarks on a harrowing journey to save them from the most terrifying foe imaginable: himself.",
+                "fra": "Jason Dessen est emmené de force dans une version alternative de sa vie. Déterminé à retrouver sa véritable famille, il se lance dans un voyage éprouvant pour la sauver du pire ennemi que l'on puisse imaginer : lui-même.",
+                "hin": "जेसन डेस्सन का उसकी ज़िंदगी के एक वैकल्पिक आयाम में अपहरण कर लिया जाता है। अपने असली परिवार के पास वापस जाने के लिए, वह एक ख़ौफ़नाक यात्रा पर निकलता है ताकि उन्हें बचा सके सबसे भयानक कल्पनीय दुश्मन से : ख़ुद से।",
+                "ita": "Jason Dessen si ritrova intrappolato in una versione alternativa della sua vita. Si imbarca in un viaggio tormentoso per tornare dalla sua vera famiglia e salvarla dal nemico più terrificante: lui stesso.",
+                "jpn": "ジェイソン・デスセンは“もう一つの人生”へと連れ去られた。本当の家族の元に戻り、想像し得る最も恐ろしい敵、つまり自分自身から家族を救うため苦難の旅に出る。",
+                "por": "Jason Dessen é raptado para uma versão alternativa da sua vida. Para regressar à sua família verdadeira, Jason embarca numa viagem dolorosa para a salvar do inimigo mais terrível imaginável: ele mesmo.",
+                "pt": "Jason Dessen é sequestrado para uma versão alternativa de sua vida. Em busca de voltar para sua verdadeira família, ele embarca em uma jornada angustiante para salvá-los do inimigo mais terrível que se possa imaginar: ele mesmo.",
+                "rus": "В результате похищения Джейсон Дессен попадает в альтернативную версию своей судьбы. Он отправляется в ужасное путешествие, чтобы вернуться к своей настоящей семье и спасти их от самого жуткого врага, которого только можно представить, — самого себя.",
+                "spa": "Jason Dessen acaba en una versión alternativa de su vida. Para volver con su auténtica familia, se embarca en un tortuoso viaje para salvarla del enemigo más aterrador: él mismo.",
+                "srp": "Док се једне кишне ноћи враћао кући, Џејсона Десену је дрогирао и киднаповао непознати мушкарац. Након што се пробуди, схвата да је некако стигао у други универзум, где живи потпуно другачијим животом. Да би се вратио својој правој породици, он креће на мучно путовање како би их спасио од најстрашнијег непријатеља који се може замислити, самог себе.",
+                "tur": "Jason Dessen hayatının alternatif bir versiyonuna kaçırılır. Gerçek ailesine geri dönmek için onları akla gelebilecek en korkunç düşmandan, kendisinden kurtarmak için yürek parçalayıcı bir yolculuğa çıkar."
+            },
+            "translations": {
+                "deu": "Dark Matter – Der Zeitenläufer",
+                "ell": "Σκοτεινή ύλη",
+                "eng": "Dark Matter (2024)",
+                "fra": "Dark Matter (2024)",
+                "hin": "डार्क मैटर",
+                "ita": "Dark Matter",
+                "jpn": "ダーク・マター",
+                "por": "Matéria Escura",
+                "pt": "Matéria Escura",
+                "rus": "Темная материя",
+                "spa": "Materia oscura",
+                "srp": "Тамна материја",
+                "tur": "Dark Matter"
+            },
+            "network": "Apple TV+",
+            "remote_ids": [
+                {
+                    "id": "10.5240/E1BF-E488-C13C-D282-8217-7",
+                    "type": 13,
+                    "sourceName": "EIDR"
+                },
+                {
+                    "id": "tt19231492",
+                    "type": 2,
+                    "sourceName": "IMDB"
+                },
+                {
+                    "id": "https://tv.apple.com/gb/show/dark-matter/umc.cmc.4luj45vtqpmjsvb6sc2675oeg",
+                    "type": 4,
+                    "sourceName": "Official Website"
+                },
+                {
+                    "id": "196322",
+                    "type": 12,
+                    "sourceName": "TheMovieDB.com"
+                },
+                {
+                    "id": "Dark_Matter_(2024_TV_series)",
+                    "type": 24,
+                    "sourceName": "Wikipedia"
+                }
+            ],
+            "thumbnail": "https://artworks.thetvdb.com/banners/v4/series/393159/posters/6617f4dee7fd4_t.jpg"
+        },
+        {
+            "objectID": "movie-29412",
+            "country": "usa",
+            "extended_title": "Dark Matter (2008)",
+            "genres": [
+                "Drama"
+            ],
+            "id": "movie-29412",
+            "image_url": "https://artworks.thetvdb.com/banners/movies/29412/posters/29412.jpg",
+            "name": "Dark Matter",
+            "first_air_time": "2008-04-24",
+            "overview": "The film is inspired by the true story of Gang Lu, a former graduate student who killed four faculty members and one student at the University of Iowa. However, the story has substantial differences in plot and character motivation.",
+            "primary_language": "eng",
+            "primary_type": "movie",
+            "status": "Released",
+            "type": "movie",
+            "tvdb_id": "29412",
+            "year": "2008",
+            "slug": "dark-matter",
+            "overviews": {
+                "eng": "The film is inspired by the true story of Gang Lu, a former graduate student who killed four faculty members and one student at the University of Iowa. However, the story has substantial differences in plot and character motivation."
+            },
+            "translations": {
+                "ces": "Temná hmota",
+                "eng": "Dark Matter",
+                "heb": "חומר למחשבה",
+                "hun": "Sötét anyag",
+                "por": "Fúria Pela Honra",
+                "spa": "Un asunto muy oscuro",
+                "zho": "暗物质"
+            },
+            "remote_ids": [
+                {
+                    "id": "tt0416675",
+                    "type": 2,
+                    "sourceName": "IMDB"
+                },
+                {
+                    "id": "http://www.darkmatterthefilm.com/",
+                    "type": 4,
+                    "sourceName": "Official Website"
+                },
+                {
+                    "id": "18031",
+                    "type": 10,
+                    "sourceName": "TheMovieDB.com"
+                }
+            ],
+            "thumbnail": "https://artworks.thetvdb.com/banners/movies/29412/posters/29412_t.jpg"
+        },
+        {
+            "objectID": "series-85325",
+            "id": "series-85325",
+            "image_url": "https://artworks.thetvdb.com/banners/posters/85325-1.jpg",
+            "name": "Dark Matter, Dark Energy - The Dark Side of the Universe",
+            "first_air_time": "2007-01-01",
+            "overview": "First proposed in the 1930s, the idea that there is missing mass influencing the behavior of galaxies began to look more and more likely from the 1970s on. We know that it is matter because we can detect its gravitational influence on visible matter, but we cannot see it. An inventory of the distribution of dark matter throughout space shows that it constitutes 25% of the energy density of the universe.",
+            "primary_language": "eng",
+            "primary_type": "series",
+            "status": "Ended",
+            "type": "series",
+            "tvdb_id": "85325",
+            "year": "2007",
+            "slug": "dark-matter-dark-energy-the-dark-side-of-the-universe",
+            "overviews": {
+                "eng": "First proposed in the 1930s, the idea that there is missing mass influencing the behavior of galaxies began to look more and more likely from the 1970s on. We know that it is matter because we can detect its gravitational influence on visible matter, but we cannot see it. An inventory of the distribution of dark matter throughout space shows that it constitutes 25% of the energy density of the universe."
+            },
+            "translations": {
+                "eng": "Dark Matter, Dark Energy - The Dark Side of the Universe"
+            },
+            "thumbnail": "https://artworks.thetvdb.com/banners/posters/85325-1_t.jpg"
+        },
+        {
+            "objectID": "movie-62343",
+            "country": "gbr",
+            "director": "Sarah McCarthy",
+            "extended_title": "The Dark Matter of Love (2012)",
+            "genres": [
+                "Documentary"
+            ],
+            "id": "movie-62343",
+            "image_url": "https://artworks.thetvdb.com/banners/movies/62343/posters/62343.jpg",
+            "name": "The Dark Matter of Love",
+            "first_air_time": "2012-11-01",
+            "primary_language": "eng",
+            "primary_type": "movie",
+            "status": "Released",
+            "type": "movie",
+            "tvdb_id": "62343",
+            "year": "2012",
+            "slug": "the-dark-matter-of-love",
+            "translations": {
+                "eng": "The Dark Matter of Love",
+                "rus": "Тёмная материя любви"
+            },
+            "remote_ids": [
+                {
+                    "id": "tt2512582",
+                    "type": 2,
+                    "sourceName": "IMDB"
+                },
+                {
+                    "id": "http://www.thedarkmatteroflove.com/",
+                    "type": 4,
+                    "sourceName": "Official Website"
+                },
+                {
+                    "id": "199291",
+                    "type": 10,
+                    "sourceName": "TheMovieDB.com"
+                }
+            ],
+            "thumbnail": "https://artworks.thetvdb.com/banners/movies/62343/posters/62343_t.jpg"
+        },
+        {
+            "objectID": "movie-155387",
+            "country": "usa",
+            "director": "Daniel H. Birman",
+            "extended_title": "The Hunt for Dark Matter (2017)",
+            "genres": [
+                "Documentary"
+            ],
+            "id": "movie-155387",
+            "image_url": "https://artworks.thetvdb.com/banners/images/missing/movie.jpg",
+            "name": "The Hunt for Dark Matter",
+            "first_air_time": "2017-05-04",
+            "overview": "CERN and the University of California-Santa Barbara are collaborating in the search for the elusive substance that physicists and astronomers believe holds the universe together -- dark matter. Where is this search now in the realm of particle physics and what comes next?",
+            "primary_language": "eng",
+            "primary_type": "movie",
+            "status": "Released",
+            "type": "movie",
+            "tvdb_id": "155387",
+            "year": "2017",
+            "slug": "the-hunt-for-dark-matter",
+            "overviews": {
+                "eng": "CERN and the University of California-Santa Barbara are collaborating in the search for the elusive substance that physicists and astronomers believe holds the universe together -- dark matter. Where is this search now in the realm of particle physics and what comes next?"
+            },
+            "translations": {
+                "eng": "The Hunt for Dark Matter"
+            },
+            "remote_ids": [
+                {
+                    "id": "tt6850276",
+                    "type": 2,
+                    "sourceName": "IMDB"
+                },
+                {
+                    "id": "465025",
+                    "type": 10,
+                    "sourceName": "TheMovieDB.com"
+                }
+            ]
+        },
+        {
+            "objectID": "movie-169985",
+            "aliases": [
+                "A Dark Matter: 4K"
+            ],
+            "country": "can",
+            "director": "James Naylor",
+            "extended_title": "A Dark Matter (2013)",
+            "genres": [
+                "Crime",
+                "Science Fiction",
+                "Thriller"
+            ],
+            "id": "movie-169985",
+            "image_url": "https://artworks.thetvdb.com/banners/movies/169985/posters/uTNwWSxdZDuOnWW0StuWxZvBtpj.jpg",
+            "name": "A Dark Matter",
+            "first_air_time": "2013-04-19",
+            "overview": "Unhinged by his girlfriend's sudden departure, artist Angus begins slipping into a dark layer of reality ruled by a powerful demon. Believing that the key to finding her lies within, Angus plunges deeper into the infernal netherworld.",
+            "primary_language": "eng",
+            "primary_type": "movie",
+            "status": "Released",
+            "type": "movie",
+            "tvdb_id": "169985",
+            "year": "2013",
+            "slug": "a-dark-matter",
+            "overviews": {
+                "eng": "Unhinged by his girlfriend's sudden departure, artist Angus begins slipping into a dark layer of reality ruled by a powerful demon. Believing that the key to finding her lies within, Angus plunges deeper into the infernal netherworld.",
+                "kor": "서로에게 깊이 빠져 있는 젊은 예술가 커플, 앵거스와 로라.  두 사람은 서로에게 영감을 주는 특별한 관계다.  그러나 말할 수 없는 비밀을 품은 로라가 앵거스의 곁을 떠나고…  창작 슬럼프와 함께 기이한 환각에 시달리는 앵거스.  미모의 바텐더 이브는 노골적으로 앵거스를 유혹하기 시작하고,  점점 더 혼란스러운 앵거스는 로라의 비밀을 파헤치는데…"
+            },
+            "translations": {
+                "eng": "A Dark Matter",
+                "kor": "더 홀",
+                "por": "Matéria Duvidosa"
+            },
+            "remote_ids": [
+                {
+                    "id": "tt2386175",
+                    "type": 2,
+                    "sourceName": "IMDB"
+                },
+                {
+                    "id": "274283",
+                    "type": 10,
+                    "sourceName": "TheMovieDB.com"
+                }
+            ],
+            "thumbnail": "https://artworks.thetvdb.com/banners/movies/169985/posters/uTNwWSxdZDuOnWW0StuWxZvBtpj_t.jpg"
+        },
+        {
+            "objectID": "company-12721",
+            "company_type": "Production Company",
+            "id": "company-12721",
+            "name": "Dark Matter Studios",
+            "primary_type": "Production Company",
+            "type": "company",
+            "tvdb_id": "12721",
+            "slug": "dark-matter-studios",
+            "translations": {
+                "eng": "Dark Matter Studios"
+            }
+        },
+        {
+            "objectID": "company-12720",
+            "company_type": "Production Company",
+            "id": "company-12720",
+            "name": "Dark Matter Productions",
+            "primary_type": "Production Company",
+            "type": "company",
+            "tvdb_id": "12720",
+            "slug": "dark-matter-productions",
+            "translations": {
+                "eng": "Dark Matter Productions"
+            }
+        },
+        {
+            "objectID": "movie-337526",
+            "country": "tur",
+            "extended_title": "Karanlık Madde (2022)",
+            "genres": [
+                "Mystery",
+                "Thriller"
+            ],
+            "id": "movie-337526",
+            "image_url": "https://artworks.thetvdb.com/banners/images/missing/movie.jpg",
+            "name": "Karanlık Madde",
+            "overview": "Karanlık Madde, Aladağlar’da kendilerini beklenmedik olayların içinde bulan bir grubun yaşadıklarına odaklanıyor. Cin, şeytan, peri veya katil gibi öğeler kullanılmadan seyircilere korku dolu anlar yaşatan filmde, bir grubun yaşadıkları ya da yaşadıklarını düşündükleri olaylar ana kahraman Can’ın gözünden gözler önüne seriliyor.",
+            "primary_language": "tur",
+            "primary_type": "movie",
+            "status": "Released",
+            "type": "movie",
+            "tvdb_id": "337526",
+            "year": "2022",
+            "slug": "karanlik-madde",
+            "overviews": {
+                "eng": "Can, accompanied by some of his friends, is on his way to a cursed region. The natives of the place believe that two hundred years ago, after the child of Satan had been slayed, the whole region had been cursed and vanished from the face of the earth. Right when the group reaches the area, bizarre things begin to happen; The problem is that Can is unable to distinguish between reality and his nightmares and is trapped in a limbo between hallucination and the real world.",
+                "tur": "Karanlık Madde, Aladağlar’da kendilerini beklenmedik olayların içinde bulan bir grubun yaşadıklarına odaklanıyor. Cin, şeytan, peri veya katil gibi öğeler kullanılmadan seyircilere korku dolu anlar yaşatan filmde, bir grubun yaşadıkları ya da yaşadıklarını düşündükleri olaylar ana kahraman Can’ın gözünden gözler önüne seriliyor."
+            },
+            "translations": {
+                "eng": "Dark Matter",
+                "tur": "Karanlık Madde"
+            },
+            "remote_ids": [
+                {
+                    "id": "tt20753410",
+                    "type": 2,
+                    "sourceName": "IMDB"
+                },
+                {
+                    "id": "900303",
+                    "type": 10,
+                    "sourceName": "TheMovieDB.com"
+                }
+            ],
+            "thumbnail": "https://artworks.thetvdb.com/banners/v4/movie/337526/posters/629a1d3456b6d_t.jpg"
+        },
+        {
+            "objectID": "series-250734",
+            "aliases": [
+                "Dark Matters: Twisted But True",
+                "科学机密档案 曲解却真实"
+            ],
+            "country": "usa",
+            "id": "series-250734",
+            "image_url": "https://artworks.thetvdb.com/banners/posters/250734-1.jpg",
+            "name": "Dark Matters",
+            "first_air_time": "2011-08-31",
+            "overview": "Delves into the most unusual research ever conducted, including attempts to crossbreed humans and apes, actual zombie investigations and head transplantation studies. Cutting-edge CGI recreations enable viewers to witness the pivotal moments when brilliant minds face controversy or ethical crossroads on the fringes of science.",
+            "primary_language": "eng",
+            "primary_type": "series",
+            "status": "Ended",
+            "type": "series",
+            "tvdb_id": "250734",
+            "year": "2011",
+            "slug": "dark-matters",
+            "overviews": {
+                "deu": "Bizarre Experimente, schockierende Forschungsprojekte und skurrile Persönlichkeiten: Die neue Dokumentarserie \"Die dunkle Seite der Wissenschaft\" deckt unglaubliche Geschichten auf und belegt anhand realer Fälle, wie nah sich Genie und Wahnsinn wirklich sind. John Noble - bekannt aus dem Kino-Epos \"Herr der Ringe\" sowie aus der US-Serie \"Fringe\" - moderiert die Dokumentation. Auf seiner Suche nach Antworten muss er in den tiefsten Abgründen der menschlichen Psyche schürfen - und wirft dabei grundlegende Fragen auf. Wie weit darf Wissenschaft gehen? Was passiert, wenn ethische Normen im Namen der Forschung außer Kraft gesetzt werden? Von Charles Lindberghs Herzmaschine zu Zeiten des Zweiten Weltkriegs über Menschenversuche nach Iwan Pawlow bis hin zu Zimbardos weltbekanntem Gefängnis-Experiment: Diese Dokumentarserie bringt Licht ins Dunkel wissenschaftlicher Grenzfälle.",
+                "eng": "Delves into the most unusual research ever conducted, including attempts to crossbreed humans and apes, actual zombie investigations and head transplantation studies. Cutting-edge CGI recreations enable viewers to witness the pivotal moments when brilliant minds face controversy or ethical crossroads on the fringes of science.",
+                "fra": "En compagnie de John Noble, acteur de la série Fringe, découvrez ce qui survient lorsque les scientifiques vont trop loin dans leurs expériences et leurs recherches.\r\nEn explorant des questions gênantes, Expériences Interdites revient pour mettre en lumière et exposer les expériences scientifiques les plus étranges de notre histoire. Grâce aux décors virtuels et aux reconstitutions, ce programme macabre mais drôle, explore le côté sombre de la compréhension humaine.\r\n\r\nUn monde où les expériences peuvent être éthiquement controversées et les résultats complètement hallucinants. Des efforts rocambolesques dï¿½un scientifique pour ramener les morts à la vie, aux lavages de cerveaux désastreux de la CIA, en passant par une chanson ayant causé la mort de dix-huit personnes, Expériences Interdites invite les téléspectateurs à méditer sur les limites de la science et de la connaissance.",
+                "ita": "La star di Fringe, John Noble esplora le ricerche scientifiche più affascinanti e inusuali avvenute nella realtà. Tramite le ricostruzioni e l'animazione computerizzata, il programma esplora i momenti della storia scientifica in cui certi individui si sono spinti in esperimenti estremi, al fine di raggiungere scoperte fondamentali; dal trapianto di testa alle attuali indagini sugli zombie e all'incrocio tra umani e scimmie. Queste storie sono stravaganti come una grande sceneggiatura di fantascienza, o disturbanti come una classica storia dell'orrore; l'unica differenza è che sono vere. John Noble è la guida perfetta per traghettare gli spettatori nel sordido mondo delle ricerche andate male che, in alcuni casi, ci hanno portato alla tecnologia e alla scienza di cui godiamo oggi.",
+                "spa": "Para algunos son científicos locos, para otros son mentes lúcidas y privilegiadas.  Macabro pero cierto repasa aquellos capítulos más oscuros de la historia de la ciencia que, por extravagantes que parecieran, fueron necesarios para avanzar. Inverosímiles, escalofriantes, en ocasiones hasta espeluznantes y, sin embargo, imprescindibles para el futuro devenir de la sociedad. El actor John Noble (‘Fringe’ y ‘El señor de los anillos’) conducirá al espectador a un peculiar laboratorio desde el que exponer algunos de los experimentos más ‘macabros, pero ciertos’ de la historia.\r\nEn una cuidada producción que se traslada a los tiempos más lejanos de la ciencia, seremos testigos de las motivaciones, problemas y situaciones no exentas de dramatismo que rodearon, entre otras, la creación de la anestesia general, la lobotomía, el experimento ‘filadelfia’ y tantos otros capítulos de la ciencia que se mezclan con la leyenda. Los experimentos más extravagantes de la historia nos proponen, además, un debate que sigue estando en alza: ¿qué sucede cuando la investigación científica va demasiado lejos y pone en peligro la vida humana? En los 13 capítulos que componen la serie también hay sitio para ‘experimentos’ a olvidar dentro de la historia de la investigación como, por ejemplo, intentos de manipular a los simios mestizos, investigaciones con ‘zombis reales’ y trasplantes de cerebro. Armas de espionaje extrasensorial, mutaciones imposibles, los peligros del infrasonido e incluso el mito que habla del patólogo encargado de la autopsia de Einstein, al que le practicaron una lobotomía antes de ser enterrado",
+                "zho": "《科学机密档案》探讨当科学研究太过极端会发生何种后果。本系列带领观众进入实验室了解古怪的科学，并揭露历史上最超乎寻常的实验。由知名科幻演员约翰·诺伯（John Noble）主持，《科学机密档案》深入介绍最奇特的研究，包括试图培育人猿混种、实际的殭尸调查和头部移植研究。先进的电脑动画重现让观众得以见证重要时刻，了解优秀科学家做科学研究时所面临的争议和道德挣扎。"
+            },
+            "translations": {
+                "deu": "Die dunkle Seite der Wissenschaft",
+                "eng": "Dark Matters",
+                "fra": "Expériences interdites (2011)",
+                "ita": "La scienza oscura",
+                "spa": "Macabro pero cierto",
+                "zho": "科学机密档案"
+            },
+            "network": "Science Channel",
+            "remote_ids": [
+                {
+                    "id": "tt2014554",
+                    "type": 2,
+                    "sourceName": "IMDB"
+                },
+                {
+                    "id": "EP01437858",
+                    "type": 3,
+                    "sourceName": "TMS (Zap2It)"
+                },
+                {
+                    "id": "43832",
+                    "type": 12,
+                    "sourceName": "TheMovieDB.com"
+                }
+            ],
+            "thumbnail": "https://artworks.thetvdb.com/banners/posters/250734-1_t.jpg"
+        },
+        {
+            "objectID": "series-384440",
+            "country": "usa",
+            "id": "series-384440",
+            "image_url": "https://artworks.thetvdb.com/banners/images/missing/series.jpg",
+            "name": "Dark Matters (2016)",
+            "primary_language": "eng",
+            "primary_type": "series",
+            "status": "Ended",
+            "type": "series",
+            "tvdb_id": "384440",
+            "slug": "dark-matters-2016",
+            "translations": {
+                "eng": "Dark Matters (2016)"
+            }
+        },
+        {
+            "objectID": "series-279201",
+            "aliases": [
+                "Heroes Reborn: Dark Matters",
+                "Les Héros : Le retour"
+            ],
+            "country": "usa",
+            "id": "series-279201",
+            "image_url": "https://artworks.thetvdb.com/banners/posters/279201-2.jpg",
+            "name": "Heroes Reborn",
+            "first_air_time": "2015-09-24",
+            "overview": "The Supernatural phenomenon begins again with a fresh crop of inspiring heroes who take on the ultimate struggle between those with extraordinary abilities and those with nefarious motives to hunt and harness their powers. Epic adventures await these newly empowered allies as they cross paths with some of the original characters, unlocking the mysterious fate of the universe and their place within it.",
+            "primary_language": "eng",
+            "primary_type": "series",
+            "status": "Ended",
+            "type": "series",
+            "tvdb_id": "279201",
+            "year": "2015",
+            "slug": "heroes-reborn",
+            "overviews": {
+                "ces": "Zdánlivě obyčejná skupina lidí zjistí, že má každý z nich nějakou zvláštní schopnost. Jak může něco takového ovlivnit jejich životy a životy jejich rodin?\r\nSeriál je spin-offem původního hitu stanice NBC Hrdinové",
+                "dan": "Det loyale publikum har været vedholdende i deres forsøg på at genoplive Heroes, og tilbage i februar kunne seriens skaber, Tim Kring, så meddele, at Heroes genfødes under navnet Heroes Reborn og lanceres som en helt ny miniserie på 13 afsnit.Heroes: Reborn er både en form for spin-off og efterfølger til den oprindelige Heroes. På Rollelisten finder man også endnu en gang Zachery Levi og Jack Coleman, der begge medvirkede i Heroes.",
+                "deu": "Ein Jahr ist vergangen seit ein verheerender Terroranschlag die Stadt Odessa dem Erdboden gleich gemacht hat. Damals wurden Menschen mit außergewöhnlichen Fähigkeiten für das Unglück verantwortlich gemacht. Seither werden sie von den Menschen und der Regierung geächtet. Um der Verfolgung zu entkommen, sind viele untergetaucht und leben versteckt. Die Wege von alten Bekannten und neuen Helden kreuzen sich stetig – gemeinsam verfolgen sie ein Ziel: die Welt und die Menschheit zu retten.",
+                "eng": "The Supernatural phenomenon begins again with a fresh crop of inspiring heroes who take on the ultimate struggle between those with extraordinary abilities and those with nefarious motives to hunt and harness their powers. Epic adventures await these newly empowered allies as they cross paths with some of the original characters, unlocking the mysterious fate of the universe and their place within it.",
+                "fin": "Noah Bennet on halunnut unohtaa kaiken menneisyydestään. Tämä on varma että on menettänyt tyttärensä terroristi-iskussa viisi vuotta sitten. Maailma tietää nyt ihmisistä, joilla on erikoisvoimia ja Yhdysvallat on ottanut erikoisihmiset tarkkailuun, moni heistä onkin paennut maan alle. Revontulien aikaansaama yliluonnollinen ilmiö antaa uudelle joukolle ihmisiä supervoimia. Noah tempaistaan jälleen hyvien ja pahojen voimien väliseen taisteluun. Onko ihmiskunta suuren muutoksen äärellä?",
+                "fra": "Un an après les derniers événements d’Heroes, un attentat terroriste fait de nombreuses victimes à Odessa, au Texas. Tenues responsables de cette attaque, les personnes dotées de pouvoirs sont désormais des fugitifs, traqués par Luke et Joanne, avides de vengeance depuis une perte tragique. Disparu de la circulation, Noah Bennet va malgré lui devoir sortir de l’ombre lorsque le conspirationniste Quentin Frady lui ouvre les yeux sur les véritables motivations cachées derrière ces événements. Ailleurs, au même moment, d'autres \"évolués\" doivent se cacher. Ils ne savent pas encore qu'ils vont jouer un rôle crucial dans la plus grande des quêtes : sauver le monde !",
+                "heb": "מיני-סדרה המבוססת על הסדרה \"גיבורים\". בסדרה יהיו עלילות ודמויות חדשות. הסדרה החדשה מתרחשת כמה שנים לאחר הפינאלה של \"גיבורים\" במסגרתה נחשפו האנשים בעלי הכוחות לציבור הרחב. כיצד מגיב הציבור הרחב לסוד? מה קרה לגיבורים? וכמה פעמים העולם יכול לעמוד בפני סכנה קיומית?",
+                "hun": "A Texas állambeli Odessa városát ért, sok áldozatot követelő terrortámadás után járunk öt évvel. Sok idő eltelt azóta, mégis a különleges képességekkel rendelkező emberek egy csoportját okolják a katasztrófa bekövetkeztéért. Ők persze folyton menekülni kényszerülnek, hiszen jó páran a képességeik megszerzésére pályáznak.",
+                "ita": "Ad un anno di distanza la città di Odessa è ancora sconvolta da quello che è stato descritto dai media come un grave attentato terroristico, la cui responsabilità sarebbe dei cosiddetti \"umani evoluti\", noti con l'abbreviazione evo, persone dotate di poteri soprannaturali la cui esistenza, dopo gli eventi del finale della quarta stagione di Heroes, risalenti a cinque anni prima, è ormai di dominio pubblico. Di conseguenza molti di tali soggetti sono ora costretti a vivere cercando di celare le proprie abilità, per sottrarsi alle discriminazioni della società, alle misure restrittive imposte dai governi, e per evitare di finire nel mirino di chi è in cerca di vendetta o vorrebbe sfruttarli per propri fini, come la compagnia Renautas, conglomerato che ha acquisito la Primatech Paper, o la coppia Luke e Joanne, che vorrebbe sterminarli per vendicare la morte del figlio rimasto vittima degli eventi di Odessa. Tra i protagonisti figurano il giovane Tommy Clark, uno studente in grado di far sparire cose e persone, la giapponese Miko Otomo, in grado di vivere in una realtà virtuale in cui va alla ricerca del padre, Carlos Gutierrez, che cerca di onorare la morte del fratello e Malina, una delle prime ad essere testimone di un pericolo immininente per l'intero pianeta. Presto, infatti, saranno chiamati ad unire le proprie forze per salvare il mondo.\r\n\r\nA cercare di mettere in chiaro tali vicende vi è anche Quentin Frady, un cospirazionista in cerca della sorella rapita, il quale si avvale dell'aiuto dell'ex dipendente della Primatech Noah Bennet, la cui memoria sugli eventi di Odessa è stata cancellata.",
+                "nld": "Heroes Reborn begint 5 jaar na het einde van seizoen 4 van Heroes in Odessa, Texas vlak na een terroristische aanslag. Mensen met bijzondere krachten krijgen de schuld van de aanslag en zij moeten zich nu schuilhouden want de jacht is op hen geopend. In goede en slechte tijden zorgt het lot ervoor dat de nieuwe helden bekende helden ontmoeten als Hiro Nakamura (Masi Oka), Matt Parkman (Greg Grunberg), Mohinder Suresh (Sendhil Ramamurthy) en The Haitian (Jimmy Jean-Louis). Uiteindelijk is hun gezamenlijke missie niets minder dan het redden van de wereld en de mensheid.",
+                "por": "Um ano atrás, um ataque terrorista em Odessa, no Texas, dizimou a cidade. Aqueles com habilidades especiais foram considerados os culpados pelo evento, o que os levou a esconderem suas habilidades ou fugirem de pessoas com motivos nefastos. Dois destes vigilantes incluem Luke e Joanne, que estão em busca de vingança após uma grande perda.\r\n\r\nEnquanto isso, Noah Bennet, mais conhecido como H.R.G., está desparecido. Quentin Frady, um teórico da conspiração, o encontra e abre seus olhos para a verdade por trás da tragédia de Odessa.",
+                "rus": "Год назад ужасный теракт в Одессе, штат Техас, практически уничтожил весь город. Виновниками произошедшей трагедии были признаны люди с экстраординарными способностями. Теперь они вынуждены скрываться и убегать от тех, кто мечтает воспользоваться их необычайными возможностями в собственных целях. Но каждый день в мире появляются новые герои, которые не знают, что им делать со своими удивительными талантами и пытаются жить, как раньше. Так, Люк и Джоанна одержимы личной вендеттой. Томми, как и любой подросток, мечтает завоевать сердце девушки своей мечты. Малина растет в любящей семье, где все ее холят и лелеют, веруя, что она рождена для свершения великих дел. Между тем в Токио Мико разыскивает пропавшего отца. Но наступает момент, когда новым героям приходится объединиться, чтобы противостоять вселенскому злу и спасти человечество. Неоценимую помощь в этом трудном деле им окажут уже знакомые зрителям Ной Беннет, Хиро Накамура, Мэтт Паркман и Мохиндер Суреш, готовые поделиться богатым опытом с молодым поколением.",
+                "spa": "Un año después de un brutal ataque terrorista en Odessa, se responsabiliza a aquellos poseedores de poderes extraordinarios. Por eso, ahora son perseguidos y tratan de esconderse en los lugares más remotos del planeta.",
+                "tur": "13 bölümlük bir mini-dizi olarak tasarlanan Heroes Reborn, olağanüstü yeteneklere sahip sıradan insanların destansı hikayesini bir kez daha ekranlara getirecek. Yeni karakterler ve yeni hikâyeler izleyeceğimiz yapım, orijinal dizinin ilk sezonunun izlerini taşıyor.",
+                "zho": "故事和《超異能英雄》一樣，仍然描述一群普通人發現自己擁有超能力。一年前，德州奧德薩市發生一起恐怖襲擊案，這座城市遭到毀滅。人們因為這起事件而遷怒於那些擁有超能力的人，超能人被迫躲藏起來或四處逃亡，但擁有不良動機的人絕不會輕易放過他們。為了給逝去的親人報仇，路克和喬安也加入了追殺超異能人士的行列。綽號HRG的諾亞·班奈特決定保持低調，但陰謀理論家昆丁·費勒帝找到了他，擦亮了他的眼睛，讓他認清了奧德薩悲劇幕後的真相……"
+            },
+            "translations": {
+                "ces": "Hrdinové: Znovuzrození",
+                "deu": "Heroes Reborn",
+                "eng": "Heroes Reborn",
+                "fin": "Heroes Reborn",
+                "fra": "Heroes Reborn",
+                "heb": "גיבורים נולדו מחדש",
+                "hun": "Hősök: Újjászületés",
+                "ita": "Heroes Reborn",
+                "nld": "Heroes Reborn",
+                "por": "Heroes Reborn",
+                "pt": "Heroes Reborn",
+                "rus": "Герои: Возрождение",
+                "spa": "Heroes Reborn",
+                "tur": "Heroes Reborn",
+                "zho": "Heroes再現"
+            },
+            "network": "NBC",
+            "remote_ids": [
+                {
+                    "id": "tt3556944",
+                    "type": 2,
+                    "sourceName": "IMDB"
+                },
+                {
+                    "id": "EP01882900",
+                    "type": 3,
+                    "sourceName": "TMS (Zap2It)"
+                },
+                {
+                    "id": "60858",
+                    "type": 12,
+                    "sourceName": "TheMovieDB.com"
+                }
+            ],
+            "thumbnail": "https://artworks.thetvdb.com/banners/posters/279201-2_t.jpg"
+        },
+        {
+            "objectID": "series-330006",
+            "id": "series-330006",
+            "image_url": "https://artworks.thetvdb.com/banners/images/missing/series.jpg",
+            "name": "DarkMatter2525",
+            "first_air_time": "2009-01-14",
+            "overview": "DarkMatter2525 is a popular atheist YouTuber who makes animations, mainly against fundamentalist religious views. \r\n\r\nIn his own words, \"I don't address religion because of God; I address it because of the people who believe﻿ in God. I don't want them to believe in a fantasy. I want them to believe what is true. If most of the world believed in Harry Potter and based life decisions — that affect everyone — on that belief, then I'd spend my time addressing Harry Potter. Get this straight: I don't know if a god exists, but I do KNOW the Abrahamic God doesn't exist, for He is an illogical concept, rife with contradiction — a square circle of loving wrath, known to have gone through an evolution as He was compiled by the ancients throughout history.\"",
+            "primary_language": "eng",
+            "primary_type": "series",
+            "status": "Ended",
+            "type": "series",
+            "tvdb_id": "330006",
+            "year": "2009",
+            "slug": "darkmatter2525",
+            "overviews": {
+                "eng": "DarkMatter2525 is a popular atheist YouTuber who makes animations, mainly against fundamentalist religious views. \r\n\r\nIn his own words, \"I don't address religion because of God; I address it because of the people who believe﻿ in God. I don't want them to believe in a fantasy. I want them to believe what is true. If most of the world believed in Harry Potter and based life decisions — that affect everyone — on that belief, then I'd spend my time addressing Harry Potter. Get this straight: I don't know if a god exists, but I do KNOW the Abrahamic God doesn't exist, for He is an illogical concept, rife with contradiction — a square circle of loving wrath, known to have gone through an evolution as He was compiled by the ancients throughout history.\""
+            },
+            "translations": {
+                "eng": "DarkMatter2525"
+            }
+        },
+        {
+            "objectID": "series-393419",
+            "country": "jpn",
+            "id": "series-393419",
+            "image_url": "https://artworks.thetvdb.com/banners/images/missing/series.jpg",
+            "name": "No Matter How Dark the Night Is",
+            "overview": "Michinari Shiga (Takaya Kamikawa) works as a deputy editor for weekly magazine Shukan Jiryu. The magazine has seen a rise in its sales by breaking numerous scandals. Michinari Shiga lives his life faithfully as a journalist, but his life suddenly changes. His son, who attends a university, kills someone he has stalked and then kills himself. Instead of chasing after scandals, Michinari Shiga now finds himself the target of other journalists. He is also demoted to another magazine and his relationship with his wife deteriorates. He falls into a desperate situation, but he approaches the truth behind his son's case.",
+            "primary_language": "jpn",
+            "primary_type": "series",
+            "status": "Continuing",
+            "type": "series",
+            "tvdb_id": "393419",
+            "slug": "no-matter-how-dark-the-night-is",
+            "overviews": {
+                "jpn": "Michinari Shiga (Takaya Kamikawa) works as a deputy editor for weekly magazine Shukan Jiryu. The magazine has seen a rise in its sales by breaking numerous scandals. Michinari Shiga lives his life faithfully as a journalist, but his life suddenly changes. His son, who attends a university, kills someone he has stalked and then kills himself. Instead of chasing after scandals, Michinari Shiga now finds himself the target of other journalists. He is also demoted to another magazine and his relationship with his wife deteriorates. He falls into a desperate situation, but he approaches the truth behind his son's case."
+            },
+            "translations": {
+                "jpn": "No Matter How Dark the Night Is"
+            }
+        },
+        {
+            "objectID": "series-392593",
+            "aliases": [
+                "Yoru ga Dorehodo Kurakutemo"
+            ],
+            "country": "jpn",
+            "id": "series-392593",
+            "image_url": "https://artworks.thetvdb.com/banners/series/392593/posters/5ffe301a45090.jpg",
+            "name": "夜がどれほど暗くても",
+            "first_air_time": "2020-11-22",
+            "overview": "２０２０年にデビュー１０周年を迎えた作家・中山七里の報道サスペンス小説「夜がどれほど暗くても」を上川隆也主演でドラマ化。上川がＷＯＷＯＷで主役を務めるのは、２０１８年放送の「連続ドラマＷ　真犯人」以来、約２年ぶり。今回演じるのはスクープを追う有名週刊誌の副編集長・志賀倫成役。順風満帆なジャーナリスト人生を歩んでいたが、ひとり息子が殺人を起こし、被害者とともに自ら命を絶つという衝撃的な運命が待ち受ける。そんな志賀と対立する若手記者・井波渉役はＷＯＷＯＷ連続ドラマＷ初出演の加藤シゲアキ。被害者遺族の少女・星野奈々美役には女優としても活躍の場を広げる岡田結実。ほか、高橋克実、鈴木浩介、高嶋政伸、羽田美智子、原田泰造ら実力派キャストが顔をそろえる。\r\n追う側が一転、追われる立場となった主人公が、ある出来事をきっかけに事件の真相に迫っていく。容疑者の家族になってしまった人間の姿から報道の自由や意義を問いただす、重厚な報道サスペンスドラマに期待していただきたい。\r\n\r\n＜ストーリー＞\r\nちまたにあふれる数々のスキャンダルを暴いて売り上げを伸ばしてきた大手出版社の雑誌「週刊時流」。副編集長の志賀倫成（上川隆也）は、ジャーナリストとしての自負を持ち、充実した生活を送っていた。しかしある日、大学生の息子がストーカー殺人を起こし、その場で命を絶ったことで、幸福だった生活は崩れ去る。\r\nスキャンダルを追う立場から一転、容疑者の家族として追われる立場になった志賀は、別の雑誌へと左遷され、理不尽な報道やネットを飛び交う噂などで精神をすりつぶしていく。妻ともうまくいかなくなり、そんな絶望的な状況の中、ある少女との出会いから志賀は再び突き動かされる。果たして事件の真相とは何だったのか？深い闇の中で見つけた一条の光とは？",
+            "primary_language": "jpn",
+            "primary_type": "series",
+            "status": "Ended",
+            "type": "series",
+            "tvdb_id": "392593",
+            "year": "2020",
+            "slug": "392593-",
+            "overviews": {
+                "eng": "Shiga Michinari was a well-respected deputy editor-in-chief of a major publishing company \"Shukan Shuncho\". However, his reputation and happiness hit the bottom when his son Kensuke was involved in a stalker's murder case and later committed suicide.\r\n\r\nPeople around Michinari suddenly became cold to him. He was demoted and abused by the company and reporters. In addition, his daughter Nanami became violent while his beloved wife couldn't handle the pressure and left home.\r\n\r\nMichinari could no longer stand the situation and decided to investigate the incident which Kensuke was involved in.",
+                "jpn": "２０２０年にデビュー１０周年を迎えた作家・中山七里の報道サスペンス小説「夜がどれほど暗くても」を上川隆也主演でドラマ化。上川がＷＯＷＯＷで主役を務めるのは、２０１８年放送の「連続ドラマＷ　真犯人」以来、約２年ぶり。今回演じるのはスクープを追う有名週刊誌の副編集長・志賀倫成役。順風満帆なジャーナリスト人生を歩んでいたが、ひとり息子が殺人を起こし、被害者とともに自ら命を絶つという衝撃的な運命が待ち受ける。そんな志賀と対立する若手記者・井波渉役はＷＯＷＯＷ連続ドラマＷ初出演の加藤シゲアキ。被害者遺族の少女・星野奈々美役には女優としても活躍の場を広げる岡田結実。ほか、高橋克実、鈴木浩介、高嶋政伸、羽田美智子、原田泰造ら実力派キャストが顔をそろえる。\r\n追う側が一転、追われる立場となった主人公が、ある出来事をきっかけに事件の真相に迫っていく。容疑者の家族になってしまった人間の姿から報道の自由や意義を問いただす、重厚な報道サスペンスドラマに期待していただきたい。\r\n\r\n＜ストーリー＞\r\nちまたにあふれる数々のスキャンダルを暴いて売り上げを伸ばしてきた大手出版社の雑誌「週刊時流」。副編集長の志賀倫成（上川隆也）は、ジャーナリストとしての自負を持ち、充実した生活を送っていた。しかしある日、大学生の息子がストーカー殺人を起こし、その場で命を絶ったことで、幸福だった生活は崩れ去る。\r\nスキャンダルを追う立場から一転、容疑者の家族として追われる立場になった志賀は、別の雑誌へと左遷され、理不尽な報道やネットを飛び交う噂などで精神をすりつぶしていく。妻ともうまくいかなくなり、そんな絶望的な状況の中、ある少女との出会いから志賀は再び突き動かされる。果たして事件の真相とは何だったのか？深い闇の中で見つけた一条の光とは？",
+                "zhtw": "　上川飾演的是追跡新聞的有名週刊雜誌的副主編志賀，因工作態度受到好評，走上了一帆風順的記者生涯，某天，兒子發生了跟踪狂殺人事件，與被害者一起斷命，因兇殺案的嫌疑犯家族而成為被追殺的對象，在絕望的狀況下遇到了少女，不久後就開始往事件的真相接近。"
+            },
+            "translations": {
+                "eng": "No Matter how Dark the Night is",
+                "jpn": "夜がどれほど暗くても",
+                "zhtw": "不管夜晚多黑"
+            },
+            "network": "WOWOW",
+            "remote_ids": [
+                {
+                    "id": "https://www.wowow.co.jp/drama/original/yoruga/",
+                    "type": 4,
+                    "sourceName": "Official Website"
+                },
+                {
+                    "id": "112497",
+                    "type": 12,
+                    "sourceName": "TheMovieDB.com"
+                },
+                {
+                    "id": "tt13511190",
+                    "type": 2,
+                    "sourceName": "IMDB"
+                }
+            ],
+            "thumbnail": "https://artworks.thetvdb.com/banners/series/392593/posters/5ffe301a45090_t.jpg"
+        },
+        {
+            "objectID": "series-258451",
+            "country": "deu",
+            "id": "series-258451",
+            "image_url": "https://artworks.thetvdb.com/banners/posters/258451-1.jpg",
+            "name": "Auf Leben und Tod - Sternstunden der Medizin",
+            "first_air_time": "2004-11-22",
+            "overview": "Über Tabubrüche, waghalsige Experimente und gefährliche Experimente, aber auch die Geschichte von bloßen Unfällen, die zu bahnbrechenden Entdeckungen führten. Erzählt diese Geschichte auf die spannendste, informativste und verständlichste Weise.",
+            "primary_language": "deu",
+            "primary_type": "series",
+            "status": "Ended",
+            "type": "series",
+            "tvdb_id": "258451",
+            "year": "2004",
+            "slug": "matter-of-life-and-death-great-moments-of-medicine",
+            "overviews": {
+                "deu": "Über Tabubrüche, waghalsige Experimente und gefährliche Experimente, aber auch die Geschichte von bloßen Unfällen, die zu bahnbrechenden Entdeckungen führten. Erzählt diese Geschichte auf die spannendste, informativste und verständlichste Weise.",
+                "eng": "About breaking taboos, daring experiments and dangerous experiments, but also the story of mere accidents that led to groundbreaking discoveries. Tells this story in the most exciting, informative and understandable way. \r\n"
+            },
+            "translations": {
+                "deu": "Auf Leben und Tod - Sternstunden der Medizin",
+                "eng": "A Matter of Life and Death: Magic Moments and Dark Hours in Medicine"
+            },
+            "remote_ids": [
+                {
+                    "id": "tt0490710",
+                    "type": 2,
+                    "sourceName": "IMDB"
+                }
+            ],
+            "thumbnail": "https://artworks.thetvdb.com/banners/posters/258451-1_t.jpg"
+        },
+        {
+            "objectID": "series-360295",
+            "aliases": [
+                "Queste oscure materie",
+                "Karanlık Cevher",
+                "Його темні матеріали",
+                "Темні початки",
+                "Піраньї тьми"
+            ],
+            "country": "gbr",
+            "id": "series-360295",
+            "image_url": "https://artworks.thetvdb.com/banners/series/360295/posters/5f8490b855f99.jpg",
+            "name": "His Dark Materials",
+            "first_air_time": "2019-11-03",
+            "overview": "In an alternative world where all humans have animal companions called dæmons, which are the manifestation of the human soul, a young orphan living with the tutors at Jordan College, Oxford discovers a dangerous secret that involves Lord Asriel and Marisa Coulter. In her search for her missing friend, she uncovers a slew of kidnappings and its link to the mysterious substance called Dust.",
+            "primary_language": "eng",
+            "primary_type": "series",
+            "status": "Ended",
+            "type": "series",
+            "tvdb_id": "360295",
+            "year": "2019",
+            "slug": "his-dark-materials",
+            "overviews": {
+                "bul": "Сериалът проследява Лайра – наглед обикновено момиче в необикновен свят. Тя тръгва да търси отвлечен приятел, но разкрива зловещ заговор за крадене на деца. Така решава да разреши загадката, наречена Прашеца.",
+                "ces": "Dvanáctiletá Lyra Belacqua si žije poklidný život ve světě, kde každý člověk má k sobě připoutaného Daemona. To je zvířecí společník, který do dospělosti jedince dokáže měnit svoji podobu. Jednoho dne je unesen její dobrý kamarád Roger. S pomocí tajemného přístroje a nových spojenců se ho vydá zachránit.",
+                "deu": "Jordan College, Oxford, in einer anderen Welt, in der Wissenschaft, Theologie und Magie eng miteinander verwoben sind: Die Eltern der jungen Lyra wurden bei einem Unfall getötet, Onkel Lord Asriel ist ihr einzig bekannter lebender Verwandter. Deshalb wuchs Lyra behütet unter den Schülern und Mitarbeitern des Colleges auf. Bis dort die glamouröse, aber undurchsichtige Marisa Coulter (Ruth Wilson) auftaucht. Fasziniert nimmt Lyra deren Einladung nach London an. Doch dort zeigt Coulter auch gefährliche Seiten: Anscheinend ist sie in das mysteriöse Verschwinden vieler Kinder aus Oxford verwickelt, das in Verbindung mit einer unerforschten Substanz namens \"Staub\" zu stehen scheint. Die Suche nach einem entführten Freund führt Lyra immer weiter nach Norden, wo sie auf Panzerbären und Hexenclans trifft. Als sie der gefährlichen Bedrohung auf die Spur kommt, liegt das Schicksal aller Welten in ihren Händen.",
+                "ell": "Η σειρά ακολουθεί την Lyra, μια φαινομενικά συνηθισμένη, αλλά πολύ γενναία νεαρή γυναίκα από έναν άλλο κόσμο. Η αναζήτηση της Lyra για έναν απαχθέντα φίλο, αποκαλύπτει μια σατανική πλοκή, που περιλαμβάνει κλεμμένα παιδιά, και εξελίσσεται σε μια αποστολή κατανόησης του μυστηριώδους φαινομένου που αποκαλείται Dust. Καθώς ταξιδεύει ανάμεσα στους κόσμους, η Lyra συναντά ένα αποφασισμένο και πολύ γενναίο αγόρι με το όνομα Bill. Οι δυο τους, θα βρεθούν αντιμέτωποι με απίστευτα πλάσματα και επικίνδυνα μυστικά, με την μοίρα τόσο των ζωντανών όσο και των πεθαμένων να βρίσκεται στα χέρια τους.",
+                "eng": "In an alternative world where all humans have animal companions called dæmons, which are the manifestation of the human soul, a young orphan living with the tutors at Jordan College, Oxford discovers a dangerous secret that involves Lord Asriel and Marisa Coulter. In her search for her missing friend, she uncovers a slew of kidnappings and its link to the mysterious substance called Dust.",
+                "fin": "Sarjan tapahtumat sijoittuvat meidän maailmamme rinnakkaiseen todellisuuteen, jossa ihmisillä on daimoni, eläimen hahmon ottava sielu. \r\nLyra on tavalliselta vaikuttava, mutta rohkea tyttö, joka on kotoisin toisesta maailmasta. Etsiessään kadonnutta ystäväänsä, Lyran matka vie pohjoiseen, jota asuttavat muun muassa noidat ja panssarikarhut. Lyra saa tietää kamalasta suunnitelmasta, johon liittyy kaapattuja lapsia. Asiaa tutkiessaan hän yrittää ymmärtää mystistä ilmiötä nimeltä Dust ja merkitystä ja sen yhteyttä siepattuihin lapsiin. \r\nSarja perustuu Philip Pullmanin kirjatrilogiaan \"Universumien tomu\".",
+                "fra": "Courageuse et futée, Lyra se retrouve embarquée dans une folle aventure dans les contrées du Nord, à la recherche de son meilleur ami disparu. Pourquoi cette jeune fille orpheline, élevée dans l'atmosphère austère et confinée du prestigieux Jordan College, fait-elle l'objet de tant d'attentions ? Serait-elle investie d'une mystérieuse mission ? Sur les traces de ravisseurs d'enfants aux motivations obscures, Lyra va faire d'étonnantes rencontres et surmonter de multiples dangers...\r\n\r\nUne adaptation de \"À la croisée des mondes\" de Philip Pullman.",
+                "heb": "“חומריו האפלים” מתרחשת בעולם מקביל ופנטסטי שבו נשמות בני האדם מתקיימות מחוץ לגופם בדמות בעלי חיים שונים, המכונים “דמונים”. במרכז העלילה נמצאת ליירה (דפני קין, “לוגאן”), יתומה צעירה שהושארה בינקותה באקדמיה על ידי דודה, לורד עזריאל (ג’יימס מק’אבוי, “אקס-מן”), חולמת על חיי הרפתקאות מחוץ לכתלי המוסד בו גדלה. כאשר חברה הטוב נעלם, היא יוצאת לחיפוש אחריו, חושפת מזימה לחטיפת ילדים ותופעה מסתורית בשם “אבק”. לעולמה של ליירה נכנסת גם גברת קולטר (רות ווילסון, “הרומן”) הזוהרת והמסוכנת, בעוד הנערה הנועזת יוצאת למסע מסוכן שייקח אותה צפונה, בחיפוש אחר תשובות שישנו את חייה לנצח.",
+                "hrv": "Serija je adaptacija književnog serijala His Dark Materials Filipa Pulmana. Serija prati Lyru, naoko običnu, ali hrabru djevojčicu iz drugog svijeta. Njezina potraga za otetim prijateljem otkriva mračnu zavjeru koja uključuje ukradenu djecu i pretvara se u potragu za poimanjem misterioznog fenomena zvanog Prašina. Kako putuje kroz svjetove, uključujući i njen vlastiti, Lyra upoznaje odlučnog i hrabrog dečaka Vila. Zajedno će se susresti s neobičnim bićima i opasnim tajnama, sa sudbinom živih kako i mrtvih u njihovim rukama...",
+                "hun": "Philip Pullman klasszikussá vált, számtalan díjjal elismert ifjúsági trilógiájának sorozat adaptációjában megismerjük Lyrát (Dafne Keen), a rendkívüli kislányt, aki miközben elrabolt barátja után nyomoz, egy sokkal nagyobb összeesküvést is felfedez.",
+                "ita": "La serie racconta la storia di Lyra Belacqua, una bambina di 11 anni allegra e brillante cresciuta a Oxford, in Inghilterra, la quale vive in un mondo parallelo in cui a ogni essere umano è affiancato un alter ego, un daimon sotto forma animale. La sua vita felice è stravolta quando scopre l'esistenza di una misteriosa entità, nota come Polvere, e in città iniziano a sparire dei bambini, che si vocifera vengano sottoposti a terribili esperimenti. Con l'obiettivo di salvarli, Lyra si imbarca in un pericoloso viaggio nel multiverso, imparando a distinguere il male dal bene.",
+                "kat": "ორი ბავშვი პარალელურ სამყაროში ჯადოსნურ თავგადასავალს იწყებს.",
+                "kor": "필립 풀먼의 유명판타지 소설을 원작으로 한 드라마",
+                "nld": "Lyra Belacqua, een wees, leeft in een parallel universum waarin wetenschap, theologie en magie met elkaar verweven zijn. Lyra's zoektocht naar een gekidnapte vriend onthult een sinister complot van gestolen kinderen en verandert in een zoektocht om een mysterieus fenomeen te begrijpen dat Dust wordt genoemd. Ze wordt vergezeld op haar reis door Will Parry, een jongen die een mes bezit dat vensters tussen werelden kan snijden. Terwijl Lyra de waarheid over haar ouders en haar voorspelde lot ontdekt, raken de twee verwikkeld in een oorlog tegen hemelse machten die zich over vele werelden uitstrekt.",
+                "pol": "Lyra jest z pozoru zwyczajną dziewczyną. Kiedy znika jej najlepszy przyjaciel, decyduje się ruszyć mu na pomoc, odkrywając przy tym groźny spisek, który dotyczy porwanych dzieci. Lyra podejmuje też próbę zrozumienia tajemniczego zjawiska zwanego Pyłem. Podczas podróży przez przeróżne światy, bohaterka spotyka zdeterminowanego i odważnego chłopca o imieniu Will. Razem spotykają na swojej drodze niezwykłe istoty i poznają niebezpieczne sekrety, a los żywych – jak i umarłych – zdaje się być w ich rękach.",
+                "por": "Lyra é uma miúda de outro mundo, aparentemente normal, mas corajosa. A sua busca por um amigo sequestrado leva à descoberta de uma conspiração que envolve crianças raptadas e torna-se numa missão para perceber o fenómeno chamado Dust.",
+                "pt": "His Dark Materials se passa em um mundo alternativo, onde todos os humanos têm companheiros animais chamados daemons, que são a manifestação da alma humana. A série segue a vida da jovem Lyra Belacqua, órfã que vive com os estudiosos do Jordan College, Oxford. Como no romance de Pullman, Lyra descobre um segredo perigoso que envolve Lorde Asriel e Marisa Coulter. Em sua busca pelo amigo desaparecido, Lyra também descobre uma série de sequestros e seu vínculo com a substância misteriosa chamada Pó.",
+                "rus": "Лира Белаква живёт в мире, где существуют ведьмы и бронированные медведи, а у людей есть деймоны — существа, составляющие неотъемлемую часть их личностей. Опекун девочки, исследователь лорд Азриэл, находит способ передвигаться между параллельными землями, благодаря чему Лира знакомится с мальчиком Уиллом, который живёт в мире, лишённом магии.",
+                "spa": "En un mundo alternativo donde todos los humanos tienen compañeros animales llamados Daemonions, que son la manifestación del alma humana, una joven huérfana que vive con los tutores en el Jordan College, Oxford descubre un secreto peligroso que involucra a Lord Asriel y Marisa Coulter. En la búsqueda de su amigo desaparecido, descubre una serie de secuestros y su vínculo con la misteriosa sustancia llamada \"El Polvo\".",
+                "swe": "I serien får vi följa Lyra, en till synes helt vanlig, men modig flicka från en annan värld. Under sitt sökande efter en vän som kidnappats avslöjar hon en lömsk plan som har med stulna barn att göra. Det leder henne vidare in på ett uppdrag för att ta reda på vad det mystiska fenomenet som kallas för Stoft är för något.",
+                "tur": "His Dark Materials, paralel evrenlerde hareket edebilen iki çocuğun hikayesini konu ediniyor. Dizi konu itibariyle paralel evrenlere geçiş yapabilen iki çocuğun maceralarını ekrana getirecek; roman serisinin ilk kitabından uyarlanan ilk sezonda, başka bir dünyadan gelen Lyra’yı izleyeceğiz. Arkadaşı kaçırıldıktan sonra onu bulmak için harekete geçen Lyra, şeytani bir komplonun ortasında kalır. Bu esnada karşılaştığı Will ile birlikte, sıra dışı varlıklara karşı mücadele edecekleri fantastik bir yolculuğa atılırlar.",
+                "zho": "莱拉自幼父母双亡，在牛津的约旦学院中由诸位学者抚养教育，只是莱拉是个个性野蛮，常常说谎的人，常常到学院的屋顶或地窖探险，或者率领牛津街坊的玩伴与外来的吉普赛孩子打泥巴仗。这般无忧无虑的生活，自从莱拉偷偷潜入院长贵宾室后而改变，并展开了一场冒险。莱拉在旅程中发现，艾塞列公爵并非她的伯父，而是亲生父亲；而考尔特夫人则是莱拉的亲生母亲。",
+                "zhtw": "故事發生在不同於現實的異世界中。在這個世界中，所有的人類均擁有被稱為守護精靈的動物同伴，這些動物是人類靈魂的具象體現。女主角萊拉·貝拉克成長於英國牛津的約旦學院。在她前往倫敦尋找失蹤的朋友羅傑的過程中，萊拉發現一系列兒童失蹤事件與神秘物質塵埃有所關聯。隨著故事展開，她還發現了涉及到艾塞列公爵和瑪莉莎·考爾特的危險秘密。\r\n\r\n"
+            },
+            "translations": {
+                "bul": "Тъмните му материи",
+                "ces": "Jeho temné esence",
+                "dan": "His Dark Materials",
+                "deu": "His Dark Materials",
+                "ell": "His Dark Materials",
+                "eng": "His Dark Materials",
+                "fin": "His Dark Materials",
+                "fra": "His Dark Materials : À la croisée des mondes",
+                "heb": "חומריו האפלים",
+                "hrv": "Njegova mračna građa",
+                "hun": "Az Úr sötét anyagai",
+                "ita": "His Dark Materials - Queste oscure materie",
+                "kat": "მისი ბნელი საწყისები",
+                "kor": "히스 다크 마테리얼",
+                "nld": "His Dark Materials",
+                "pol": "Mroczne materie",
+                "por": "Mundos Paralelos",
+                "pt": "His Dark Materials – Fronteiras do Universo",
+                "rus": "Тёмные начала",
+                "spa": "La Materia Oscura",
+                "swe": "His Dark Materials",
+                "tur": "His Dark Materials",
+                "ukr": "Темні матерії",
+                "zho": "黑暗物质三部曲",
+                "zhtw": "黑暗元素"
+            },
+            "network": "BBC One",
+            "remote_ids": [
+                {
+                    "id": "HisDarkMaterialsOfficial",
+                    "type": 5,
+                    "sourceName": "Facebook"
+                },
+                {
+                    "id": "tt5607976",
+                    "type": 2,
+                    "sourceName": "IMDB"
+                },
+                {
+                    "id": "darkmaterialsofficial",
+                    "type": 9,
+                    "sourceName": "Instagram"
+                },
+                {
+                    "id": "https://www.bbc.co.uk/programmes/m000b1v2",
+                    "type": 4,
+                    "sourceName": "Official Website"
+                },
+                {
+                    "id": "68507",
+                    "type": 12,
+                    "sourceName": "TheMovieDB.com"
+                },
+                {
+                    "id": "SH03234133",
+                    "type": 3,
+                    "sourceName": "TMS (Zap2It)"
+                },
+                {
+                    "id": "darkmaterials",
+                    "type": 6,
+                    "sourceName": "Twitter"
+                }
+            ],
+            "thumbnail": "https://artworks.thetvdb.com/banners/series/360295/posters/5f8490b855f99_t.jpg"
+        },
+        {
+            "objectID": "movie-318588",
+            "country": "gbr",
+            "extended_title": "Jimmy Carr: His Dark Material (2021)",
+            "genres": [
+                "Comedy"
+            ],
+            "id": "movie-318588",
+            "image_url": "https://artworks.thetvdb.com/banners/v4/movie/318588/posters/61d0a96db9683.jpg",
+            "name": "Jimmy Carr: His Dark Material",
+            "overview": "Jimmy Carr finds humor in the darkest places, which includes his sarcastic opinions and some out-of-line jokes ...",
+            "primary_language": "eng",
+            "primary_type": "movie",
+            "status": "Released",
+            "type": "movie",
+            "tvdb_id": "318588",
+            "year": "2021",
+            "slug": "jimmy-carr-his-dark-material",
+            "overviews": {
+                "ell": "Ο Τζίμι Καρ διακωμωδεί και τις πιο σκοτεινές πτυχές της ζωής, σ' αυτό το σταντ απ με αφοπλιστικά, σαρκαστικά αστεία που, όπως λέει, \"μπορούν να θάψουν την καριέρα του\".",
+                "eng": "Jimmy Carr finds humor in the darkest places, which includes his sarcastic opinions and some out-of-line jokes ...",
+                "fra": "Avec son esprit vif et sarcastique, Jimmy Carr évoque dans ce spectacle les situations les plus sombres sous un jour humoristique et ose les blagues les plus audacieuses.",
+                "pt": "Com muito sarcasmo, perspicácia e piadas capazes de acabar com sua carreira, Jimmy Carr encontra humor nos lugares mais improváveis neste especial de stand-up."
+            },
+            "translations": {
+                "ell": "Τζίμι Καρ: Το Σκοτεινό Υλικό",
+                "eng": "Jimmy Carr: His Dark Material",
+                "fra": "Jimmy Carr: His Dark Material",
+                "pt": "Jimmy Carr: His Dark Material"
+            },
+            "network": "Netflix",
+            "remote_ids": [
+                {
+                    "id": "https://www.netflix.com/ar/title/81478151",
+                    "type": 4,
+                    "sourceName": "Official Website"
+                },
+                {
+                    "id": "tt16259786",
+                    "type": 2,
+                    "sourceName": "IMDB"
+                },
+                {
+                    "id": "904263",
+                    "type": 10,
+                    "sourceName": "TheMovieDB.com"
+                }
+            ],
+            "thumbnail": "https://artworks.thetvdb.com/banners/v4/movie/318588/posters/61d0a96db9683_t.jpg"
+        },
+        {
+            "objectID": "series-79149",
+            "id": "series-79149",
+            "image_url": "https://artworks.thetvdb.com/banners/posters/79149-1.jpg",
+            "name": "Twilight of the Dark Master",
+            "overview": "Tsunami is an ancient gaurdian fom days long ago when the Mother Spirit created Daemons and Gaurdians to aid a fledgling human race. Tsunami becomes involved with a woman who has just lost her fiance and her arm and now wants to figure out why this has happened.Meanwhile the Daemon leader is still alive and plotting to enslave mankind. Will Tsunami defend earth once again or be corrupted as two other gaurdians have been by the Daemon leader...",
+            "primary_language": "eng",
+            "primary_type": "series",
+            "status": "Ended",
+            "type": "series",
+            "tvdb_id": "79149",
+            "slug": "twilight-of-the-dark-master",
+            "overviews": {
+                "eng": "Tsunami is an ancient gaurdian fom days long ago when the Mother Spirit created Daemons and Gaurdians to aid a fledgling human race. Tsunami becomes involved with a woman who has just lost her fiance and her arm and now wants to figure out why this has happened.Meanwhile the Daemon leader is still alive and plotting to enslave mankind. Will Tsunami defend earth once again or be corrupted as two other gaurdians have been by the Daemon leader..."
+            },
+            "translations": {
+                "eng": "Twilight of the Dark Master"
+            },
+            "thumbnail": "https://artworks.thetvdb.com/banners/posters/79149-1_t.jpg"
+        },
+        {
+            "objectID": "movie-95970",
+            "aliases": [
+                "支配者の黄昏 TWILIGHT OF THE DARK MASTER"
+            ],
+            "country": "jpn",
+            "director": "Akiyuki Shinbo",
+            "extended_title": "支配者の黄昏 (1998)",
+            "genres": [
+                "Animation",
+                "Fantasy",
+                "Science Fiction"
+            ],
+            "id": "movie-95970",
+            "image_url": "https://artworks.thetvdb.com/banners/movies/95970/posters/95970.jpg",
+            "name": "支配者の黄昏",
+            "first_air_time": "1998-01-21",
+            "overview": "はるか昔、グレートマザースピリットは悪魔、保護者、そして人間を創造しました。 2089年の間、新神術の街には数人の鬼と守護者しか残っておらず、守護者である津波四条（昔からの古代の火のマニピュレーター）は、駆け出しの人類を助けるために出かけています。 津波は麻薬で怪物に変身した人間を探しています。 これは彼を彼の恋人を殺した悪魔のリーダーである高谷氏に導きます。",
+            "primary_language": "jpn",
+            "primary_type": "movie",
+            "status": "Released",
+            "type": "movie",
+            "tvdb_id": "95970",
+            "year": "1998",
+            "slug": "twilight-of-the-dark-master",
+            "overviews": {
+                "eng": "Long ago, the Great Mother Spirit created demons, guardians, and humans.  During 2089, only a few demons and guardians remain and in the city of Neo-Shinjuku.The guardian, Tsunami Shijo (an ancient fire manipulator from days long ago) is out to aid a fledgling human race. Tsunami is looking for a human who was transformed into a monster by drugs. This leads him to Mr. Takaiya, the Demon leader, who killed his lover.",
+                "jpn": "はるか昔、グレートマザースピリットは悪魔、保護者、そして人間を創造しました。 2089年の間、新神術の街には数人の鬼と守護者しか残っておらず、守護者である津波四条（昔からの古代の火のマニピュレーター）は、駆け出しの人類を助けるために出かけています。 津波は麻薬で怪物に変身した人間を探しています。 これは彼を彼の恋人を殺した悪魔のリーダーである高谷氏に導きます。"
+            },
+            "translations": {
+                "eng": "Twilight of the Dark Master",
+                "jpn": "支配者の黄昏",
+                "kor": "지배자의 황혼",
+                "spa": "El crepúsculo del amo de la oscuridad"
+            },
+            "remote_ids": [
+                {
+                    "id": "tt0279487",
+                    "type": 2,
+                    "sourceName": "IMDB"
+                },
+                {
+                    "id": "20089",
+                    "type": 10,
+                    "sourceName": "TheMovieDB.com"
+                }
+            ],
+            "thumbnail": "https://artworks.thetvdb.com/banners/movies/95970/posters/95970_t.jpg"
+        },
+        {
+            "objectID": "movie-44146",
+            "aliases": [
+                "SHIN ANGYO ONSHI",
+                "しんあんぎょうおんし",
+                "Sin amhaeng eosa",
+                "영화: 신암행어사",
+                "Sinamhaengeosa",
+                "Sin amhaeng eosa",
+                "Phantom Master: Dark Hero from the Ruined Empire",
+                "The New Ankyo Gohshi"
+            ],
+            "country": "jpn",
+            "director": "Jôji Shimura",
+            "extended_title": "Blade of the Phantom Master (2004)",
+            "genres": [
+                "Adventure",
+                "Animation",
+                "Fantasy",
+                "Science Fiction"
+            ],
+            "id": "movie-44146",
+            "image_url": "https://artworks.thetvdb.com/banners/movies/44146/posters/44146.jpg",
+            "name": "Blade of the Phantom Master",
+            "first_air_time": "2004-11-26",
+            "overview": "After wandering through the desert for days, a bitter warrior named Munsu is lost and unable to continue. His life is unexpectedly saved by Mon-ryon, a young man who dreams of becoming a secret agent for Jushin, a once-great country that was recently destroyed. Mon-ryon's goal is to save his girlfriend, Chunhyan, a born fighter who is held captive by the evil Lord Byonand. Then, from out of nowhere, blood begins trickling from his chest. He has been fatally wounded by the Sarinjas, a cannibalistic breed of desert goblin. The quick-thinking Munsu convinces these beasts to spare his life, in exchange for the peaceful handover of Mon-ryon's appetizing corpse. Although skeptical of Mon-ryon's motives, Munsu sets out to continue the mission that the young idealist described. Accompanied by an army of ghost troops, unleashed using the powers of Angyo Onshi, Munsu liberates Chunhyan. After visiting her boyfriend's final resting place, she declares herself Munsu's bodyguard and, together, they set out on a mission to punish those who stripped Jushin of its original glory.",
+            "primary_language": "eng",
+            "primary_type": "movie",
+            "status": "Released",
+            "type": "movie",
+            "tvdb_id": "44146",
+            "year": "2004",
+            "slug": "blade-of-the-phantom-master",
+            "overviews": {
+                "eng": "After wandering through the desert for days, a bitter warrior named Munsu is lost and unable to continue. His life is unexpectedly saved by Mon-ryon, a young man who dreams of becoming a secret agent for Jushin, a once-great country that was recently destroyed. Mon-ryon's goal is to save his girlfriend, Chunhyan, a born fighter who is held captive by the evil Lord Byonand. Then, from out of nowhere, blood begins trickling from his chest. He has been fatally wounded by the Sarinjas, a cannibalistic breed of desert goblin. The quick-thinking Munsu convinces these beasts to spare his life, in exchange for the peaceful handover of Mon-ryon's appetizing corpse. Although skeptical of Mon-ryon's motives, Munsu sets out to continue the mission that the young idealist described. Accompanied by an army of ghost troops, unleashed using the powers of Angyo Onshi, Munsu liberates Chunhyan. After visiting her boyfriend's final resting place, she declares herself Munsu's bodyguard and, together, they set out on a mission to punish those who stripped Jushin of its original glory.",
+                "jpn": "内容はオリジナルだが、朝鮮半島の歴史や伝承が元ネタとして使われることも多い。\r\n\r\nタイトルにある「暗行御史」（あんぎょうおんし、アメンオサ、韓：암행어사，'amhaiq'esa）とは、朝鮮王朝（李氏朝鮮時代）に実在した特別な官職。作品内においては、主人公の文秀（ムンス）が暗行御史を名乗っている。文秀は御使の証である馬牌（マハイ）を用い、幽幻兵士（ファントム・ソルジャー）を召喚して敵を倒す。彼は聚慎（ジュシン）という国の将軍だったが、聚慎が滅亡してからは流浪の旅を続けている（聚慎という名は朝鮮の原音に推定されている「ジュシン」から）。聚慎滅亡の原因となった男を捜すことが文秀の目的のひとつである。\r\n\r\n作中の文明レベルは、西欧諸国が19世紀程度、聚慎は原始的な火砲はあるが携帯用の銃火器は普及しておらず、個人の武器は刀剣が主流であることから17世紀程度である。ただし、聚慎には西欧では一般的でない（失われた）魔法術が普及しているため、実際の戦闘では優劣は決めがたい。内容はオリジナルだが、朝鮮半島の歴史や伝承が元ネタとして使われることも多い。\r\n\r\nタイトルにある「暗行御史」（あんぎょうおんし、アメンオサ、韓：암행어사，'amhaiq'esa）とは、朝鮮王朝（李氏朝鮮時代）に実在した特別な官職。作品内においては、主人公の文秀（ムンス）が暗行御史を名乗っている。文秀は御使の証である馬牌（マハイ）を用い、幽幻兵士（ファントム・ソルジャー）を召喚して敵を倒す。彼は聚慎（ジュシン）という国の将軍だったが、聚慎が滅亡してからは流浪の旅を続けている（聚慎という名は朝鮮の原音に推定されている「ジュシン」から）。聚慎滅亡の原因となった男を捜すことが文秀の目的のひとつである。\r\n\r\n作中の文明レベルは、西欧諸国が19世紀程度、聚慎は原始的な火砲はあるが携帯用の銃火器は普及しておらず、個人の武器は刀剣が主流であることから17世紀程度である。ただし、聚慎には西欧では一般的でない（失われた）魔法術が普及しているため、実際の戦闘では優劣は決めがたい。",
+                "kor": "암행어사 박문수에서 모티브를 딴 주인공 문수가 마패를 들고 호령하면 악인을 무찌르기 위한 '팬텀 솔져'라는 쥬신의 특수부대가 나타나 적을 무찌른다."
+            },
+            "translations": {
+                "eng": "Blade of the Phantom Master",
+                "fra": "Le Nouvel Angyo Onshi",
+                "jpn": "新暗行御史",
+                "kor": "신암행어사",
+                "pol": "Ostatni strażnik magii",
+                "rus": "Повелитель призраков",
+                "zho": "新暗行御史"
+            },
+            "remote_ids": [
+                {
+                    "id": "tt1467299",
+                    "type": 2,
+                    "sourceName": "IMDB"
+                },
+                {
+                    "id": "36345",
+                    "type": 10,
+                    "sourceName": "TheMovieDB.com"
+                }
+            ],
+            "thumbnail": "https://artworks.thetvdb.com/banners/movies/44146/posters/44146_t.jpg"
+        },
+        {
+            "objectID": "movie-146133",
+            "country": "usa",
+            "director": "David Gregory",
+            "extended_title": "Master of Dark Shadows (2019)",
+            "genres": [
+                "Documentary",
+                "History"
+            ],
+            "id": "movie-146133",
+            "image_url": "https://artworks.thetvdb.com/banners/v4/movie/146133/posters/63d1d2675d119.jpg",
+            "name": "Master of Dark Shadows",
+            "first_air_time": "2019-04-16",
+            "overview": "Reveals the fascinating impact of the ground-breaking Gothic drama Dark Shadows with a compelling blend of rare footage and behind-the-scenes stories exploring the diverse talents of creator-producer-director Dan Curtis.",
+            "primary_language": "eng",
+            "primary_type": "movie",
+            "status": "Released",
+            "type": "movie",
+            "tvdb_id": "146133",
+            "year": "2019",
+            "slug": "master-of-dark-shadows",
+            "overviews": {
+                "eng": "Reveals the fascinating impact of the ground-breaking Gothic drama Dark Shadows with a compelling blend of rare footage and behind-the-scenes stories exploring the diverse talents of creator-producer-director Dan Curtis."
+            },
+            "translations": {
+                "eng": "Master of Dark Shadows"
+            },
+            "remote_ids": [
+                {
+                    "id": "tt9740952",
+                    "type": 2,
+                    "sourceName": "IMDB"
+                },
+                {
+                    "id": "586221",
+                    "type": 10,
+                    "sourceName": "TheMovieDB.com"
+                }
+            ],
+            "thumbnail": "https://artworks.thetvdb.com/banners/v4/movie/146133/posters/63d1d2675d119_t.jpg"
+        },
+        {
+            "objectID": "movie-177114",
+            "country": "usa",
+            "director": "Alexander Gray",
+            "extended_title": "Masterpiece: Frank Miller's The Dark Knight Returns (2013)",
+            "genres": [
+                "Documentary",
+                "History"
+            ],
+            "id": "movie-177114",
+            "image_url": "https://artworks.thetvdb.com/banners/movies/177114/posters/fWTlgkpZ3yXSgy5g3QEMSALDIHI.jpg",
+            "name": "Masterpiece: Frank Miller's The Dark Knight Returns",
+            "first_air_time": "2013-10-08",
+            "overview": "Masterpiece: Frank Miller's The Dark Knight Returns- Documentary -78 minutes This is the master-crafted work of the legendary writer and artist Frank Miller. The film encapsulates, and celebrates the stunning achievement of Batman: the Dark Knight Returns, galvanizing the reason why this story ushered in the modern take of the dark and brooding protector of Gotham. This is the journey of Frank Miller, seeking the freedom that some authors only dream of in a lifetime. -Narrated by Malcolm McDowell.",
+            "primary_language": "eng",
+            "primary_type": "movie",
+            "status": "Released",
+            "type": "movie",
+            "tvdb_id": "177114",
+            "year": "2013",
+            "slug": "masterpiece-frank-millers-the-dark-knight-returns",
+            "overviews": {
+                "eng": "Masterpiece: Frank Miller's The Dark Knight Returns- Documentary -78 minutes This is the master-crafted work of the legendary writer and artist Frank Miller. The film encapsulates, and celebrates the stunning achievement of Batman: the Dark Knight Returns, galvanizing the reason why this story ushered in the modern take of the dark and brooding protector of Gotham. This is the journey of Frank Miller, seeking the freedom that some authors only dream of in a lifetime. -Narrated by Malcolm McDowell."
+            },
+            "translations": {
+                "eng": "Masterpiece: Frank Miller's The Dark Knight Returns"
+            },
+            "remote_ids": [
+                {
+                    "id": "tt3153806",
+                    "type": 2,
+                    "sourceName": "IMDB"
+                },
+                {
+                    "id": "369661",
+                    "type": 10,
+                    "sourceName": "TheMovieDB.com"
+                }
+            ],
+            "thumbnail": "https://artworks.thetvdb.com/banners/movies/177114/posters/fWTlgkpZ3yXSgy5g3QEMSALDIHI_t.jpg"
+        },
+        {
+            "objectID": "movie-19871",
+            "country": "usa",
+            "director": "Jack Sholder",
+            "extended_title": "Alone in the Dark (1982)",
+            "genres": [
+                "Horror",
+                "Thriller"
+            ],
+            "studios": [
+                "New Line Cinema"
+            ],
+            "id": "movie-19871",
+            "image_url": "https://artworks.thetvdb.com/banners/movies/19871/posters/19871.jpg",
+            "name": "Alone in the Dark",
+            "first_air_time": "1982-11-12",
+            "overview": "Dr. Dan Potter is the replacement for Dr. Harry Merton, a psychiatrist at Dr. Leo Bain's psychiatric hospital. Dr. Merton has taken a position at a psychiatric hospital in the nearby city of Philadelphia. Dan, his wife Nell, and daughter Lyla, have recently moved into a house in the area. Dan's sister Toni arrives for a visit. Leo operates the haven through very lenient methods. The 3rd floor patients--paranoia former POW Frank Hawkes, pyromaniac preacher Byron \"Preacher\" Sutcliff, obese child molester Ronald Elster, and homicidal maniac John \"The Bleeder\" Skagg--initially treat Dan with mixed hostility. Dan learns from staff worker Ray Curtis that the 3rd floor patients believe he has killed Dr. Merton. Later, the four men on the 3rd floor talk of killing Dr Potter.",
+            "primary_language": "eng",
+            "primary_type": "movie",
+            "status": "Released",
+            "type": "movie",
+            "tvdb_id": "19871",
+            "year": "1982",
+            "slug": "alone-in-the-dark-1982",
+            "overviews": {
+                "eng": "Dr. Dan Potter is the replacement for Dr. Harry Merton, a psychiatrist at Dr. Leo Bain's psychiatric hospital. Dr. Merton has taken a position at a psychiatric hospital in the nearby city of Philadelphia. Dan, his wife Nell, and daughter Lyla, have recently moved into a house in the area. Dan's sister Toni arrives for a visit. Leo operates the haven through very lenient methods. The 3rd floor patients--paranoia former POW Frank Hawkes, pyromaniac preacher Byron \"Preacher\" Sutcliff, obese child molester Ronald Elster, and homicidal maniac John \"The Bleeder\" Skagg--initially treat Dan with mixed hostility. Dan learns from staff worker Ray Curtis that the 3rd floor patients believe he has killed Dr. Merton. Later, the four men on the 3rd floor talk of killing Dr Potter."
+            },
+            "translations": {
+                "deu": "Zwei Stunden vor Mitternacht",
+                "eng": "Alone in the Dark",
+                "hun": "Egyedül a sötétben",
+                "ita": "Nel buio da soli",
+                "spa": "Solos en la oscuridad"
+            },
+            "remote_ids": [
+                {
+                    "id": "tt0083542",
+                    "type": 2,
+                    "sourceName": "IMDB"
+                },
+                {
+                    "id": "40952",
+                    "type": 10,
+                    "sourceName": "TheMovieDB.com"
+                }
+            ],
+            "thumbnail": "https://artworks.thetvdb.com/banners/movies/19871/posters/19871_t.jpg"
+        },
+        {
+            "objectID": "movie-113549",
+            "country": "can",
+            "director": "Paul Schneider",
+            "extended_title": "Cries in the Dark (2006)",
+            "genres": [
+                "Thriller",
+                "Crime"
+            ],
+            "id": "movie-113549",
+            "image_url": "https://artworks.thetvdb.com/banners/movies/113549/posters/113549.jpg",
+            "name": "Cries in the Dark",
+            "first_air_time": "2006-09-15",
+            "primary_language": "eng",
+            "primary_type": "movie",
+            "status": "Released",
+            "type": "movie",
+            "tvdb_id": "113549",
+            "year": "2006",
+            "slug": "cries-in-the-dark",
+            "translations": {
+                "eng": "Cries in the Dark",
+                "fra": "Obsession maternelle",
+                "hun": "Sikoly a sötétben",
+                "ita": "Grida nella notte",
+                "spa": "Llantos en la oscuridad"
+            },
+            "remote_ids": [
+                {
+                    "id": "tt0845980",
+                    "type": 2,
+                    "sourceName": "IMDB"
+                },
+                {
+                    "id": "132358",
+                    "type": 10,
+                    "sourceName": "TheMovieDB.com"
+                }
+            ],
+            "thumbnail": "https://artworks.thetvdb.com/banners/movies/113549/posters/113549_t.jpg"
+        },
+        {
+            "objectID": "person-8038832",
+            "id": "person-8038832",
+            "image_url": "https://artworks.thetvdb.com/banners/images/missing/actor.jpg",
+            "name": "Park Matter",
+            "primary_type": "people",
+            "type": "person",
+            "tvdb_id": "8038832",
+            "translations": {
+                "eng": "Park Matter"
+            }
+        },
+        {
+            "objectID": "series-408610",
+            "country": "gbr",
+            "id": "series-408610",
+            "image_url": "https://artworks.thetvdb.com/banners/images/missing/series.jpg",
+            "name": "Dare Master",
+            "first_air_time": "2021-06-21",
+            "overview": "Teenage presenter Danny Murphy takes on crazy dares, from extreme window cleaning to bungee jumping.",
+            "primary_language": "eng",
+            "primary_type": "series",
+            "status": "Continuing",
+            "type": "series",
+            "tvdb_id": "408610",
+            "year": "2021",
+            "slug": "dare-master",
+            "overviews": {
+                "eng": "Teenage presenter Danny Murphy takes on crazy dares, from extreme window cleaning to bungee jumping."
+            },
+            "translations": {
+                "eng": "Dare Master"
+            },
+            "network": "CITV",
+            "remote_ids": [
+                {
+                    "id": "https://www.itv.com/hub/dare-master/2a6715",
+                    "type": 4,
+                    "sourceName": "Official Website"
+                }
+            ]
+        },
+        {
+            "objectID": "movie-303119",
+            "aliases": [
+                "絕代鏢王"
+            ],
+            "country": "twn",
+            "director": "Joseph Kuo",
+            "extended_title": "Jue dai biao wang (1969)",
+            "genres": [
+                "Action",
+                "Adventure"
+            ],
+            "id": "movie-303119",
+            "image_url": "https://artworks.thetvdb.com/banners/movies/303119/posters/uYYoT1H9iflUHc6cZ4mtGM8TpEH.jpg",
+            "name": "Jue dai biao wang",
+            "primary_language": "zho",
+            "primary_type": "movie",
+            "status": "Released",
+            "type": "movie",
+            "tvdb_id": "303119",
+            "year": "1969",
+            "slug": "superior-darter",
+            "overviews": {
+                "eng": "After the noble escort captain Han Wu Kwan (Chiang Nan) rescues the grandson of the famous escort security chief Hung Wan Kang, he pledges to escort the kid safely back home. On the journey they encounter many fighters and Han Wu Kwan loses his eyesight."
+            },
+            "translations": {
+                "eng": "Superior Darter",
+                "yue": "The Last Dart Master",
+                "zho": "Jue dai biao wang"
+            },
+            "remote_ids": [
+                {
+                    "id": "tt1132164",
+                    "type": 2,
+                    "sourceName": "IMDB"
+                },
+                {
+                    "id": "576374",
+                    "type": 10,
+                    "sourceName": "TheMovieDB.com"
+                }
+            ],
+            "thumbnail": "https://artworks.thetvdb.com/banners/movies/303119/posters/uYYoT1H9iflUHc6cZ4mtGM8TpEH_t.jpg"
+        },
+        {
+            "objectID": "movie-167233",
+            "aliases": [
+                "Darf ich Sie zur Mutter machen?",
+                "Mehrmals täglich... Peng, peng, peng"
+            ],
+            "country": "deu",
+            "director": "Ralf Gregan",
+            "extended_title": "Mehrmals täglich (1969)",
+            "genres": [
+                "Comedy"
+            ],
+            "id": "movie-167233",
+            "image_url": "https://artworks.thetvdb.com/banners/movies/167233/posters/5U108IuWgQ2feAwaVwYmWEl9no3.jpg",
+            "name": "Mehrmals täglich",
+            "first_air_time": "1969-02-18",
+            "overview": "Ulrich Vogler und seinem fünfjährigen Sohn Dieter ist durch das verständnisvolle Urteil eines Scheidungsrichters die Ehefrau und Mutter abhanden gekommen. Nun sind die beiden dringend auf der Suche nach einer Nachfolgerin, denn Voglers Nachbarin hetzt dem allein erziehenden Studenten das Jugendfürsorgeamt auf den Hals. Und dieses fordert den Nachweis einer heilen Ehe, sonst kommt der kleine Dieter ins Kinderheim. Einzige Voraussetzung für die Traumfrau: Sie muss vorzüglich Königsberger Klopse zubereiten können! Eine Dame zu finden wäre kein Problem, denn Ulrichs Freund Lothar bietet seine volle Unterstützung im Aufreißen potenzieller Kandidatinnen an. Aber ein goldenes Händchen beweist er dabei nicht, und so spielt das Schicksal seine Macht gegen Ulrich aus. In Nachtbars und Museen, sogar in einem Ruderboot sucht er vergeblich sein Ideal. Die Zeit drängt und die Katastrophe scheint ihren Lauf zu nehmen.",
+            "primary_language": "deu",
+            "primary_type": "movie",
+            "status": "Released",
+            "type": "movie",
+            "tvdb_id": "167233",
+            "year": "1969",
+            "slug": "several-times-daily",
+            "overviews": {
+                "deu": "Ulrich Vogler und seinem fünfjährigen Sohn Dieter ist durch das verständnisvolle Urteil eines Scheidungsrichters die Ehefrau und Mutter abhanden gekommen. Nun sind die beiden dringend auf der Suche nach einer Nachfolgerin, denn Voglers Nachbarin hetzt dem allein erziehenden Studenten das Jugendfürsorgeamt auf den Hals. Und dieses fordert den Nachweis einer heilen Ehe, sonst kommt der kleine Dieter ins Kinderheim. Einzige Voraussetzung für die Traumfrau: Sie muss vorzüglich Königsberger Klopse zubereiten können! Eine Dame zu finden wäre kein Problem, denn Ulrichs Freund Lothar bietet seine volle Unterstützung im Aufreißen potenzieller Kandidatinnen an. Aber ein goldenes Händchen beweist er dabei nicht, und so spielt das Schicksal seine Macht gegen Ulrich aus. In Nachtbars und Museen, sogar in einem Ruderboot sucht er vergeblich sein Ideal. Die Zeit drängt und die Katastrophe scheint ihren Lauf zu nehmen.",
+                "eng": "A student of chinese languages tries to find a wife."
+            },
+            "translations": {
+                "deu": "Mehrmals täglich",
+                "eng": "Several Times Daily"
+            },
+            "remote_ids": [
+                {
+                    "id": "tt0258516",
+                    "type": 2,
+                    "sourceName": "IMDB"
+                },
+                {
+                    "id": "281516",
+                    "type": 10,
+                    "sourceName": "TheMovieDB.com"
+                }
+            ],
+            "thumbnail": "https://artworks.thetvdb.com/banners/movies/167233/posters/5U108IuWgQ2feAwaVwYmWEl9no3_t.jpg"
+        },
+        {
+            "objectID": "movie-4462",
+            "country": "usa",
+            "director": "Delmer Daves",
+            "extended_title": "Dark Passage (1947)",
+            "genres": [
+                "Crime",
+                "Drama",
+                "Thriller"
+            ],
+            "studios": [
+                "Warner Bros. Pictures"
+            ],
+            "id": "movie-4462",
+            "image_url": "https://artworks.thetvdb.com/banners/movies/4462/posters/4462.jpg",
+            "name": "Dark Passage",
+            "first_air_time": "1947-09-27",
+            "overview": "A man convicted of murdering his wife escapes from prison and works with a woman to prove his innocence.",
+            "primary_language": "eng",
+            "primary_type": "movie",
+            "status": "Released",
+            "type": "movie",
+            "tvdb_id": "4462",
+            "year": "1947",
+            "slug": "dark-passage",
+            "overviews": {
+                "eng": "A man convicted of murdering his wife escapes from prison and works with a woman to prove his innocence.",
+                "ita": "Vincent Parry scappa di prigione dopo essere stato rinchiuso per un crimine che non ha commesso e si affida alla chirurgia plastica per cambiare i connotati e scoprire il vero colpevole dell'omicidio della moglie."
+            },
+            "translations": {
+                "dan": "Flygtningen",
+                "deu": "Die schwarze Natter",
+                "eng": "Dark Passage",
+                "fin": "Pimeä käytävä",
+                "fra": "Les Passagers de la nuit",
+                "heb": "מעבר אפל",
+                "hun": "Sötét átjáró",
+                "ita": "La fuga",
+                "pol": "Mroczne przejscie",
+                "rus": "Черная полоса",
+                "spa": "La senda tenebrosa",
+                "swe": "Mörk passage",
+                "zho": "逃狱雪冤"
+            },
+            "remote_ids": [
+                {
+                    "id": "tt0039302",
+                    "type": 2,
+                    "sourceName": "IMDB"
+                },
+                {
+                    "id": "16227",
+                    "type": 10,
+                    "sourceName": "TheMovieDB.com"
+                }
+            ],
+            "thumbnail": "https://artworks.thetvdb.com/banners/movies/4462/posters/4462_t.jpg"
+        },
+        {
+            "objectID": "movie-23378",
+            "country": "gbr",
+            "director": "Charles Sturridge",
+            "extended_title": "Where Angels Fear to Tread (1991)",
+            "genres": [
+                "Drama"
+            ],
+            "id": "movie-23378",
+            "image_url": "https://artworks.thetvdb.com/banners/movies/23378/posters/23378.jpg",
+            "name": "Where Angels Fear to Tread",
+            "first_air_time": "1991-06-21",
+            "overview": "Recently widowed and anxious to escape the clutches of her oppressively meddlesome in-laws, free-spirited Lilia Herriton, née Theobald (Helen Mirren) travels to the hillside Tuscany town of Monteriano with her young friend Caroline Abbott (Helena Bonham Carter). There she falls in love with both the countryside and Gino Carella, a handsome young villager, and she decides to stay. Appalled by her behaviour and concerned about Lilia's future, Mrs. Herriton, Lilia's strait-laced mother-in-law, dispatches her own son Philip (Rupert Graves) to Italy to persuade her to return home, but by the time he arrives Lilia and Gino have wed. He and Caroline return home, unable to forgive themselves for not putting an end to what they see as a clearly unsuitable marriage.",
+            "primary_language": "eng",
+            "primary_type": "movie",
+            "status": "Released",
+            "type": "movie",
+            "tvdb_id": "23378",
+            "year": "1991",
+            "slug": "where-angels-fear-to-tread",
+            "overviews": {
+                "eng": "Recently widowed and anxious to escape the clutches of her oppressively meddlesome in-laws, free-spirited Lilia Herriton, née Theobald (Helen Mirren) travels to the hillside Tuscany town of Monteriano with her young friend Caroline Abbott (Helena Bonham Carter). There she falls in love with both the countryside and Gino Carella, a handsome young villager, and she decides to stay. Appalled by her behaviour and concerned about Lilia's future, Mrs. Herriton, Lilia's strait-laced mother-in-law, dispatches her own son Philip (Rupert Graves) to Italy to persuade her to return home, but by the time he arrives Lilia and Gino have wed. He and Caroline return home, unable to forgive themselves for not putting an end to what they see as a clearly unsuitable marriage.",
+                "hun": "A brit felsőbb osztályok elfojtott szexualitása a célpontja a filmnek, amely E.M. Forster első regénye alapján készült. A történet egy brit özvegy Toszkánában tett kalandozásait követi, ahol is szerelembe esik, majd férjhez megy egy helyi férfihoz."
+            },
+            "translations": {
+                "deu": "Engel und Narren",
+                "eng": "Where Angels Fear to Tread",
+                "hun": "Ahol angyal se jár",
+                "ita": "Monteriano - dove gli angeli non osano metter piede",
+                "rus": "Куда боятся ступить ангелы",
+                "spa": "Donde los ángeles no se aventuran",
+                "swe": "Där änglar vägrar gå"
+            },
+            "remote_ids": [
+                {
+                    "id": "tt0103243",
+                    "type": 2,
+                    "sourceName": "IMDB"
+                },
+                {
+                    "id": "59704",
+                    "type": 10,
+                    "sourceName": "TheMovieDB.com"
+                }
+            ],
+            "thumbnail": "https://artworks.thetvdb.com/banners/movies/23378/posters/23378_t.jpg"
+        },
+        {
+            "objectID": "person-9102612",
+            "id": "person-9102612",
+            "image_url": "https://artworks.thetvdb.com/banners/images/missing/actor.jpg",
+            "name": "Mark Masterton",
+            "primary_type": "people",
+            "type": "person",
+            "tvdb_id": "9102612",
+            "translations": {
+                "eng": "Mark Masterton"
+            }
+        },
+        {
+            "objectID": "series-442944",
+            "country": "usa",
+            "id": "series-442944",
+            "image_url": "https://artworks.thetvdb.com/banners/v4/series/442944/posters/656b9570632e7.jpg",
+            "name": "MasterClass: Kevin Hart Teaches Using Humor to Make Your Mark",
+            "overview": "Comedy icon Kevin Hart teaches you how to use humor as a tool for success. If you can find laughter everywhere, you can be confident anywhere.\r\n",
+            "primary_language": "eng",
+            "primary_type": "series",
+            "status": "Ended",
+            "type": "series",
+            "tvdb_id": "442944",
+            "slug": "masterclass-kevin-hart-teaches-using-humor-to-make-your-mark",
+            "overviews": {
+                "eng": "Comedy icon Kevin Hart teaches you how to use humor as a tool for success. If you can find laughter everywhere, you can be confident anywhere.\r\n"
+            },
+            "translations": {
+                "eng": "MasterClass: Kevin Hart Teaches Using Humor to Make Your Mark"
+            },
+            "thumbnail": "https://artworks.thetvdb.com/banners/v4/series/442944/posters/656b9570632e7_t.jpg"
+        },
+        {
+            "objectID": "person-8645161",
+            "aliases": [
+                "Shanghai Pierce",
+                "Henry O. Godwinn",
+                "Master Blaster"
+            ],
+            "id": "person-8645161",
+            "image_url": "https://artworks.thetvdb.com/banners/v4/actor/8645161/photo/628d380149e3e.jpg",
+            "name": "Mark Canterbury",
+            "primary_type": "people",
+            "type": "person",
+            "tvdb_id": "8645161",
+            "translations": {
+                "eng": "Mark Canterbury"
+            },
+            "thumbnail": "https://artworks.thetvdb.com/banners/v4/actor/8645161/photo/628d380149e3e_t.jpg"
+        },
+        {
+            "objectID": "person-416884",
+            "aliases": [
+                "Mark Callous",
+                "Mean Mark Callous",
+                "The Master of Pain",
+                "Texas Red",
+                "Kane the Undertaker",
+                "Commando",
+                "Mean Mark",
+                "Dice Morgan",
+                "The Punisher",
+                "The Undertaker"
+            ],
+            "id": "person-416884",
+            "image_url": "https://artworks.thetvdb.com/banners/v4/actor/416884/photo/65f9dc8a4b194.jpg",
+            "name": "Mark Calaway",
+            "primary_type": "people",
+            "type": "person",
+            "tvdb_id": "416884",
+            "overviews": {
+                "eng": "Mark William Calaway (born March 24, 1965), better known by the ring name The Undertaker is an American retired professional wrestler. Widely regarded as one of the greatest professional wrestlers of all time, Calaway spent the vast majority of his career wrestling for WWF/E, and is best known for his critically acclaimed \"Deadman\" Undertaker gimmick, for which he was inducted into the WWE Hall of Fame in 2022."
+            },
+            "translations": {
+                "eng": "Mark Calaway"
+            },
+            "thumbnail": "https://artworks.thetvdb.com/banners/v4/actor/416884/photo/65f9dc8a4b194_t.jpg"
+        },
+        {
+            "objectID": "movie-169725",
+            "aliases": [
+                "Verhör um Mitternacht"
+            ],
+            "country": "deu",
+            "director": "Jürgen von Alten",
+            "extended_title": "Parkstrasse 13 (1939)",
+            "genres": [
+                "Drama",
+                "Crime"
+            ],
+            "id": "movie-169725",
+            "image_url": "https://artworks.thetvdb.com/banners/movies/169725/posters/d0gUZhohSnv6VsIK9G6QLRuEOld.jpg",
+            "name": "Parkstrasse 13",
+            "first_air_time": "1939-05-04",
+            "overview": "Evelyne Schratt ist bildhübsch - und bereits zweimal auf mysteriöse Weise verwitwet. Dennoch kann sie sich vor Verehrern kaum retten. Als einer dieser Verehrer bei einem Empfang Evelynes erstochen wird, fängt die Polizei an, Fragen zu stellen. Nach und nach enthüllt sich eine pikante Wahrheit. Als auf einen weiteren Bewerber ein Mordanschlag fehlschlägt, spitzt sich die Situation zu. Ist die Witwe eine kaltblütige Killerin?",
+            "primary_language": "deu",
+            "primary_type": "movie",
+            "status": "Released",
+            "type": "movie",
+            "tvdb_id": "169725",
+            "year": "1939",
+            "slug": "parkstrasse-13",
+            "overviews": {
+                "deu": "Evelyne Schratt ist bildhübsch - und bereits zweimal auf mysteriöse Weise verwitwet. Dennoch kann sie sich vor Verehrern kaum retten. Als einer dieser Verehrer bei einem Empfang Evelynes erstochen wird, fängt die Polizei an, Fragen zu stellen. Nach und nach enthüllt sich eine pikante Wahrheit. Als auf einen weiteren Bewerber ein Mordanschlag fehlschlägt, spitzt sich die Situation zu. Ist die Witwe eine kaltblütige Killerin?",
+                "eng": "The beautiful Evelyne Schratt, who has many admirerers, and whose two husbands both died under mysterious circumstances, is giving a reception. When one of her admirers is found stabbed to death in a room upstairs, the police detains everyone in the house and begins an interrogation (oh goody:  does dinner come with this mystery theatre, too?). Evelyne admits, that the murdered man tried to blackmail about some information he had about the death of the two husbands."
+            },
+            "translations": {
+                "dan": "Midnatsforhøret",
+                "deu": "Parkstrasse 13",
+                "ell": "Eglima sti leoforo 13",
+                "eng": "Parkstraat 13",
+                "hun": "A 13-as ház",
+                "spa": "Central Park nº 13"
+            },
+            "remote_ids": [
+                {
+                    "id": "tt0031788",
+                    "type": 2,
+                    "sourceName": "IMDB"
+                },
+                {
+                    "id": "303068",
+                    "type": 10,
+                    "sourceName": "TheMovieDB.com"
+                }
+            ],
+            "thumbnail": "https://artworks.thetvdb.com/banners/movies/169725/posters/d0gUZhohSnv6VsIK9G6QLRuEOld_t.jpg"
+        },
+        {
+            "objectID": "person-9013809",
+            "id": "person-9013809",
+            "image_url": "https://artworks.thetvdb.com/banners/images/missing/actor.jpg",
+            "name": "Mark Tattersall",
+            "primary_type": "people",
+            "type": "person",
+            "tvdb_id": "9013809",
+            "translations": {
+                "eng": "Mark Tattersall"
+            },
+            "remote_ids": [
+                {
+                    "id": "/name/nm8334690/",
+                    "type": 0,
+                    "sourceName": "IMDB"
+                }
+            ]
+        },
+        {
+            "objectID": "person-8840865",
+            "id": "person-8840865",
+            "image_url": "https://artworks.thetvdb.com/banners/images/missing/actor.jpg",
+            "name": "Mark Batterson",
+            "primary_type": "people",
+            "type": "person",
+            "tvdb_id": "8840865",
+            "translations": {
+                "eng": "Mark Batterson"
+            },
+            "remote_ids": [
+                {
+                    "id": "nm619094",
+                    "type": 0,
+                    "sourceName": "IMDB"
+                }
+            ]
+        },
+        {
+            "objectID": "person-8252527",
+            "id": "person-8252527",
+            "image_url": "https://artworks.thetvdb.com/banners/images/missing/actor.jpg",
+            "name": "Mark Patterson",
+            "primary_type": "people",
+            "type": "person",
+            "tvdb_id": "8252527",
+            "translations": {
+                "eng": "Mark Patterson"
+            },
+            "remote_ids": [
+                {
+                    "id": "/name/nm1362863/",
+                    "type": 0,
+                    "sourceName": "IMDB"
+                }
+            ]
+        },
+        {
+            "objectID": "person-8199617",
+            "id": "person-8199617",
+            "image_url": "https://artworks.thetvdb.com/banners/images/missing/actor.jpg",
+            "name": "Mark Watters",
+            "primary_type": "people",
+            "type": "person",
+            "tvdb_id": "8199617",
+            "translations": {
+                "eng": "Mark Watters"
+            }
+        },
+        {
+            "objectID": "person-8010282",
+            "id": "person-8010282",
+            "image_url": "https://artworks.thetvdb.com/banners/images/missing/actor.jpg",
+            "name": "Mark Satterthwaite",
+            "primary_type": "people",
+            "type": "person",
+            "tvdb_id": "8010282",
+            "translations": {
+                "eng": "Mark Satterthwaite"
+            }
+        },
+        {
+            "objectID": "person-8003415",
+            "id": "person-8003415",
+            "image_url": "https://artworks.thetvdb.com/banners/images/missing/actor.jpg",
+            "name": "Mark Battershall",
+            "primary_type": "people",
+            "type": "person",
+            "tvdb_id": "8003415",
+            "translations": {
+                "eng": "Mark Battershall"
+            }
+        },
+        {
+            "objectID": "series-76913",
+            "country": "usa",
+            "id": "series-76913",
+            "image_url": "https://artworks.thetvdb.com/banners/images/missing/series.jpg",
+            "name": "Battery Park",
+            "first_air_time": "2000-03-23",
+            "overview": "Battery Park is a comedic look at a group of police officers from every walk of life. They are led by their very competitive captain, Madeline Dunleavy who will stop at nothing to win the town's mayor seat.",
+            "primary_language": "eng",
+            "primary_type": "series",
+            "status": "Ended",
+            "type": "series",
+            "tvdb_id": "76913",
+            "year": "2000",
+            "slug": "battery-park",
+            "overviews": {
+                "eng": "Battery Park is a comedic look at a group of police officers from every walk of life. They are led by their very competitive captain, Madeline Dunleavy who will stop at nothing to win the town's mayor seat.",
+                "fra": "Une capitaine de police ultra-compétitive a le cœur fixé sur le siège du maire et ne reculera devant rien pour y arriver... Si le groupe hétéroclite de flics avec lequel elle travaille ne l'arrête pas en premier."
+            },
+            "translations": {
+                "eng": "Battery Park",
+                "fra": "Battery Park"
+            },
+            "network": "NBC",
+            "remote_ids": [
+                {
+                    "id": "tt0238763",
+                    "type": 2,
+                    "sourceName": "IMDB"
+                },
+                {
+                    "id": "SH362787",
+                    "type": 3,
+                    "sourceName": "TMS (Zap2It)"
+                },
+                {
+                    "id": "21588",
+                    "type": 12,
+                    "sourceName": "TheMovieDB.com"
+                }
+            ],
+            "thumbnail": "https://artworks.thetvdb.com/banners/v4/series/76913/posters/64d578c08640c_t.jpg"
+        },
+        {
+            "objectID": "person-8038137",
+            "id": "person-8038137",
+            "image_url": "https://artworks.thetvdb.com/banners/images/missing/actor.jpg",
+            "name": "Mark Edward Patterson",
+            "primary_type": "people",
+            "type": "person",
+            "tvdb_id": "8038137",
+            "translations": {
+                "eng": "Mark Edward Patterson"
+            }
+        },
+        {
+            "objectID": "person-8169492",
+            "aliases": [
+                "Mark Calderon",
+                "Sam Watters",
+                "Kevin \"K.T.\" Thornton",
+                "Bryan Abrams"
+            ],
+            "id": "person-8169492",
+            "image_url": "https://artworks.thetvdb.com/banners/v4/actor/8169492/photo/61e49d6abfc5e.jpg",
+            "name": "Color Me Badd",
+            "primary_type": "people",
+            "type": "person",
+            "tvdb_id": "8169492",
+            "overviews": {
+                "eng": "Color Me Badd is an American contemporary R&B group that was formed in 1985 in Oklahoma City, Oklahoma by lead singer Bryan Abrams (born November 16, 1969), tenor Mark Calderon (born September 27, 1970), second tenor Sam Watters (born July 23, 1970) and baritone Kevin Thornton (born June 17, 1969). Color Me Badd broke up in 1998 before reuniting in 2010, with various lineups since.",
+                "por": "Color Me Badd é um grupo americano de R&B contemporâneo formado em 1985 em Oklahoma City, Oklahoma, pelo vocalista Bryan Abrams, o tenor Mark Calderon, o segundo tenor Sam Watters e o barítono Kevin Thornton. Color Me Badd se separou em 1998 antes de se reunir em 2010, com várias formações desde então.",
+                "pt": "Color Me Badd é um grupo americano de R&B contemporâneo formado em 1985 em Oklahoma City, Oklahoma, pelo vocalista Bryan Abrams, o tenor Mark Calderon, o segundo tenor Sam Watters e o barítono Kevin Thornton. Color Me Badd se separou em 1998 antes de se reunir em 2010, com várias formações desde então."
+            },
+            "translations": {
+                "eng": "Color Me Badd",
+                "por": "Color Me Badd",
+                "pt": "Color Me Badd"
+            },
+            "thumbnail": "https://artworks.thetvdb.com/banners/v4/actor/8169492/photo/61e49d6abfc5e_t.jpg"
+        }
+    ],
+    "links": {
+        "prev": null,
+        "self": "https://api4.thetvdb.com/v4/search?query=Dark Matter&limit=50&page=0",
+        "next": null,
+        "total_items": 46,
+        "page_size": 50
+    }
+}
