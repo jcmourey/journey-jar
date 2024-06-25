@@ -2,7 +2,8 @@ import ComposableArchitecture
 import SwiftUI
 import TVShow
 import Authentication
-import PersistenceKeys
+import UserLogin
+import Styleguide
 
 @Reducer
 struct AppFeature: Reducer {
@@ -20,7 +21,7 @@ struct AppFeature: Reducer {
         var path = StackState<Path.State>()
         @Presents var destination: Destination.State?
         var tvShowList = TVShowList.State()
-        @Shared(.user) var user
+        @Shared(.userLogin) var user
     }
     
     enum Action {
@@ -38,6 +39,10 @@ struct AppFeature: Reducer {
         
         Reduce { state, action in
             switch action {
+            case let .tvShowList(.detailButtonTapped(tvShow)):
+                state.path.append(.detail(TVShowDetail.State(tvShow: tvShow)))
+                return .none
+                                
             case .onAppear:
                 // if first time running the app, no user in storage, offer chance to sign in with a provider
                 if state.user == nil {

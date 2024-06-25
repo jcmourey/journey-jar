@@ -14,7 +14,7 @@ struct NavTitleStyle: ViewModifier {
 }
 
 extension View {
-    func navTitleStyle(font: Font = .largeTitle) -> some View {
+    public func navTitleStyle(font: Font = .largeTitle) -> some View {
         modifier(NavTitleStyle(font: font))
     }
 }

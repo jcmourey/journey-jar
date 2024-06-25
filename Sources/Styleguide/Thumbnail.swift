@@ -1,13 +1,24 @@
 import SwiftUI
 import Kingfisher
+import Future
 
-struct Thumbnail: View {
+public struct Thumbnail: View {
     let url: URL?
-    var lowResolutionURL: URL?
-    var size: CGSize = CGSize(width: Double.infinity, height: .infinity)
-    var placeholderImageName: String?
-    var altText: String?
-    var showError: Bool = true
+    let lowResolutionURL: URL?
+    let size: CGSize
+    let placeholderImageName: String?
+    let altText: String?
+    let showError: Bool
+    
+    public init(url: URL?, lowResolutionURL: URL? = nil, size: CGSize = CGSize(width: Double.infinity, height: .infinity), placeholderImageName: String? = nil, altText: String? = nil, showError: Bool = true) {
+        self.url = url
+        self.lowResolutionURL = lowResolutionURL
+        self.size = size
+        self.placeholderImageName = placeholderImageName
+        self.altText = altText
+        self.showError = showError
+        self.errorOccurred = errorOccurred
+    }
     
     @State private var errorOccurred: Bool = false
     
@@ -27,7 +38,7 @@ struct Thumbnail: View {
         }
     }
     
-    var body: some View {
+    public var body: some View {
         let lowResolutionSource: Source? = if let lowResolutionURL {
             .network(lowResolutionURL)
         } else {
@@ -68,23 +79,6 @@ struct Thumbnail: View {
             }
         }
     }
-//    var body: some View {
-//        AsyncImage(url: url) { phase in
-//            if let image = phase.image {
-//                ImageView(image)
-//            } else if phase.error != nil || url == nil {
-//                if showError {
-//                    errorView
-//                }
-//                if let altText {
-//                    Text(altText)
-//                        .frame(maxHeight: .infinity, alignment: .bottom)
-//                }
-//            } else {
-//                ProgressView()
-//            }
-//        }
-//    }
 }
 
 

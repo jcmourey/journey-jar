@@ -2,13 +2,13 @@ import SwiftUI
 
 extension DefaultPickerStyle {
     #if os(watchOS)
-    static let segmentedIfAvailable = DefaultPickerStyle.automatic
+    public static let segmentedIfAvailable = DefaultPickerStyle.automatic
     #else
-    static let segmentedIfAvailable = SegmentedPickerStyle.segmented
+    public static let segmentedIfAvailable = SegmentedPickerStyle.segmented
     #endif
 }
 
-struct Layout {
+public struct Layout {
     static let sheetIdealWidth = 400.0
     static let sheetIdealHeight = 500.0
     
@@ -21,12 +21,12 @@ struct Layout {
     static let posterAspectRatio = 16 / 9
     
 #if os(watchOS)
-    static let gridItemSize = CGSize(width: 168, height: 168 * posterAspectRatio)
+    public static let gridItemSize = CGSize(width: 168, height: 168 * posterAspectRatio)
 #else
-    static let gridItemSize = CGSize(width: 100, height: 100 * posterAspectRatio)
+    public static let gridItemSize = CGSize(width: 100, height: 100 * posterAspectRatio)
 #endif
     
-    static let gridItems = [GridItem(.adaptive(minimum: gridItemSize.width), spacing: 10, alignment: .top)]
+    public static let gridItems = [GridItem(.adaptive(minimum: gridItemSize.width), spacing: 10, alignment: .top)]
     
 #if os(watchOS)
     static let iconSize = 80.0
@@ -34,9 +34,9 @@ struct Layout {
     static let iconSize = 60.0
 #endif
     
-    static let iconGridItems =  [GridItem(.adaptive(minimum: iconSize), spacing: 10, alignment: .top)]
+    public static let iconGridItems =  [GridItem(.adaptive(minimum: iconSize), spacing: 10, alignment: .top)]
     
-    static let posterSize = gridItemSize.scaled(by: 2)
+    public static let posterSize = gridItemSize.scaled(by: 2)
 }
 
 extension CGSize {

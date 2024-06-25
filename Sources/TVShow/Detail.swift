@@ -1,26 +1,32 @@
 import ComposableArchitecture
 import SwiftUI
 import Combine
+import Styleguide
+import Rating
 
 @Reducer
-struct TVShowDetail: Reducer {
+public struct TVShowDetail: Reducer {
     @Reducer(state: .equatable)
-    enum Destination {
+    public enum Destination {
         case largePoster(LargePoster)
         case alert(AlertState<Alert>)
         case edit(TVShowForm)
         @CasePathable
-        enum Alert {
+        public enum Alert {
             case acknowledgeDeletedButtonTapped
             case confirmDeleteButtonTapped
         }
     }
     @ObservableState
-    struct State: Equatable {
+    public struct State: Equatable {
         @Presents var destination: Destination.State?
-        @Shared var tvShow: TVShow
+        @Shared public var tvShow: TVShow
+        
+        public init(tvShow: Shared<TVShow>) {
+            self._tvShow = tvShow
+        }
     }
-    enum Action {
+    public enum Action {
         case posterTapped
         case tvShowsUpdated(IdentifiedArrayOf<TVShow>)
         case onAppear
@@ -34,7 +40,9 @@ struct TVShowDetail: Reducer {
     @Dependency(\.dismiss) var dismiss
     @Dependency(\.date.now) var now
     
-    var body: some ReducerOf<Self> {
+    public init() {}
+    
+    public var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
                 
@@ -94,7 +102,7 @@ struct TVShowDetail: Reducer {
     }
 }
 
-extension AlertState where Action == TVShowDetail.Destination.Alert {
+public extension AlertState where Action == TVShowDetail.Destination.Alert {
     static let delete = Self {
         TextState("Delete?")
     } actions: {
@@ -119,10 +127,14 @@ extension AlertState where Action == TVShowDetail.Destination.Alert {
     }
 }
 
-struct TVShowDetailView: View {
+public struct TVShowDetailView: View {
     @Perception.Bindable var store: StoreOf<TVShowDetail>
     
-    var body: some View {
+    public init(store: StoreOf<TVShowDetail>) {
+        self.store = store
+    }
+    
+    public var body: some View {
         WithPerceptionTracking {
             Form {
                 VStack {

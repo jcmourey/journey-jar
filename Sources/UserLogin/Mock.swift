@@ -1,7 +1,7 @@
-extension UserInfo {
+extension UserLogin {
     static var mock: Self {
-        UserInfo(
-            id: UserInfo.ID(),
+        UserLogin(
+            id: UserLogin.ID(),
             uid: "someID",
             name: "some Name",
             photoURL: nil,

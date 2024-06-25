@@ -1,10 +1,3 @@
-//
-//  TripAdvisorLocation.swift
-//  JourneyJar
-//
-//  Created by Jean-Charles Mourey on 04/05/2024.
-//
-
 import Foundation
 
 /// TripAdvisor Location Search

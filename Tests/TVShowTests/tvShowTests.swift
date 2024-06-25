@@ -1,7 +1,7 @@
 import XCTest
-@testable import journey_jar
+@testable import TVShow
 
-final class journey_jarTests: XCTestCase {
+final class tvShowTests: XCTestCase {
     func testExample() throws {
         // XCTest Documentation
         // https://developer.apple.com/documentation/xctest

@@ -1,8 +1,8 @@
 import ComposableArchitecture
-import TVShow
+import Persistence
 
-extension PersistenceReaderKey where Self == PersistenceKeyDefault<FirebaseStorageKey<TVShow>> {
-   static var tvShows: Self {
+extension PersistenceKey where Self == PersistenceKeyDefault<FirebaseStorageKey<TVShow>> {
+   public static var tvShows: PersistenceKeyDefault<FirebaseStorageKey<TVShow>> {
        .firebase()
    }
 }

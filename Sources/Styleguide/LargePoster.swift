@@ -2,31 +2,41 @@ import ComposableArchitecture
 import SwiftUI
 
 @Reducer
-struct LargePoster {
+public struct LargePoster: Reducer {
     @ObservableState
-    struct State: Equatable {
+    public struct State: Equatable {
         let posterURL: URL
+        
+        public init(posterURL: URL) {
+            self.posterURL = posterURL
+        }
     }
-    enum Action {
+    public enum Action {
         case posterTapped
     }
+        
+    public init() {}
     
     @Dependency(\.dismiss) var dismiss
     
-    var body: some ReducerOf<Self> {
+    public var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
             case .posterTapped:
-                .run { _ in await dismiss() }
+                return .run { _ in await dismiss() }
             }
         }
     }
 }
 
-struct LargePosterView: View {
+public struct LargePosterView: View {
     let store: StoreOf<LargePoster>
     
-    var body: some View {
+    public init(store: StoreOf<LargePoster>) {
+        self.store = store
+    }
+    
+    public var body: some View {
         WithPerceptionTracking {
             Button {
                 store.send(.posterTapped)

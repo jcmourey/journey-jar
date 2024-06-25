@@ -1,9 +1,10 @@
 import SwiftUI
+import Future
 
 /**
  A view that shows a no data label if content is not available or empty
  */
-struct OptionalView<T, Content>: View where Content: View {
+public struct OptionalView<T, Content>: View where Content: View {
     let noDataLabel: Label<Text, Image>?
     let content: Content?
 
@@ -32,7 +33,7 @@ struct OptionalView<T, Content>: View where Content: View {
         )
     }
 
-    var body: some View {
+    public var body: some View {
         if let content {
             content
         } else if let noDataLabel {
@@ -43,14 +44,14 @@ struct OptionalView<T, Content>: View where Content: View {
     }
 }
 
-struct OptionalText: View {
+public struct OptionalText: View {
     let text: String?
     
-    init(_ text: String?) {
+    public init(_ text: String?) {
         self.text = text
     }
     
-    var body: some View {
+    public var body: some View {
         OptionalView(text) {
             Text($0)
         }

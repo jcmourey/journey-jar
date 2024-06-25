@@ -1,36 +1,29 @@
-//
-//  TheTVDBSeriesDetailModel.swift
-//  JourneyJar
-//
-//  Created by Jean-Charles Mourey on 04/05/2024.
-//
-
 import Foundation
 
 /// TheTVDB Series details
 /// https://api4.thetvdb.com/v4/series/292174
 
-struct TheTVDBSeriesDetailResult: Codable {
-    let data: TheTVDBSeriesDetail
+public struct TheTVDBSeriesDetailResult: Codable {
+    public let data: TheTVDBSeriesDetail
 }
 
-struct TheTVDBSeriesDetail: Codable {
-    let id: Int
-    let name: String?
-    let image: URL?
-    let firstAired: Date?
-    let lastAired: Date?
-    let nextAired: Date?
-    let score: Int?
-    let status: Status?
-    let originalCountry: String?
-    let originalLanguage: String?
-    let overview: String?
-    let year: String?
-    let averageRuntime: Int?
+public struct TheTVDBSeriesDetail: Codable, Identifiable, Equatable {
+    public let id: Int
+    public let name: String?
+    public let image: URL?
+    public let firstAired: Date?
+    public let lastAired: Date?
+    public let nextAired: Date?
+    public let score: Int?
+    public let status: Status?
+    public let originalCountry: String?
+    public let originalLanguage: String?
+    public let overview: String?
+    public let year: String?
+    public let averageRuntime: Int?
     
     // defensive try? so it gets as many of the properties as possible
-    init(from decoder: any Decoder) throws {
+    public init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try container.decode(Int.self, forKey: .id)
         self.name = try? container.decodeIfPresent(String.self, forKey: .name)
@@ -49,11 +42,9 @@ struct TheTVDBSeriesDetail: Codable {
 }
 
 extension TheTVDBSeriesDetail {
-    struct Status: Codable, Equatable {
-        let id: Int
-        let name: String
-        let recordType: String
+    public struct Status: Codable, Equatable {
+        public let id: Int
+        public let name: String
+        public let recordType: String
     }
 }
-
-extension TheTVDBSeriesDetail: Identifiable, Equatable {}

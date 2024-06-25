@@ -1,3 +1,6 @@
-//
+import ModelElements
+import Rating
 
-import Foundation
+extension Interest: Symbolized {
+    public static var symbol: Symbol { .heart }
+}

@@ -1,11 +1,7 @@
-//
-//  TVDBInfoView.swift
-//  JourneyJar
-//
-//  Created by Jean-Charles Mourey on 12/06/2024.
-//
-
 import SwiftUI
+import Styleguide
+import DatabaseRepresentable
+import Date
 
 struct TVDBInfoDetail: View {
     let info: TVDBInfo

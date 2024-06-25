@@ -1,5 +1,7 @@
 import ComposableArchitecture
 import SwiftUI
+import Styleguide
+import Rating
 
 struct TVShowFormView: View {
     @Perception.Bindable var store: StoreOf<TVShowForm>
@@ -32,7 +34,7 @@ struct TVShowFormView: View {
                     }
                     
                     KeyContentPair("How interested are you in the show?") {
-                        RatingView(level: $store.tvShow.interest)
+                        RatingSelector(level: $store.tvShow.interest)
                     }
                     
                     KeyContentPair("Where are you with the show?", axis: .vertical) {
@@ -177,7 +179,7 @@ struct TVShowFormView: View {
 
 #Preview("Add TV Show") {
     NavigationStack {
-        let store = Store(initialState: TVShowForm.State(tvShow: TVShow(dateAdded: .now, dateModified: .now), focus: .title)) {
+        let store = Store(initialState: TVShowForm.State(tvShow: TVShow(id: TVShow.ID(), dateAdded: .now, dateModified: .now), focus: .title)) {
             TVShowForm()
         }
         TVShowFormView(store: store)

@@ -1,16 +1,7 @@
-//
-//  FirebaseService.swift
-//  JourneyJar
-//
-//  Created by Jean-Charles Mourey on 12/06/2024.
-//
-
-import Foundation
 @preconcurrency import FirebaseFirestore
 import IdentifiedCollections
 import FirebaseDatabase
-import Tagged
-import FirebaseCore
+import DatabaseRepresentable
 
 enum FirebaseError: Error {
     case emptySnapshotData
@@ -19,7 +10,6 @@ enum FirebaseError: Error {
     case noSnapshot(String)
     case invalidJSONObject(String)
     case firebaseNotInitialized
-    case noDocumentID
 }
 
 extension Firestore {
@@ -39,7 +29,7 @@ extension Firestore {
 }
 
 
-actor FirebaseService<T: FirebaseRepresentable> {
+actor FirebaseService<T: DatabaseRepresentable> {
     typealias Value = IdentifiedArrayOf<T>
     
     private var _db: Firestore?
@@ -61,10 +51,7 @@ actor FirebaseService<T: FirebaseRepresentable> {
     }
 
     private func documentRef(_ document: T) async throws -> DocumentReference {
-        guard let documentPath = document.id else {
-            throw FirebaseError.noDocumentID 
-        }
-        return try await collectionRef().document(documentPath)
+        return try await collectionRef().document(document.idString)
     }
     
     private func listen(update: @Sendable @escaping (_ newValue: Value) async -> Void) async throws {

@@ -1,20 +1,24 @@
 import SwiftUI
 import ComposableArchitecture
 import FirebaseAuthUI
+import Styleguide
+import UserLogin
 
 @Reducer
-struct UserFeature {
+public struct UserFeature {
     @Reducer(state: .equatable)
-    enum Destination {
+    public enum Destination {
         case signIn(FirebaseSignIn)
         case editName(EditName)
     }
     @ObservableState
-    struct State: Equatable {
-        @Shared(.user) var user
+    public struct State: Equatable {
+        @Shared(.userLogin) var user
         @Presents var destination: Destination.State?
+        
+        public init() {}
     }
-    enum Action {
+    public enum Action {
         case destination(PresentationAction<Destination.Action>)
         case signInButtonTapped
         case cancelEditNameButtonTapped
@@ -25,7 +29,9 @@ struct UserFeature {
     
     @Dependency(\.dismiss) var dismiss
     
-    var body: some ReducerOf<Self> {
+    public init() {}
+    
+    public var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
             case .destination:
@@ -53,7 +59,7 @@ struct UserFeature {
                 do {
                     try FUIAuth.defaultAuthUI()?.signOut()
                     Auth.auth().signInAnonymously()
-                    state.user = .currentUser
+                    update(user: &state.user)
                 } catch {
                     print("error signing out: \(error)")
                 }
@@ -64,10 +70,14 @@ struct UserFeature {
     }
 }
 
-struct UserView: View {
-    @Perception.Bindable var store: StoreOf<UserFeature>
+public struct UserView: View {
+    @Perception.Bindable public var store: StoreOf<UserFeature>
     
-    var body: some View {
+    public init(store: StoreOf<UserFeature>) {
+        self.store = store
+    }
+    
+    public var body: some View {
         WithPerceptionTracking {
             List {
                 if let user = store.user, !user.isAnonymous {
@@ -102,7 +112,7 @@ struct UserView: View {
     }
     
     @ViewBuilder
-    func guestUserView(user: UserInfo?) -> some View {
+    func guestUserView(user: UserLogin?) -> some View {
         if let displayName = user?.displayName {
             Text(displayName)
                 .navTitleStyle()
@@ -126,7 +136,7 @@ struct UserView: View {
     }
     
     @ViewBuilder
-    func signedInUserInfoView(user: UserInfo) -> some View {
+    func signedInUserInfoView(user: UserLogin) -> some View {
         HStack {
             ProfileImage(user: user)
                 .frame(width: 60)
@@ -159,10 +169,14 @@ struct UserView: View {
     }
 }
 
-struct ProfileImage: View {
-    let user: UserInfo?
+public struct ProfileImage: View {
+    let user: UserLogin?
     
-    var body: some View {
+    public init(user: UserLogin?) {
+        self.user = user
+    }
+    
+    public var body: some View {
         if let userPhotoURL = user?.photoURL {
             Thumbnail(url: userPhotoURL)
 

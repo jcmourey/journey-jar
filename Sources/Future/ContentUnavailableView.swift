@@ -1,11 +1,3 @@
-//
-//  ContentUnavailableViewFuture.swift
-//  JourneyJar
-//
-//  Created by Jean-Charles Mourey on 19/05/2024.
-//  Copyright © 2024 Apple. All rights reserved.
-//
-
 import SwiftUI
 
 /// ContentUnavailableView is not available until iOS 17

@@ -1,45 +1,54 @@
 import UIKit
 import Tagged
 import IdentifiedCollections
+import ModelElements
+import TheTVDBAPI
+import DatabaseRepresentable
 
-public struct TVShow: Codable, Identifiable, Equatable, Sendable {
-    let id: Tagged<Self, UUID>
-    var title: String = ""
-    let dateAdded: Date
-    var dateModified: Date
+public struct TVShow: DatabaseRepresentable, Sendable {
+    public let id: Tagged<Self, UUID>
+    public var title: String = ""
+    public let dateAdded: Date
+    public var dateModified: Date
     
     // info
-    var recommendations: IdentifiedArrayOf<Recommendation> = []
-    var interest: Interest?
-    var progress: Progress?
-    var tvdbInfo: TVDBInfo?
+    public var recommendations: IdentifiedArrayOf<Recommendation> = []
+    public var interest: Interest?
+    public var progress: Progress?
+    public var tvdbInfo: TVDBInfo?
+    
+    public enum Progress: String, CaseIterable, Codable, Sendable {
+        case notStarted = "not started"
+        case watching
+        case finished
+    }
 }
 
-public struct Recommendation: Equatable, Hashable, Identifiable, Codable {
-    let id: Tagged<Recommendation, UUID>
+public struct Recommendation: Equatable, Hashable, Identifiable, Codable, Sendable {
+    public let id: Tagged<Recommendation, UUID>
     var name = ""
 }
 
-public struct TVDBInfo: Equatable, Hashable, Identifiable, Codable {
+public struct TVDBInfo: Equatable, Hashable, Identifiable, Codable, Sendable  {
     let tvdbID: Tagged<TVDBInfo, Int>
     var name: String?
-    var country: String?
-    var year: Int?
-    var slug: String?
-    var network: String?
-    var overview: String?
-    var imageURL: URL?
-    var thumbnailURL: URL?
-    var language: String?
+    public var country: String?
+    public var year: Int?
+    public var slug: String?
+    public var network: String?
+    public var overview: String?
+    public var imageURL: URL?
+    public var thumbnailURL: URL?
+    public var language: String?
 
     // detailed info
     var score: Int?
     var averageRuntime: Int?
-    var lastAired: Date?
-    var nextAired: Date?
-    var status: String?
+    public var lastAired: Date?
+    public var nextAired: Date?
+    public var status: String?
     
-    var id: Tagged<TVDBInfo, Int> { tvdbID }
+    public var id: Tagged<TVDBInfo, Int> { tvdbID }
     
     init(tvdbID: Tagged<TVDBInfo, Int>, name: String? = nil, country: String? = nil, year: Int? = nil, slug: String? = nil, network: String? = nil, overview: String? = nil, imageURL: URL? = nil, thumbnailURL: URL? = nil, language: String? = nil, score: Int? = nil, averageRuntime: Int? = nil, lastAired: Date? = nil, nextAired: Date? = nil, status: String? = nil) {
         self.tvdbID = tvdbID
@@ -82,13 +91,5 @@ public struct TVDBInfo: Equatable, Hashable, Identifiable, Codable {
         lastAired = detail.lastAired
         nextAired = detail.nextAired
         status = detail.status?.name
-    }
-}
-
-extension TVShow  {
-    enum Progress: String, CaseIterable, RawRepresentable, Codable {
-        case notStarted = "not started"
-        case watching
-        case finished
     }
 }

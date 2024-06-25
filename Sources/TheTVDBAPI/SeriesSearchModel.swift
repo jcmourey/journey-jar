@@ -1,35 +1,28 @@
-//
-//  TheTVDBSeriesSearchModel.swift
-//  JourneyJar
-//
-//  Created by Jean-Charles Mourey on 04/05/2024.
-//
-
 import Foundation
 import IdentifiedCollections
 
 /// TheTVDB search
 /// https://api4.thetvdb.com/v4/search?query=Dark Matter
 
-struct TheTVDBSeriesSearchResult: Codable {
-    let data: IdentifiedArrayOf<TheTVDBSeries>
+public struct TheTVDBSeriesSearchResult: Codable {
+    public let data: IdentifiedArrayOf<TheTVDBSeries>
 }
 
-struct TheTVDBSeries: Codable {
-    let tvdbId: String
-    let country: String?
-    let name: String
-    let type: String?
-    let year: String?
-    let slug: String?
-    let network: String?
-    let overview: String?
-    let imageUrl: URL?
-    let thumbnail: URL?
-    let primaryLanguage: String?
-    let status: String?
+public struct TheTVDBSeries: Codable {
+    public let tvdbId: String
+    public let country: String?
+    public let name: String
+    public let type: String?
+    public let year: String?
+    public let slug: String?
+    public let network: String?
+    public let overview: String?
+    public let imageUrl: URL?
+    public let thumbnail: URL?
+    public let primaryLanguage: String?
+    public let status: String?
     
-    init(from decoder: any Decoder) throws {
+    public init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.tvdbId = try container.decode(String.self, forKey: .tvdbId)
         self.country = try? container.decodeIfPresent(String.self, forKey: .country)
@@ -47,7 +40,7 @@ struct TheTVDBSeries: Codable {
 }
 
 extension TheTVDBSeries: Identifiable {
-    var id: String { tvdbId }
+    public var id: String { tvdbId }
 }
 
 extension TheTVDBSeries: Hashable {}

@@ -1,30 +1,17 @@
-//
-//  FirebaseStorageKey.swift
-//  JourneyJar
-//
-//  Created by Jean-Charles Mourey on 14/06/2024.
-//
-
-import ComposableArchitecture
 import Foundation
+import ComposableArchitecture
 import IdentifiedCollections
+import DatabaseRepresentable
 
-// Option to pass a local URL to use fileStorage as a local cache for Firebase (in case of connectivity problems)
-extension PersistenceReaderKey {
-    static func firebase<T: FirebaseRepresentable>(local url: URL? = nil) -> Self where Self == FirebaseStorageKey<T> {
-        FirebaseStorageKey(local: url)
-  }
-}
-
-actor FirebaseStorageKey<T: FirebaseRepresentable>: PersistenceKey {
-    typealias Value = IdentifiedArrayOf<T>
+public actor FirebaseStorageKey<T: DatabaseRepresentable>: PersistenceKey {
+    public typealias Value = IdentifiedArrayOf<T>
     
     @Shared private var cache: Value
     private let firebaseService: FirebaseService<T> = FirebaseService()
+        
+    public nonisolated var id: String { T.collectionName }
     
-    nonisolated var id: String { T.collectionName }
-    
-    init(local url: URL?) {
+    public init(local url: URL?) {
         if let url {
             _cache = Shared(wrappedValue: [], .fileStorage(url))
         } else {
@@ -32,7 +19,7 @@ actor FirebaseStorageKey<T: FirebaseRepresentable>: PersistenceKey {
         }
     }
     
-    nonisolated func load(initialValue: Value?) -> Value? {
+    public nonisolated func load(initialValue: Value?) -> Value? {
         Task {
             if await cache.isEmpty, let initialValue {
                 await $cache.withLock { $0 = initialValue }
@@ -41,7 +28,7 @@ actor FirebaseStorageKey<T: FirebaseRepresentable>: PersistenceKey {
         return initialValue
     }
     
-    nonisolated func save(_ value: Value) {
+    public nonisolated func save(_ value: Value) {
         Task {
             let cache = await cache
             let addedItems = value.elementsNot(in: cache)
@@ -65,7 +52,7 @@ actor FirebaseStorageKey<T: FirebaseRepresentable>: PersistenceKey {
         })
     }
     
-    nonisolated func subscribe(initialValue: Value?, didSet: @Sendable @escaping (_ newValue: Value?) -> Void) -> Shared<Value>.Subscription {
+    public nonisolated func subscribe(initialValue: Value?, didSet: @Sendable @escaping (_ newValue: Value?) -> Void) -> Shared<Value>.Subscription {
         let task = Task {
             let cache = await cache
             didSet(cache)

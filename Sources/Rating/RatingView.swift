@@ -1,95 +1,55 @@
 import SwiftUI
 
-struct RatingView<Level: Rating>: View {
-    @Binding var level: Level?
+public struct RatingView: View {
+    let value: Int?
     let label: String?
-    let changeable: Bool
-    let onSymbol: Symbol
-    let offSymbol: Symbol?
+    let symbol: Symbol
+    let min: Int
+    let max: Int
     
-    init(level: Binding<Level?>, label: String? = nil, changeable: Bool = true, onSymbol: Symbol? = nil, offSymbol: Symbol? = nil) {
-        self._level = level
+    public init(value: Int?, label: String? = nil, symbol: Symbol, min: Int, max: Int) {
+        self.value = value
         self.label = label
-        self.changeable = changeable
-        self.onSymbol = if let onSymbol { onSymbol } else { Level.onSymbol }
-        self.offSymbol = if let offSymbol { offSymbol } else { Level.offSymbol }
+        self.symbol = symbol
+        self.min = min
+        self.max = max
     }
     
-    init(level: Level?, label: String? = nil, onSymbol: Symbol? = nil, offSymbol: Symbol? = nil) {
-        self.init(
-            level: .constant(level),
-            label: label,
-            changeable: false,
-            onSymbol: onSymbol,
-            offSymbol: offSymbol
-        )
-    }
-    
-    var body: some View {
+    public var body: some View {
         HStack {
             if let label {
                 Text(label)
             }
             Spacer()
-            HStack {
-                ForEach(Level.allCases, id: \.self) { shownLevel in
-                    if changeable {
-                        Button {
-                            level = shownLevel
-                        } label: {
-                            imageView(for: shownLevel)
-                        }
-                        .buttonStyle(.plain)
-                    } else {
-                        imageView(for: shownLevel)
-                    }
-                }
+                        
+            ForEach(min...max, id: \.self) {
+                SymbolView(value: value, index: $0, symbol: symbol)
             }
-        }
-    }
-
-    
-    @ViewBuilder
-    func imageView(for shownLevel: Level) -> some View {
-        symbol(for: shownLevel)
-            .image
-            .foregroundStyle(color(for: shownLevel))
-    }
-    
-    func symbol(for shownLevel: Level) -> Symbol {
-        if let level, shownLevel <= level {
-            onSymbol
-        } else {
-            offSymbol ?? onSymbol
-        }
-    }
-    
-    func color(for shownLevel: Level) -> Color {
-        if let level, shownLevel <= level {
-            onSymbol.color
-        } else {
-            offSymbol?.color ?? .gray
         }
     }
 }
 
 #Preview {
-    struct Preview: View {
-        @State private var stars: Stars? = .two
-        @State private var interest: Interest? = nil
-
-        var body: some View {
-            Form {
-                RatingView(level: $interest, label: "Interest: \(String(describing: interest))")
-
-                RatingView(level: interest, label: "Not changeable")
-                RatingView(level: $interest)
-                
-                RatingView(level: $stars, label: "Stars", onSymbol: .star)
-                RatingView(level: $stars, label: "Heart Stars", onSymbol: .heart)
-                RatingView(level: stars, label: "Weird Fixed stars", onSymbol: .star, offSymbol: .heart)
-            }
-        }
+    List {
+        RatingView(value: 3, label: "Stars", symbol: .star, min: 1, max: 5)
+        RatingView(value: nil, label: nil, symbol: .star, min: 1, max: 4)
+        RatingView(value: 6, label: "Hearts", symbol: .heart, min: 0, max: 4)
     }
-    return Preview()
+}
+
+extension RatingView {
+    public init<T: RawRepresentable & CaseIterable>(level: T?, label: String? = nil, symbol: Symbol) where T.RawValue == Int {
+        let rawValues = T.allCases.map(\.rawValue)
+        self.init(
+            value: level?.rawValue,
+            label: label,
+            symbol: symbol,
+            min: rawValues.min() ?? 1,
+            max: rawValues.max() ?? level?.rawValue ?? 1
+        )
+    }
+    
+    public init<T: RawRepresentable & CaseIterable & Symbolized>(level: T?, label: String? = nil) where T.RawValue == Int {
+        self.init(level: level, label: label, symbol: T.symbol)
+    }
 }

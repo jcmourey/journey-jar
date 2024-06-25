@@ -1,11 +1,3 @@
-//
-//  OnChangeFuture.swift
-//  JourneyJar
-//
-//  Created by Jean-Charles Mourey on 24/05/2024.
-//  Copyright © 2024 Apple. All rights reserved.
-//
-
 import SwiftUI
 
 /// New onChange API is not available until iOS 17

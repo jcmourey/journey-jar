@@ -1,15 +1,17 @@
 import ComposableArchitecture
 import SwiftUI
 import IdentifiedCollections
+import TheTVDBAPI
+import CollectionConvenience
 
 @Reducer
-struct TVShowForm {
+public struct TVShowForm {
     @ObservableState
-    struct State: Equatable {
+    public struct State: Equatable {
         var errorDescription: String?
         var currentSeries: TheTVDBSeries?
         var series: IdentifiedArrayOf<TheTVDBSeries> = []
-        var tvShow: TVShow
+        public var tvShow: TVShow
         var focus: Field? = .title
 
         enum Field: Hashable {
@@ -48,7 +50,7 @@ struct TVShowForm {
         }
     }
     
-    enum Action: BindableAction {
+    public enum Action: BindableAction {
         case clearTitle
         case posterTapped
         case tvdbDetailResponse(Result<TheTVDBSeriesDetail, Error>)
@@ -67,7 +69,7 @@ struct TVShowForm {
     
     @Dependency(\.uuid) var uuid
     
-    var body: some ReducerOf<Self> {
+    public var body: some ReducerOf<Self> {
         BindingReducer()
         
         Reduce { state, action in
@@ -170,7 +172,6 @@ struct TVShowForm {
                         await send(.tvdbSeriesResponse(.success(series)))
                      } catch {
                         await send(.tvdbSeriesResponse(.failure(error)))
-                        return
                      }
                 }
                 .cancellable(id: CancelID.fetchSeriesTask, cancelInFlight: true)

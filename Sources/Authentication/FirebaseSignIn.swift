@@ -4,28 +4,34 @@ import ComposableArchitecture
 import FirebaseAuthUI
 import FirebaseGoogleAuthUI
 import FirebaseOAuthUI
+import UserLogin
 
 @Reducer
 public struct FirebaseSignIn {
     @ObservableState
-    struct State: Equatable {
-        @Shared(.user) var user
+    public struct State: Equatable {
+        @Shared(.userLogin) var user
+        
+        public init() {}
     }
     
-    enum Action {
-        case anonymousSignInCompleted
-        case cancelButtonTapped
+    public enum Action {
+        case anonymousSignInDone
         case signInDone
+        case cancelButtonTapped
     }
     
     @Dependency(\.dismiss) var dismiss
     @Dependency(\.uuid) var uuid
     
-    var body: some ReducerOf<Self> {
+    public init() {}
+    
+    public var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
-            case .anonymousSignInCompleted:
-                state.user = UserInfo(from: Auth.auth().currentUser, with: user?.name)
+                
+            case .anonymousSignInDone, .signInDone:
+                update(user: &state.user)
                 return .run { _ in await dismiss() }
                 
             case .cancelButtonTapped:
@@ -34,7 +40,7 @@ public struct FirebaseSignIn {
                     return .run { send in
                         do {
                             try await Auth.auth().signInAnonymously()
-                            await send(.anonymousSignInCompleted)
+                            await send(.anonymousSignInDone)
                         } catch {
                             print("Anonymous sign in failed: \(error)")
                         }
@@ -42,19 +48,19 @@ public struct FirebaseSignIn {
                 } else {
                     return .run { _ in await dismiss() }
                 }
-                
-            case .signInDone:
-                state.user = .currentUser
-                return .run { _ in await dismiss() }
             }
         }
     }
 }
 
-struct FirebaseSignInView: View {
+public struct FirebaseSignInView: View {
     let store: StoreOf<FirebaseSignIn>
     
-    var body: some View {
+    public init(store: StoreOf<FirebaseSignIn>) {
+        self.store = store
+    }
+    
+    public var body: some View {
         WithPerceptionTracking {
             FirebaseAuthView {
                 store.send(.signInDone)

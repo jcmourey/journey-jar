@@ -1,13 +1,6 @@
-//
-//  APIResource.swift
-//  TopQuestions
-//
-//  Created by Matteo Manferdini on 18/09/23.
-//
-
 import Foundation
 
-protocol APIResource {
+public protocol APIResource {
 	associatedtype ModelType: Codable
     var basePath: String { get }
     var method: String { get }
@@ -17,10 +10,10 @@ protocol APIResource {
 }
 
 extension APIResource {
-    var queryItems:[URLQueryItem] { [] }
-    var headers: [String: String] { [:] }
+    public var queryItems:[URLQueryItem] { [] }
+    public var headers: [String: String] { [:] }
     
-    var apiDecoder: JSONDecoder { .apiDecoder }
+    public var apiDecoder: JSONDecoder { .apiDecoder }
     
     var urlComponents: URLComponents {
         guard var components = URLComponents(string: basePath) else {
@@ -42,7 +35,7 @@ extension APIResource {
         return request
     }
     
-    func fetch() async throws -> ModelType? {
+    public func fetch() async throws -> ModelType? {
         let request = APIRequest(resource: self)
         do {
             return try await request.execute()

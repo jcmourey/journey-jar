@@ -1,9 +1,5 @@
-//
-//  TripAdvisorLocationResource.swift
-//
-//
-
 import Foundation
+import APIClient
 
 protocol TripAdvisorAPIResource: APIResource {
     var apiKey: String { get }

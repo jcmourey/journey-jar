@@ -2,17 +2,17 @@ import SwiftUI
 import ComposableArchitecture
 
 @Reducer
-struct EditName {
+public struct EditName {
     @ObservableState
-    struct State: Equatable {
+    public struct State: Equatable {
         var name: String = ""
     }
-    enum Action: BindableAction, Sendable {
+    public enum Action: BindableAction, Sendable {
         case clearButtonTapped
         case binding(BindingAction<State>)
     }
     
-    var body: some ReducerOf<Self> {
+    public var body: some ReducerOf<Self> {
         BindingReducer()
         
         Reduce { state, action in
@@ -28,10 +28,10 @@ struct EditName {
     }
 }
 
-struct EditNameView: View {
+public struct EditNameView: View {
     @Perception.Bindable var store: StoreOf<EditName>
     
-    var body: some View {
+    public var body: some View {
         WithPerceptionTracking {
             Form {
                 HStack {

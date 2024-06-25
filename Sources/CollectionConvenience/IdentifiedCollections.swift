@@ -1,4 +1,3 @@
-import Foundation
 import IdentifiedCollections
 
 extension IdentifiedArray {
@@ -36,23 +35,22 @@ extension IdentifiedArray {
         return safeIndex(after: current)
     }
     
-    func element(before id: ID?) -> Element? {
+    public func element(before id: ID?) -> Element? {
         guard let beforeIndex = safeIndex(before: id) else { return nil }
         return self[beforeIndex]
     }
     
-    func element(after id: ID?) -> Element? {
+    public func element(after id: ID?) -> Element? {
         guard let afterIndex = safeIndex(after: id) else { return nil }
         return self[afterIndex]
     }
 
-    
-    func count(before id: ID?) -> Int {
+    public func count(before id: ID?) -> Int {
         guard let currentIndex = index(id: id) else { return 0 }
         return count(before: currentIndex)
     }
     
-    func count(after id: ID?) -> Int {
+    public func count(after id: ID?) -> Int {
         guard let currentIndex = index(id: id) else { return 0 }
         return count(after: currentIndex)
     }

@@ -1,7 +1,7 @@
 import ComposableArchitecture
 
-extension PersistenceReaderKey where Self == PersistenceKeyDefault<FileStorageKey<UserInfo?>> {
-   public static var user: Self {
+extension PersistenceReaderKey where Self == PersistenceKeyDefault<FileStorageKey<UserLogin?>> {
+   public static var userLogin: Self {
        PersistenceKeyDefault(.fileStorage(.documentsDirectory.appending(component: "user.json")), nil)
    }
 }

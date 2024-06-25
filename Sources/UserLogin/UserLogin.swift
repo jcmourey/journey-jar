@@ -35,7 +35,7 @@ public struct UserLogin: DatabaseRepresentable {
 }
 
 
-extension UserInfo {
+extension UserLogin {
     public var displayName: String {
         name ?? signInName ?? ""
     }

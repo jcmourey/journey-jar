@@ -1,16 +1,22 @@
 import SwiftUI
+import TheTVDBAPI
 import ComposableArchitecture
+import Styleguide
+import Persistence
 
 @Reducer
-struct TVShowList {
+public struct TVShowList {
     @Reducer(state: .equatable)
-    enum Destination {
+    public enum Destination {
         case add(TVShowForm)
     }
     @ObservableState
-    struct State: Equatable {
-        @Presents var destination: Destination.State?
-        @Shared(.tvShows) var tvShows
+    public struct State: Equatable {
+        @Presents public var destination: Destination.State?
+        @Shared(.tvShows) public var tvShows
+        public var lastTVShowAdded: TVShow?
+        
+        public init() {}
         
         var sortedTVShowElements: some RandomAccessCollection<Shared<TVShow>> {
             $tvShows.elements.sorted { show0, show1 in
@@ -20,7 +26,10 @@ struct TVShowList {
             }
         }
     }
-    enum Action {
+    public enum Action {
+        case addToTVShows(TVShow)
+        case addTVShowAppIntent(String)
+        case detailButtonTapped(Shared<TVShow>)
         case destination(PresentationAction<Destination.Action>)
         case deleteButtonTapped(id: TVShow.ID)
         case cancelAddButtonTapped
@@ -32,9 +41,44 @@ struct TVShowList {
     @Dependency(\.date.now) var now
     @Dependency(\.dismiss) var dismiss
     
-    var body: some ReducerOf<Self> {
+    public init() {}
+
+    public var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
+
+            case let .addToTVShows(tvShow):
+                state.tvShows.append(tvShow)
+                state.lastTVShowAdded = tvShow
+                return .none
+                
+            case let .addTVShowAppIntent(title):
+                return .run { send in
+                    let searchResource = TheTVDBSeriesSearchResource(searchQuery: title)
+                    var newTVShow = TVShow(id: TVShow.ID(uuid()), title: title, dateAdded: now, dateModified: now)
+                    
+                    do {
+                        if let firstMatchedSeries = try await searchResource.fetch()?.data.first {
+                            newTVShow.tvdbInfo = TVDBInfo(from: firstMatchedSeries)
+                            if let tvdbID = newTVShow.tvdbInfo?.tvdbID {
+                                let detailResource = TheTVDBSeriesDetailResource(tvdbID: tvdbID.rawValue)
+                                if let detail = try await detailResource.fetch()?.data {
+                                    newTVShow.tvdbInfo?.populate(detail: detail)
+                                }
+                            }
+                        }
+                    } catch {
+                        print("unable to get series info or details: \(error)")
+                    }
+                    if let tvdbName = newTVShow.tvdbInfo?.name {
+                        newTVShow.title = tvdbName
+                    }
+                    await send(.addToTVShows(newTVShow))
+                }
+                
+            case .detailButtonTapped:
+                return .none
+                
             case .destination:
                 return .none
                 
@@ -52,11 +96,12 @@ struct TVShowList {
                     newTVShow.title = tvdbName
                 }
                 state.tvShows.append(newTVShow)
+                state.lastTVShowAdded = newTVShow
                 state.destination = nil
                 return .none
                 
             case .addButtonTapped:
-                let newTVShow = TVShow(dateAdded: now, dateModified: now)
+                let newTVShow = TVShow(id: TVShow.ID(uuid()), dateAdded: now, dateModified: now)
                 state.destination = .add(TVShowForm.State(tvShow: newTVShow, focus: .title))
                 return .none
             }
@@ -65,15 +110,21 @@ struct TVShowList {
     }
 }
 
-struct TVShowListView: View {
+public struct TVShowListView: View {
     @Perception.Bindable var store: StoreOf<TVShowList>
+        
+    public init(store: StoreOf<TVShowList>) {
+        self.store = store
+    }
     
-    var body: some View {
+    public var body: some View {
         WithPerceptionTracking {
             ScrollView {
                 LazyVGrid(columns: Layout.gridItems) {
                     ForEach(store.sortedTVShowElements) { $tvShow in
-                        NavigationLink(state: AppFeature.Path.State.detail(TVShowDetail.State(tvShow: $tvShow))) {
+                        Button {
+                            store.send(.detailButtonTapped($tvShow))
+                        } label: {
                             Thumbnail(
                                 url: tvShow.tvdbInfo?.imageURL,
                                 lowResolutionURL: tvShow.tvdbInfo?.thumbnailURL,
@@ -135,15 +186,20 @@ struct TVShowListView: View {
 }
 
 #Preview {
-    NavigationStack {   
+    @MainActor
+    struct Preview: View {
         @Shared(.tvShows) var tvShows = .mock
-        
-        let store = Store(initialState: TVShowList.State()) {
+        var store = Store(initialState: TVShowList.State()) {
             TVShowList()
             ._printChanges()
         }
         
-        TVShowListView(store: store)
+        var body: some View {
+            NavigationStack {
+                 TVShowListView(store: store)
+            }
+        }
     }
+    return Preview()
 }
 
