@@ -1,0 +1,12 @@
+{
+    "location_id": "1335238",
+    "name": "La Pigeot",
+    "address_obj": {
+        "street1": "16 rue Alexis Julien",
+        "street2": "",
+        "city": "Valbonne",
+        "country": "France",
+        "postalcode": "06560",
+        "address_string": "16 rue Alexis Julien, 06560 Valbonne France"
+    }
+}
