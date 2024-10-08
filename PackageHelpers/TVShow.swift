@@ -1,81 +1,115 @@
+// swift-tools-version: 6.0
 import PackageDescription
 
-public struct User: LibraryDescription {
+public struct TVShow: LibraryDescription {
     static var product: Product = .library(
-        name: "User",
+        name: "TVShow",
         targets: [
-            "UserFeature",
-            "UserDatabaseClient",
-            "UserDatabaseClientLive",
-            "UserModel",
+            "TheTVDBAPI",
+            "TVShowFeature",
+            "TVShowDatabaseClient",
+            "TVShowDatabaseClientLive",
+            "TVShowModel",
         ]
     )
     
     static var targets: [Target] = [
         .target(
-            name: "UserFeature",
+            name: "TheTVDBAPI",
+            dependencies: [
+                // pointfree
+                .identifiedCollections,
+                // api
+                "APIClient",
+            ],
+            path: "Sources/TVShow/TheTVDBAPI"
+        ),
+        .target(
+            name: "TVShowFeature",
             dependencies: [
                 // pointfree
                 .composableArchitecture,
-                // google
-                .googleSignInSwift,
+                .tagged,
+                .identifiedCollections,
                 // dependencies
-                "TVShowDatabaseClient",
                 "AuthenticationClient",
+                "TeamDatabaseClient",
+                "TVShowDatabaseClient",
                 "ErrorClient",
                 // models
-                "UserModel",
+                "TVShowModel",
+                "TeamModel",
+                // features
+                "TeamFeature",
+                // api
+                "TheTVDBAPI",
                 // UI elements
+                "Rating",
                 "Styleguide",
+                // types
+                "ModelElements",
+                "CollectionConvenience",
+                // utilities
+                "Date",
+                "Log",
             ],
-            path: "Sources/User/Feature"
+            path: "Sources/TVShow/Feature"
         ),
         .target(
-            name: "UserDatabaseClient",
+            name: "TVShowDatabaseClient",
             dependencies: [
                 // pointfree
-               .dependencies,
-               .dependenciesMacros,
-               // dependencies
-               "TeamDatabaseClient",
-               // models
-               "UserModel",
+                .dependenciesMacros,
+                .dependencies,
+                .identifiedCollections,
+                // models
+                "TVShowModel",
             ],
-            path: "Sources/User/DatabaseClient"
+            path: "Sources/TVShow/DatabaseClient"
         ),
         .target(
-            name: "UserDatabaseClientLive",
+            name: "TVShowDatabaseClientLive",
             dependencies: [
                 // pointfree
                 .dependencies,
                 // dependencies
-                "UserDatabaseClient",
+                "TVShowDatabaseClient",
+                "AuthenticationClient",
                 // models
-                "UserModel",
+                "TVShowModel",
+                "TeamModel",
                 // modules
                 "FirebaseQuery",
             ],
-            path: "Sources/User/DatabaseClientLive"
+            path: "Sources/TVShow/DatabaseClientLive"
         ),
         .target(
-            name: "UserModel",
+            name: "TVShowModel",
             dependencies: [
                 // pointfree
-               .tagged,
-               // types
-               "DatabaseRepresentable",
+                .tagged,
+                .identifiedCollections,
+                // models
+                "UserModel",
+                "TeamModel",
+                // types
+                "DatabaseRepresentable",
+                "ModelElements",
+                // api
+                "TheTVDBAPI",
             ],
-            path: "Sources/User/Model"
+            path: "Sources/TVShow/Model"
         ),
     ]
     
     static var testTargets: [Target] = [
-        .testTarget(name: "UserTests",
+        .testTarget(
+            name: "TVShowTests",
             dependencies: [
                 // pointfree
                 .composableArchitecture,
                 // reducer
-                "UserFeature",
+                "TVShow",
             ]
         ),
     ]

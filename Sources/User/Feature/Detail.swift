@@ -6,7 +6,9 @@ import ComposableArchitecture
 // dependencies
 import AuthenticationClient
 import UserDatabaseClient
-import ErrorClient
+
+// features
+import ErrorFeature
 
 // models
 import UserModel

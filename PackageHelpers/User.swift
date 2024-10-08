@@ -1,44 +1,83 @@
+// swift-tools-version: 6.0
 import PackageDescription
 
-public struct Error: LibraryDescription {
+public struct User: LibraryDescription {
     static var product: Product = .library(
-        name: "Error",
+        name: "User",
         targets: [
-            "ErrorClient",
-            "ErrorClientLive",
-            "ErrorFeature",
+            "UserFeature",
+            "UserDatabaseClient",
+            "UserDatabaseClientLive",
+            "UserModel",
         ]
     )
     
     static var targets: [Target] = [
         .target(
-            name: "ErrorClient",
+            name: "UserFeature",
             dependencies: [
                 // pointfree
-                .dependencies,
-                .dependenciesMacros,
+                .composableArchitecture,
+                // google
+                .googleSignInSwift,
+                // dependencies
+                "TVShowDatabaseClient",
+                "AuthenticationClient",
+                "ErrorClient",
+                // models
+                "UserModel",
+                // UI elements
+                "Styleguide",
             ],
-            path: "Sources/Error/Client"
+            path: "Sources/User/Feature"
         ),
         .target(
-            name: "ErrorClientLive",
+            name: "UserDatabaseClient",
+            dependencies: [
+                // pointfree
+               .dependencies,
+               .dependenciesMacros,
+               // dependencies
+               "TeamDatabaseClient",
+               // models
+               "UserModel",
+            ],
+            path: "Sources/User/DatabaseClient"
+        ),
+        .target(
+            name: "UserDatabaseClientLive",
             dependencies: [
                 // pointfree
                 .dependencies,
                 // dependencies
-                "ErrorClient",
+                "UserDatabaseClient",
+                // models
+                "UserModel",
+                // modules
+                "FirebaseQuery",
             ],
-            path: "Sources/Error/ClientLive"
+            path: "Sources/User/DatabaseClientLive"
         ),
         .target(
-            name: "ErrorFeature",
+            name: "UserModel",
+            dependencies: [
+                // pointfree
+               .tagged,
+               // types
+               "DatabaseRepresentable",
+            ],
+            path: "Sources/User/Model"
+        ),
+    ]
+    
+    static var testTargets: [Target] = [
+        .testTarget(name: "UserTests",
             dependencies: [
                 // pointfree
                 .composableArchitecture,
-                // utilities
-                "Log",
-            ],
-            path: "Sources/Error/Feature"
+                // reducer
+                "UserFeature",
+            ]
         ),
     ]
 }

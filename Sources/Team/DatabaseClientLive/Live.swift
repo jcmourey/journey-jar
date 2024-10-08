@@ -8,12 +8,12 @@ import FirebaseFirestore
 import AuthenticationClient
 import TeamDatabaseClient
 
-// modules
-import FirebaseQuery
-
 // models
 import TeamModel
 import UserModel
+
+// modules
+import FirebaseQuery
 
 // utilities
 import Log

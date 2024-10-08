@@ -7,7 +7,9 @@ import IdentifiedCollections
 // dependencies
 import AuthenticationClient
 import TeamDatabaseClient
-import ErrorClient
+
+// features
+import ErrorFeature
 
 // models
 import UserModel

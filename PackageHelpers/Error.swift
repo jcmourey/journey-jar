@@ -1,46 +1,47 @@
+// swift-tools-version: 6.0
 import PackageDescription
 
-public struct Authentication: LibraryDescription {
+public struct Error: LibraryDescription {
     static var product: Product = .library(
-        name: "Authentication",
+        name: "Error",
         targets: [
-            "AuthenticationClient",
-            "AuthenticationClientLive"
+            "ErrorClient",
+            "ErrorClientLive",
+            "ErrorFeature",
         ]
     )
     
     static var targets: [Target] = [
         .target(
-            name: "AuthenticationClient",
+            name: "ErrorClient",
             dependencies: [
                 // pointfree
-                .composableArchitecture,
                 .dependencies,
                 .dependenciesMacros,
-                // models
-                "UserModel",
             ],
-            path: "Sources/Authentication/Client"
+            path: "Sources/Error/Client"
         ),
         .target(
-            name: "AuthenticationClientLive",
+            name: "ErrorClientLive",
+            dependencies: [
+                // pointfree
+                .dependencies,
+                // dependencies
+                "ErrorClient",
+            ],
+            path: "Sources/Error/ClientLive"
+        ),
+        .target(
+            name: "ErrorFeature",
             dependencies: [
                 // pointfree
                 .composableArchitecture,
-                .dependencies,
-                // firebase
-                .firebaseAuth,
-                .firebaseFirestore,
-                // google
-                .googleSignIn,
-                // dependencies
-                "AuthenticationClient",
-                // models
-                "UserModel",
                 // utilities
                 "Log",
             ],
-            path: "Sources/Authentication/ClientLive"
+            path: "Sources/Error/Feature"
         ),
     ]
+    
+    static var testTargets: [Target] = []
 }

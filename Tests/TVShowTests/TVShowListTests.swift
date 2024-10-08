@@ -1,22 +1,15 @@
-//
-//  TVShowListTests.swift
-//  JourneyJar
-//
-//  Created by Jean-Charles Mourey on 09/06/2024.
-//
+import Testing
 
+// pointfree
 import ComposableArchitecture
-import IdentifiedCollections
-import XCTest
 
-@testable import JourneyJar
+@testable import TVShowFeature
 
-final class TVShowListTests: XCTestCase {
-    
-    @MainActor
-    func testDelete() async {
+@Suite("TVShowList")
+struct TVShowListTests {
+    @Test
+    func delete() async {
         let mockTVShow = TVShow.mock.mock1
-        @Shared(.tvShows) var tvShows = [mockTVShow]
         
         let store = TestStore(initialState: TVShowList.State()) {
             TVShowList()
@@ -27,8 +20,8 @@ final class TVShowListTests: XCTestCase {
         }
     }
     
-    @MainActor
-    func testAdd() async {
+    @Test
+    func add() async {
         let store = TestStore(initialState: TVShowList.State()) {
             TVShowList()
         } withDependencies: {
@@ -57,8 +50,8 @@ final class TVShowListTests: XCTestCase {
         }
     }
     
-    @MainActor
-    func testAdd_NonExhaustive() async {
+    @Test
+    func add_NonExhaustive() async {
         let store = TestStore(initialState: TVShowList.State()) {
             TVShowList()
         } withDependencies: {

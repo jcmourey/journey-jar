@@ -1,18 +1,14 @@
-//
-//  TVShowDetailTests.swift
-//  JourneyJarTests
-//
-//  Created by Jean-Charles Mourey on 10/06/2024.
-//
+import Testing
 
-import XCTest
+// pointfree
 import ComposableArchitecture
 
-@testable import JourneyJar
+@testable import TVShowFeature
 
-final class TVShowDetailTests: XCTestCase {
-    @MainActor
-    func testEdit() async {
+@Suite("TVShowDetail")
+struct TVShowDetailTests {
+    @Test
+    func edit() async {
         let mockTVShow = TVShow.mock.mock2
         
         let store = TestStore(initialState: TVShowDetail.State(tvShow: Shared(mockTVShow))) {

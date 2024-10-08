@@ -7,14 +7,14 @@ import IdentifiedCollections
 // dependencies
 import AuthenticationClient
 import TeamDatabaseClient
-import ErrorClient
 
 // models
 import TVShowModel
 import TeamModel
 
-// reducers
+// features
 import TeamFeature
+import ErrorFeature
 
 // api
 import TheTVDBAPI

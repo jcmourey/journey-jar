@@ -1,122 +1,37 @@
 import PackageDescription
 
-public struct Other: LibraryDescription {
+public struct AppRoot: LibraryDescription {
     static var product: Product = .library(
-        name: "Other",
+        name: "AppRoot",
         targets: [
-            "APIClient",
-            "CollectionConvenience",
-            "DatabaseRepresentable",
-            "Date",
-            "FirebaseQuery",
-            "FirebaseStart",
-            "InvitationModel",
-            "ModelElements",
-            "Log",
-            "Rating",
-            "Styleguide",
-            "TripAdvisorAPI",
+            "AppRoot",
         ]
     )
     
     static var targets: [Target] = [
         .target(
-            name: "TheTVDBAPI",
-            dependencies: [
-                // pointfree
-                .identifiedCollections,
-                // api
-                "APIClient",
-            ],
-            path: "Sources/TVShow/TheTVDBAPI"
-        ),
-        .target(
-            name: "TVShowFeature",
+            name: "AppRoot",
             dependencies: [
                 // pointfree
                 .composableArchitecture,
-                .tagged,
-                .identifiedCollections,
                 // dependencies
                 "AuthenticationClient",
-                "TeamDatabaseClient",
-                "TVShowDatabaseClient",
                 "ErrorClient",
                 // models
                 "TVShowModel",
-                "TeamModel",
-                // reducers
-                "TeamFeature",
-                // api
-                "TheTVDBAPI",
-                // UI elements
-                "Rating",
-                "Styleguide",
-                // types
-                "ModelElements",
-                "CollectionConvenience",
-                // utilities
-                "Date",
-                "Log",
-            ],
-            path: "Sources/TVShow/Feature"
-        ),
-        .target(
-            name: "TVShowDatabaseClient",
-            dependencies: [
-                // pointfree
-                .dependenciesMacros,
-                .dependencies,
-                .identifiedCollections,
-                // models
-                "TVShowModel",
-            ],
-            path: "Sources/TVShow/DatabaseClient"
-        ),
-        .target(
-            name: "TVShowDatabaseClientLive",
-            dependencies: [
-                // pointfree
-                .dependencies,
-                // dependencies
-                "TVShowDatabaseClient",
-                "AuthenticationClient",
-                // models
-                "TVShowModel",
-                "TeamModel",
-                // modules
-                "FirebaseQuery",
-            ],
-            path: "Sources/TVShow/DatabaseClientLive"
-        ),
-        .target(
-            name: "TVShowModel",
-            dependencies: [
-                // pointfree
-                .tagged,
-                .identifiedCollections,
-                // models
                 "UserModel",
-                "TeamModel",
-                // types
-                "DatabaseRepresentable",
-                "ModelElements",
-                // api
-                "TheTVDBAPI",
-            ],
-            path: "Sources/TVShow/Model"
-        ),
-    ]
-    
-    static var testTargets: [Target] = [
-        .testTarget(
-            name: "TVShowTests",
-            dependencies: [
-                // pointfree
-                .composableArchitecture,
-                // reducer
+                // reducers
                 "TVShow",
+                "User",
+                "TeamFeature",
+                // modules
+                "FirebaseStart",
+                // utilities
+                "Log",
             ]
         ),
+
     ]
+    
+    static var testTargets: [Target] = []
 }

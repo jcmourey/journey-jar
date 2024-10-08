@@ -3,8 +3,8 @@ import SwiftUI
 // pointfree
 import ComposableArchitecture
 
-// dependencies
-import ErrorClient
+// features
+import ErrorFeature
 
 // UI elements
 import Rating

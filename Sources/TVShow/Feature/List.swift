@@ -7,7 +7,9 @@ import ComposableArchitecture
 import AuthenticationClient
 import TeamDatabaseClient
 import TVShowDatabaseClient
-import ErrorClient
+
+// features
+import ErrorFeature
 
 // models
 import TVShowModel

@@ -3,14 +3,12 @@ import SwiftUI
 // pointfree
 import ComposableArchitecture
 
-// dependencies
-import ErrorClient
-
 // models
 import TVShowModel
 
-// reducers
+// features
 import TeamFeature
+import ErrorFeature
 
 // UI elements
 import Styleguide

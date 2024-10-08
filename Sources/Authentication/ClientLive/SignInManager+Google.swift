@@ -1,3 +1,5 @@
+import UIKit
+
 // firebase
 import Firebase
 import FirebaseAuth

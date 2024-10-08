@@ -1,5 +1,10 @@
 import SwiftUI
+
+// pointfree
 import ComposableArchitecture
+
+// modules
+import FirebaseStart
 
 public struct AppRoot: View {
     @MainActor
@@ -8,7 +13,9 @@ public struct AppRoot: View {
             ._printChanges()
     }
     
-    public init() {}
+    public init() {
+        startFirebase()
+    }
     
     public var body: some View {
         AppView(store: Self.store)

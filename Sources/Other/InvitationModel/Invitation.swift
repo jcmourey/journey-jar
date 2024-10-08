@@ -1,3 +1,6 @@
+import Foundation
+import CoreTransferable
+
 struct Invitation: Transferable {
     let code: String
     let creationDate: Date
@@ -15,14 +18,14 @@ func generateInvitationCode() -> String {
     return UUID().uuidString
 }
 
-// Save invitation code in Firestore
-func saveInvitationCode(teamId: String, code: String) {
-    let invitationData: [String: Any] = ["teamId": teamId, "createdAt": Timestamp()]
-    db.collection("invitations").document(code).setData(invitationData) { error in
-        if let error {
-            print("Error saving invitation code: \(error)")
-        } else {
-            print("Invitation code saved")
-        }
-    }
-}
+//// Save invitation code in Firestore
+//func saveInvitationCode(teamId: String, code: String) {
+//    let invitationData: [String: Any] = ["teamId": teamId, "createdAt": Timestamp()]
+//    db.collection("invitations").document(code).setData(invitationData) { error in
+//        if let error {
+//            print("Error saving invitation code: \(error)")
+//        } else {
+//            print("Invitation code saved")
+//        }
+//    }
+//}

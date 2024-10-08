@@ -1,19 +1,14 @@
-//
-//  TVShowFormTests.swift
-//  JourneyJarTests
-//
-//  Created by Jean-Charles Mourey on 09/06/2024.
-//
-
-import ComposableArchitecture
 import XCTest
-import Tagged
 
-@testable import JourneyJar
+// pointfree
+import ComposableArchitecture
 
-final class TVShowFormTests: XCTestCase {
-    @MainActor
-    func testRemoveRecommendation() async {
+@testable import TVShowFeature
+
+@Suite("TVShowForm")
+struct TVShowFormTests {
+    @Test
+    func removeRecommendation() async {
         let mockTVShow = TVShow.mock.multipleRecommendations
         let store = TestStore(initialState: TVShowForm.State(tvShow: mockTVShow)) {
             TVShowForm()
@@ -24,8 +19,8 @@ final class TVShowFormTests: XCTestCase {
         }
     }
     
-    @MainActor
-    func testRemoveFocusedRecommendation() async {
+    @Test
+    func removeFocusedRecommendation() async {
         let mockTVShow = TVShow.mock.multipleRecommendations
         let recommendation1 = mockTVShow.recommendations[0]
         let recommendation2 = mockTVShow.recommendations[1]
@@ -43,8 +38,8 @@ final class TVShowFormTests: XCTestCase {
         }
     }
     
-    @MainActor
-    func testAddRecommendation() async {
+    @Test
+    func addRecommendation() async {
         let mockTVShow = TVShow.mock.noRecommendation
         let store = TestStore(initialState: TVShowForm.State(tvShow: mockTVShow)) {
             TVShowForm()
@@ -53,7 +48,7 @@ final class TVShowFormTests: XCTestCase {
         }
         
         await store.send(.addRecommendationButtonTapped) {
-            let recommendation = Recommendation(id: Tagged<Recommendation, UUID>(rawValue: UUID(0)))
+            let recommendation = Recommendation(id: ID(UUID(0)))
             $0.focus = .recommendation(recommendation.id)
             $0.tvShow.recommendations.append(recommendation)
         }

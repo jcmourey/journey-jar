@@ -1,115 +1,121 @@
+// swift-tools-version: 6.0
 import PackageDescription
 
-public struct TVShow: LibraryDescription {
-    static var product: Product = .library(
-        name: "TVShow",
+// MARK: Other
+struct Other: LibraryDescription {
+    let product: Product = .library(
+        name: "Other",
         targets: [
-            "TheTVDBAPI",
-            "TVShowFeature",
-            "TVShowDatabaseClient",
-            "TVShowDatabaseClientLive",
-            "TVShowModel",
+            "APIClient",
+            "CollectionConvenience",
+            "DatabaseRepresentable",
+            "Date",
+            "FirebaseQuery",
+            "FirebaseStart",
+            "InvitationModel",
+            "ModelElements",
+            "Log",
+            "Rating",
+            "Styleguide",
+            "TripAdvisorAPI",
         ]
     )
     
-    static var targets: [Target] = [
+    let targets: [Target] = [
         .target(
-            name: "TheTVDBAPI",
+            name: "APIClient",
+            dependencies: [
+                // utilities
+                "Log",
+            ],
+            path: "Sources/Other/APIClient"
+        ),
+        .target(
+            name: "CollectionConvenience",
+            dependencies: [
+                // pointfree
+                .identifiedCollections
+            ],
+            path: "Sources/Other/CollectionConvenience"
+        ),
+        .target(
+            name: "DatabaseRepresentable",
             dependencies: [
                 // pointfree
                 .identifiedCollections,
+            ],
+            path: "Sources/Other/DatabaseRepresentable"
+        ),
+        .target(
+            name: "Date",
+            path: "Sources/Other/Date"
+        ),
+
+        .target(
+            name: "FirebaseQuery",
+            dependencies: [
+                // pointfree
+                .identifiedCollections,
+                // firebase
+                .firebaseFirestore,
+                // types
+                "DatabaseRepresentable",
+                // utilities
+                "Log",
+            ],
+            path: "Sources/Other/FirebaseQuery"
+        ),
+        .target(
+            name: "FirebaseStart",
+            dependencies: [
+                // firebase
+                .firebaseAppCheck,
+                .firebaseCore,
+                .firebaseFirestore,
+            ],
+            path: "Sources/Other/FirebaseStart"
+        ),
+
+        .target(
+            name: "InvitationModel",
+            path: "Sources/Other/InvitationModel"
+        ),
+        .target(
+            name: "Log",
+            dependencies: [
+                // apple
+                .logging,
+            ],
+            path: "Sources/Other/Log"
+        ),
+        .target(
+            name: "ModelElements",
+            path: "Sources/Other/ModelElements"
+        ),
+        .target(
+            name: "Rating",
+            path: "Sources/Other/Rating"
+        ),
+        .target(
+            name: "Styleguide",
+            dependencies: [
+                // pointfree
+                .composableArchitecture,
+                // kingfisher
+                .kingfisher,
+            ],
+            path: "Sources/Other/Styleguide"
+        ),
+
+        .target(
+            name: "TripAdvisorAPI",
+            dependencies: [
                 // api
                 "APIClient",
             ],
-            path: "Sources/TVShow/TheTVDBAPI"
-        ),
-        .target(
-            name: "TVShowFeature",
-            dependencies: [
-                // pointfree
-                .composableArchitecture,
-                .tagged,
-                .identifiedCollections,
-                // dependencies
-                "AuthenticationClient",
-                "TeamDatabaseClient",
-                "TVShowDatabaseClient",
-                "ErrorClient",
-                // models
-                "TVShowModel",
-                "TeamModel",
-                // reducers
-                "TeamFeature",
-                // api
-                "TheTVDBAPI",
-                // UI elements
-                "Rating",
-                "Styleguide",
-                // types
-                "ModelElements",
-                "CollectionConvenience",
-                // utilities
-                "Date",
-                "Log",
-            ],
-            path: "Sources/TVShow/Feature"
-        ),
-        .target(
-            name: "TVShowDatabaseClient",
-            dependencies: [
-                // pointfree
-                .dependenciesMacros,
-                .dependencies,
-                .identifiedCollections,
-                // models
-                "TVShowModel",
-            ],
-            path: "Sources/TVShow/DatabaseClient"
-        ),
-        .target(
-            name: "TVShowDatabaseClientLive",
-            dependencies: [
-                // pointfree
-                .dependencies,
-                // dependencies
-                "TVShowDatabaseClient",
-                "AuthenticationClient",
-                // models
-                "TVShowModel",
-                "TeamModel",
-                // modules
-                "FirebaseQuery",
-            ],
-            path: "Sources/TVShow/DatabaseClientLive"
-        ),
-        .target(
-            name: "TVShowModel",
-            dependencies: [
-                // pointfree
-                .tagged,
-                .identifiedCollections,
-                // models
-                "UserModel",
-                "TeamModel",
-                // types
-                "DatabaseRepresentable",
-                "ModelElements",
-                // api
-                "TheTVDBAPI",
-            ],
-            path: "Sources/TVShow/Model"
+            path: "Sources/Other/TripAdvisorAPI"
         ),
     ]
     
-    static var testTargets: [Target] = [
-        .testTarget(
-            name: "TVShowTests",
-            dependencies: [
-                // pointfree
-                .composableArchitecture,
-                // reducer
-                "TVShow",
-            ]
-        ),
-    ]
+    let testTargets: [Target] = []
 }
