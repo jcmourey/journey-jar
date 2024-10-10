@@ -60,7 +60,10 @@ public struct ErrorView: View {
     }
 }
 
-#Preview {
+
+
+
+#Preview("Static errors") {
     let errorDescriptions = [
         "short error",
         nil,
@@ -70,6 +73,46 @@ public struct ErrorView: View {
         HStack {
             Text("error \(index)")
             ErrorView(store: Store(initialState: .init(errorDescription: errorDescription)) { ErrorFeature() })
+        }
+    }
+}
+
+enum SomeError: Error, CaseIterable {
+    case error1
+    case error2
+    case error3
+    
+    var next: Self {
+        switch self {
+        case .error1: .error2
+        case .error2: .error3
+        case .error3: .error1
+        }
+    }
+}
+
+#Preview("Dynamic errors") {
+    @Previewable @State var error = SomeError.error1
+    let store = Store(initialState: ErrorFeature.State()) { ErrorFeature() }
+    
+    let labels: [SomeError: String] = [
+        .error1: "first error",
+        .error2: "other error",
+        .error3: "last error"
+    ]
+    
+    Form {
+        VStack(spacing: 20) {
+            Button {
+                error = error.next
+                store.send(.detail(error, labels[error], #fileID, #function, #line))
+            } label: {
+                Text("Click to change error")
+            }
+            ErrorView(store: store)
+        }
+        .onAppear {
+            store.send(.detail(error, labels[error], #fileID, #function, #line))
         }
     }
 }

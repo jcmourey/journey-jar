@@ -113,8 +113,19 @@ struct GroupDescription {
         .init(stringLiteral: "\(name)Model")
     }
     
+    var featureDependency: Target.Dependency {
+        .init(stringLiteral: "\(name)Feature")
+    }
+    
     func dependencyClient(for clientName: String) -> Target.Dependency {
         .init(stringLiteral: "\(name)\(clientName)")
+    }
+   
+    func testTarget(dependencies: [Target.Dependency]) -> Target {
+        .testTarget(
+            name: "\(name)Tests",
+            dependencies: [.composableArchitecture, featureDependency] + dependencies
+        )
     }
     
     static func flatModule(name: String, dependencies: [Target.Dependency] = [], testTarget: Target? = nil) -> Self {
@@ -126,55 +137,53 @@ struct GroupDescription {
             testTarget: testTarget
         )
     }
-   
     
     func addingDependencyClient(
-        name: String = "Client",
+        clientName: String = "Client",
         dependencies: [Target.Dependency] = [],
         liveDependencies: [Target.Dependency] = []
     ) -> Self {
         addingModule(
-            name: name,
+            name: clientName,
             type: .prefixed,
             dependencies: [.dependencies, .dependenciesMacros] + dependencies
         )
         .addingModule(
-            name: "\(name)Live",
+            name: "\(clientName)Live",
             type: .prefixed,
-            dependencies: [.dependencies, dependencyClient(for: name)] + liveDependencies
+            dependencies: [.dependencies, dependencyClient(for: clientName)] + liveDependencies
         )
     }
     
     func addingDatabaseDependencyClient(
-        name: String = "DatabaseClient",
+        clientName: String = "DatabaseClient",
         dependencies: [Target.Dependency] = [],
         liveDependencies: [Target.Dependency] = [],
         modelDependencies: [Target.Dependency] = [],
         featureDependencies: [Target.Dependency] = [],
-        testTarget: Target? = nil
+        hasTests: Bool = false
     ) -> Self  {
         addingDependencyClient(
-            name: name,
+            clientName: clientName,
             dependencies: [.identifiedCollections, modelDependency] + dependencies,
             liveDependencies: [modelDependency] + liveDependencies
         )
         .addingModel(dependencies: modelDependencies)
-        .addingFeature(dependencies: [modelDependency, dependencyClient(for: name)] + featureDependencies, testTarget: testTarget)
+        .addingFeature(dependencies: [modelDependency, dependencyClient(for: clientName)] + featureDependencies, hasTests: hasTests, testDependencies: [modelDependency])
     }
 
-    func addingFeature(name: String = "Feature", dependencies: [Target.Dependency] = [], testTarget: Target? = nil) -> Self {
+    func addingFeature(dependencies: [Target.Dependency] = [], hasTests: Bool = false, testDependencies: [Target.Dependency] = []) -> Self {
         addingModule(
-            name: name,
+            name: "Feature",
             type: .prefixed,
             dependencies: [.composableArchitecture] + dependencies,
-            testTarget: testTarget
+            testTarget: hasTests ? testTarget(dependencies: testDependencies): nil
         )
-
     }
     
-    func addingModel(name: String = "Model", dependencies: [Target.Dependency] = []) -> Self {
+    func addingModel(dependencies: [Target.Dependency] = []) -> Self {
         addingModule(
-            name: name,
+            name: "Model",
             type: .prefixed,
             dependencies: [.tagged, .identifiedCollections, "DatabaseRepresentable"] + dependencies
         )
@@ -224,6 +233,28 @@ let appRoot = GroupDescription.flatModule(
     ]
 )
 
+// MARK: Authentication
+let authentication = GroupDescription(name: "Authentication")
+    .addingDependencyClient(
+        liveDependencies: [
+            // firebase
+            .firebaseAuth,
+            .firebaseFirestore,
+            .firebaseCore,
+            // google
+            .googleSignIn,
+            // utilities
+            "Log",
+        ]
+    )
+
+// MARK: Error
+let error = GroupDescription(name: "Error")
+    .addingFeature(
+        dependencies: ["Log"],
+        hasTests: true
+    )
+
 // MARK: Firebase
 let firebase = GroupDescription(name: "Firebase")
     .addingModule(
@@ -271,27 +302,6 @@ let other = GroupDescription(name: "Other")
     .addingModule(
         name: "TripAdvisorAPI",
         dependencies: ["APIClient"]
-    )
-
-// MARK: Authentication
-let authentication = GroupDescription(name: "Authentication")
-    .addingDependencyClient(
-        liveDependencies: [
-            // firebase
-            .firebaseAuth,
-            .firebaseFirestore,
-            .firebaseCore,
-            // google
-            .googleSignIn,
-            // utilities
-            "Log",
-        ]
-    )
-
-// MARK: Error
-let error = GroupDescription(name: "Error")
-    .addingFeature(
-        dependencies: ["Log"]
     )
 
 // MARK: Team
@@ -367,15 +377,7 @@ let tvShow = GroupDescription(name: "TVShow")
             "Date",
             "Log",
         ],
-        testTarget: .testTarget(
-            name: "TVShowTests",
-            dependencies: [
-                // pointfree
-                .composableArchitecture,
-                // reducer
-                "TVShowFeature",
-            ]
-        )
+        hasTests: true
     )
     .addingModule(
         name: "TheTVDBAPI",
@@ -417,18 +419,9 @@ let user = GroupDescription(name: "User")
             // UI elements
             "Styleguide",
         ],
-        testTarget: .testTarget(
-            name: "UserTests",
-            dependencies: [
-                // pointfree
-                .composableArchitecture,
-                // reducer
-                "UserFeature",
-            ]
-        )
+        hasTests: true
     )
     
-
 let groups: [GroupDescription] = [
     apiClient,
     appRoot,

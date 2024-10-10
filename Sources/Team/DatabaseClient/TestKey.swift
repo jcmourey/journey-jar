@@ -31,7 +31,12 @@ extension TeamDatabaseClient {
         return Self(
             createTeamIfNotExists: { _ in },
             fetch: { [] },
-            listen: { .init { Team.mockTeams } },
+            listen: {
+                AsyncThrowingStream { continuation in
+                    continuation.yield(Team.mockTeams(numberOfTeams: 1))
+                    continuation.finish()
+                }
+            },
             save: { _ in },
             delete: { _ in }
         )

@@ -5,11 +5,12 @@ import ComposableArchitecture
 
 @testable import UserFeature
 
+@MainActor
 @Suite("SignIn")
 struct SignInTests {
     @Test
     func googleSuccess() async {
-        let store = await TestStore(initialState: SignIn.State()) {
+        let store = TestStore(initialState: SignIn.State()) {
             SignIn()
         } withDependencies: {
             $0.authenticationClient.signInWithGoogle = { }
@@ -17,26 +18,27 @@ struct SignInTests {
         await store.send(.signInWithGoogleButtonTapped)
     }
     
-    enum TestError: Error {
-        case failure
+    enum TestError: Int, Error {
+        case failure = 1
     }
     
     @Test
     func googleFailure() async {
         let error = TestError.failure
-        let errorMsg = "got an error"
         
-        let store = await TestStore(initialState: SignIn.State()) {
+        let store = TestStore(initialState: SignIn.State()) {
             SignIn()
         } withDependencies: {
             $0.authenticationClient.signInWithGoogle = {
                 throw error
             }
-            $0.errorClient.detail = { @Sendable _,_,_,_,_ in errorMsg }
         }
+        
+        store.exhaustivity = .off
         await store.send(.signInWithGoogleButtonTapped)
         await store.receive(\.error.detail) {
-            $0.error = .init(errorDescription: errorMsg)
+            let errorDescription = try #require($0.error.errorDescription)
+            #expect(errorDescription.contains("TestError error 1"))
         }
     }
 }

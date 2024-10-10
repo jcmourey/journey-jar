@@ -5,8 +5,8 @@ import IdentifiedCollections
 import UserModel
 
 public extension Team {
-    static let mockTeams: IdentifiedArrayOf<Team> = {
-        let teams = generateRandomSubsets(from: UserModel.mockUsers, numberOfSubsets: 5)
+    static func mockTeams(numberOfTeams: Int = 5) -> IdentifiedArrayOf<Team> {
+        let teams = generateRandomSubsets(from: UserModel.mockUsers, numberOfSubsets: numberOfTeams)
             .enumerated()
             .map { index, users in
                 let uids = users.map(\.uid)
@@ -14,11 +14,12 @@ public extension Team {
                 return Team(id: ID(), name: "Team \(index)", dateAdded: .now, dateModified: .now, ownerId: uids[0], memberIds: uids, memberDetails: members)
             }
         return IdentifiedArray(uniqueElements: teams)
-    }()
+    }
     
     static let mockTeamsList: [IdentifiedArrayOf<Team>] = {
-        generateRandomSubsets(from: Team.mockTeams, numberOfSubsets: 5)
+        generateRandomSubsets(from: Team.mockTeams(), numberOfSubsets: 5)
     }()
+    
 }
 
 // Function to generate random subsets

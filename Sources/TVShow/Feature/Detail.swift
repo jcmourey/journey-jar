@@ -7,6 +7,10 @@ import ComposableArchitecture
 import TVShowModel
 import TeamModel
 
+// dependencies
+import TVShowDatabaseClient
+import TeamDatabaseClient
+
 // features
 import ErrorFeature
 
@@ -14,6 +18,8 @@ import ErrorFeature
 import Rating
 import Styleguide
 
+// utilities
+import Log
 
 @Reducer
 public struct TVShowDetail: Sendable {
@@ -76,6 +82,7 @@ public struct TVShowDetail: Sendable {
                 return .run { send in
                     let stream = try await teamDb.listen()
                     for try await teams in stream {
+                        logger.debug("teamsUpdated with \(teams.map(\.name).joined(separator: ", "))")
                         await send(.teamsUpdated(teams))
                     }
                 } catch: { error, send in
@@ -125,7 +132,7 @@ public struct TVShowDetail: Sendable {
                 }
             
             case .editButtonTapped:
-                state.destination = .edit(TVShowForm.State(tvShow: state.tvShow, focus: nil))
+                state.destination = .edit(TVShowForm.State(tvShow: state.tvShow))
                 return .none
                 
             case .error:

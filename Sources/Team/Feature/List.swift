@@ -104,14 +104,14 @@ struct TeamView: View {
 }
 
 #Preview("Single Team") {
-    TeamView(team: Team.mockTeams[0])
+    TeamView(team: Team.mockTeams(numberOfTeams: 1).first!)
 }
 
 
 #Preview("Static Team List") {
     TeamListView(
         store: Store(
-            initialState: .init(teams: Team.mockTeams)
+            initialState: .init(teams: Team.mockTeams())
         ) {
             TeamList()
         } withDependencies: {

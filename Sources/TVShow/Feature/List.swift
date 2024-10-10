@@ -32,11 +32,16 @@ public struct TVShowList: Sendable {
     @ObservableState
     public struct State: Equatable {
         @Presents public var destination: Destination.State?
-        public var tvShows: IdentifiedArrayOf<TVShow> = []
+        public var tvShows: IdentifiedArrayOf<TVShow>
         public var lastTVShowAdded: TVShow?
-        var error = ErrorFeature.State()
-
-        public init() {}
+        public var error: ErrorFeature.State
+        
+        public init(destination: Destination.State? = nil, tvShows: IdentifiedArrayOf<TVShow> = [], lastTVShowAdded: TVShow? = nil, error: ErrorFeature.State = .init()) {
+            self.destination = destination
+            self.tvShows = tvShows
+            self.lastTVShowAdded = lastTVShowAdded
+            self.error = error
+        }
     }
     public enum Action {
         case onUserUpdated
@@ -257,19 +262,11 @@ public struct TVShowListView: View {
 }
 
 #Preview {
-    @MainActor
-    struct Preview: View {
-        var store = Store(initialState: TVShowList.State()) {
+    NavigationStack {
+        TVShowListView(store: Store(initialState: .init()) {
             TVShowList()
             ._printChanges()
-        }
-        
-        var body: some View {
-            NavigationStack {
-                 TVShowListView(store: store)
-            }
-        }
+        })
     }
-    return Preview()
 }
 

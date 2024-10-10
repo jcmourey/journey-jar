@@ -1,10 +1,13 @@
-import XCTest
+import Testing
+import Foundation
 
 // pointfree
 import ComposableArchitecture
 
 @testable import TVShowFeature
+@testable import TVShowModel
 
+@MainActor
 @Suite("TVShowForm")
 struct TVShowFormTests {
     @Test
@@ -26,8 +29,8 @@ struct TVShowFormTests {
         let recommendation2 = mockTVShow.recommendations[1]
         
         let store = TestStore(initialState: TVShowForm.State(
-            focus: .recommendation(recommendation1.id),
-            tvShow: mockTVShow
+            tvShow: mockTVShow,
+            focus: .recommendation(recommendation1.id)
         )) {
             TVShowForm()
         }
@@ -48,7 +51,7 @@ struct TVShowFormTests {
         }
         
         await store.send(.addRecommendationButtonTapped) {
-            let recommendation = Recommendation(id: ID(UUID(0)))
+            let recommendation = Recommendation(id: Recommendation.ID(UUID(0)))
             $0.focus = .recommendation(recommendation.id)
             $0.tvShow.recommendations.append(recommendation)
         }

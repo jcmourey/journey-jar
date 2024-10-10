@@ -64,17 +64,18 @@ extension RatingSelector where T == Int {
 }
 
 
+enum Test: Int, CaseIterable {
+    case one = 1
+    case another
+    case yetAnother
+}
+
 #Preview {
-    enum Test: Int, CaseIterable {
-        case one = 1
-        case another
-        case yetAnother
-    }
     @Previewable @State var test: Test? = .another
     @Previewable @State var level: Int? = nil
     @Previewable @State var otherLevel: Int? = 4
     
-    return Form {
+    Form {
         RatingSelector(level: $test, label: "Test", symbol: .star)
         RatingSelector(level: $level, symbol: .heart, max: 5)
         RatingSelector(level: $otherLevel, symbol: .heart, max: 5)
