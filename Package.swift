@@ -2,7 +2,7 @@
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 import PackageDescription
 
-let platforms: [SupportedPlatform] = [.iOS(.v18)/*, .macOS(.v15)*/]
+let platforms: [SupportedPlatform] = [.iOS(.v18), .macOS(.v15)]
 
 // MARK: External dependencies
 let dependencies: [Package.Dependency] = [
@@ -108,7 +108,6 @@ struct Authentication: LibraryDescription {
             name: "AuthenticationClient",
             dependencies: [
                 // pointfree
-                .composableArchitecture,
                 .dependencies,
                 .dependenciesMacros,
                 // models
@@ -120,7 +119,6 @@ struct Authentication: LibraryDescription {
             name: "AuthenticationClientLive",
             dependencies: [
                 // pointfree
-                .composableArchitecture,
                 .dependencies,
                 // firebase
                 .firebaseAuth,
