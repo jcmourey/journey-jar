@@ -28,7 +28,6 @@ extension Query {
                     let array = IdentifiedArray(uniqueElements: objects)
                     continuation.yield(array)
                 } catch {
-                    logError(error.localizedDescription)
                     continuation.finish(throwing: error)
                 }
             }

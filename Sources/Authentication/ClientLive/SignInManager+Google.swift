@@ -1,7 +1,7 @@
 import UIKit
 
 // firebase
-import Firebase
+import FirebaseCore
 import FirebaseAuth
 
 // google

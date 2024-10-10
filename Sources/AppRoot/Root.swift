@@ -14,7 +14,9 @@ public struct AppRoot: View {
     }
     
     public init() {
-        startFirebase()
+        Task {
+            startFirebase()
+        }
     }
     
     public var body: some View {

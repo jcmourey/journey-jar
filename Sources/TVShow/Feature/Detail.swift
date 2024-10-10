@@ -3,6 +3,10 @@ import SwiftUI
 // pointfree
 import ComposableArchitecture
 
+// models
+import TVShowModel
+import TeamModel
+
 // features
 import ErrorFeature
 
@@ -10,9 +14,6 @@ import ErrorFeature
 import Rating
 import Styleguide
 
-// models
-import TVShowModel
-import TeamModel
 
 @Reducer
 public struct TVShowDetail: Sendable {
@@ -78,7 +79,7 @@ public struct TVShowDetail: Sendable {
                         await send(.teamsUpdated(teams))
                     }
                 } catch: { error, send in
-                    await send(.error(.detail(error("team listen"))))
+                    await send(.error(.detail(error, "team listen", #fileID, #function, #line)))
                 }
                 
             case .posterTapped:
@@ -95,7 +96,7 @@ public struct TVShowDetail: Sendable {
                     try await tvShowDb.delete(tvShow)
                     await dismiss()
                 } catch: { error, send in
-                    await send(.error(.detail(error("delete"))))
+                    await send(.error(.detail(error, "delete TVShow", #fileID, #function, #line)))
                 }
                 
             case .destination:
@@ -120,7 +121,7 @@ public struct TVShowDetail: Sendable {
                 return .run { [tvShow = state.tvShow] _ in
                     try await self.tvShowDb.save(tvShow)
                 } catch: { error, send in
-                    await send(.error(.detail(error("update"))))
+                    await send(.error(.detail(error, "update TVShow", #fileID, #function, #line)))
                 }
             
             case .editButtonTapped:

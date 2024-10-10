@@ -8,11 +8,11 @@ import AuthenticationClient
 import TeamDatabaseClient
 import TVShowDatabaseClient
 
-// features
-import ErrorFeature
-
 // models
 import TVShowModel
+
+// features
+import ErrorFeature
 
 // api
 import TheTVDBAPI
@@ -67,7 +67,7 @@ public struct TVShowList: Sendable {
         return .run { _ in
             try await tvShowDb.save(tvShow)
         } catch: { error, send in
-            await send(.error(.detail(error("save tvShow"))))
+            await send(.error(.detail(error, "save TVShow", #fileID, #function, #line)))
         }
     }
     
@@ -83,7 +83,7 @@ public struct TVShowList: Sendable {
                 await send(.tvShowsUpdated(tvShows))
             }
         } catch: { error, send in
-            await send(.error(.detail(error("tvShow listen"))))
+            await send(.error(.detail(error, "tvShow listen", #fileID, #function, #line)))
         }
     }
     
@@ -125,7 +125,7 @@ public struct TVShowList: Sendable {
                             }
                         }
                     } catch {
-                        await send(.error(.detail(error("tvdbInfo"))))
+                        await send(.error(.detail(error, "tvdbInfo", #fileID, #function, #line)))
                     }
                     if let tvdbName = newTVShow.tvdbInfo?.name {
                         newTVShow.title = tvdbName
@@ -144,7 +144,7 @@ public struct TVShowList: Sendable {
                     try await tvShowDb.delete(tvShow)
                     await dismiss()
                 } catch: { error, send in
-                    await send(.error(.detail(error("delete"))))
+                    await send(.error(.detail(error, "delete TVShow", #fileID, #function, #line)))
                 }
             
             case .cancelAddButtonTapped:

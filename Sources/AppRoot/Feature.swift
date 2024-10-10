@@ -90,7 +90,7 @@ public struct AppFeature: Sendable {
                             try await teamDb.createTeamIfNotExists(user)
                         }
                     } catch {
-                        await send(.error(.detail(error("save user"))))
+                        await send(.error(.detail(error, "save user", #fileID, #function, #line)))
                     }
                     await send(.tvShowList(.onUserUpdated))
                 }

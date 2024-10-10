@@ -8,12 +8,12 @@ import IdentifiedCollections
 import AuthenticationClient
 import TeamDatabaseClient
 
-// features
-import ErrorFeature
-
 // models
 import UserModel
 import TeamModel
+
+// features
+import ErrorFeature
 
 @Reducer
 public struct TeamSelector: Sendable {

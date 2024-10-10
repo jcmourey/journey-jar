@@ -1,8 +1,8 @@
 import Foundation
 
 // pointfree
-import IdentifiedCollections
 import Tagged
+import IdentifiedCollections
 
 // types
 import ModelElements

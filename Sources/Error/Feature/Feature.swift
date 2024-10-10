@@ -10,13 +10,7 @@ import Log
 public struct ErrorFeature {
     @ObservableState
     public struct State: Equatable {
-        public var errorDescription: String? {
-            didSet {
-                if let errorDescription {
-                    logger.error("🛑 \(errorDescription)")
-                }
-            }
-        }
+        public var errorDescription: String?
         
         public init(errorDescription: String? = nil) {
             self.errorDescription = errorDescription
@@ -24,7 +18,7 @@ public struct ErrorFeature {
     }
     
     public enum Action {
-        case detail(error: any Error, label: String?, file: StaticString, function: StaticString, line: UInt)
+        case detail(any Error, String?, StaticString, StaticString, UInt)
     }
     
     public init() {}
@@ -36,8 +30,10 @@ public struct ErrorFeature {
             switch action {
             case let .detail(error, label, file, function, line):
                 let localizedDescription = error.localizedDescription
-                let labeledErrorDescription = if let label { "\(label): \(localizedDescription)" } else { "\(localizedDescription)" }
-                state.errorDescription = "🛑 \(file): \(function):\(line): \(labeledErrorDescription)"
+                let labeledError = if let label { "\(label): \(localizedDescription)" } else { localizedDescription }
+                let errorDescription = "🛑 \(file): \(function):\(line): \(labeledError)"
+                logger.error("\(errorDescription)")
+                state.errorDescription = errorDescription
                 return .none
             }
         }
@@ -52,8 +48,8 @@ public struct ErrorView: View {
     }
     
     public var body: some View {
-        if let errorString = store.errorDescription {
-            Text("🛑 \(errorString)")
+        if let errorDescription = store.errorDescription {
+            Text(errorDescription)
                 .font(.caption)
 //                .lineLimit(nil)
 //                .multilineTextAlignment(.center)

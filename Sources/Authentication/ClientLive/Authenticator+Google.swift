@@ -15,6 +15,15 @@ enum GoogleAuthError: Error {
 actor GoogleAuthenticator: Authenticator {
     let signInManager = GoogleSignInManager()
     
+    func signInAndCredentials() async throws -> AuthCredential {
+        let user = try await signInManager.signIn()
+        // TODO Swift bug: Pattern that the region based isolation checker does not understand how to check. Please file a bug
+        // workaround: cast method to its prototype
+        // https://stackoverflow.com/questions/78745506/why-does-calling-an-async-actor-function-in-a-mainactor-result-in-a-compiler-err
+        let credentials = try (credentials as (GIDGoogleUser) throws -> AuthCredential)(user)
+        return credentials
+    }
+    
     func credentials(_ user: GIDGoogleUser) throws -> AuthCredential {
         guard let idToken = user.idToken?.tokenString else {
             throw GoogleAuthError.noIDToken

@@ -7,11 +7,11 @@ import ComposableArchitecture
 import AuthenticationClient
 import UserDatabaseClient
 
-// features
-import ErrorFeature
-
 // models
 import UserModel
+
+// features
+import ErrorFeature
 
 // UI elements
 import Styleguide
@@ -88,7 +88,7 @@ public struct UserDetail: Sendable {
                 return .run { send in
                     try await auth.changeUserName(newName: newName)
                 } catch: { error, send in
-                    await send(.error(.detail(error("requestNameChange"))))
+                    await send(.error(.detail(error, "request user name change", #fileID, #function, #line)))
                 }
                 
             case .editDisplayNameButtonTapped:
@@ -100,7 +100,7 @@ public struct UserDetail: Sendable {
                     try await auth.signOut()
                     await dismiss()
                 } catch: { error, send in
-                    await send(.error(.detail(error("signOut"))))
+                    await send(.error(.detail(error, "signOut", #fileID, #function, #line)))
                 }
             }
         }
@@ -182,6 +182,14 @@ public struct UserDetailView: View {
     }
 }
 
-#Preview {
-    UserDetailView(store: Store(initialState: .init(user: UserModel.mockUsers[0])) { UserDetail() })
+#Preview("User 0") {
+    NavigationStack {
+        UserDetailView(store: Store(initialState: .init(user: UserModel.mockUsers[0])) { UserDetail() })
+    }
+}
+
+#Preview("User 1") {
+    NavigationStack {
+        UserDetailView(store: Store(initialState: .init(user: UserModel.mockUsers[1])) { UserDetail() })
+    }
 }

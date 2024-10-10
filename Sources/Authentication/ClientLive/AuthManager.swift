@@ -1,11 +1,7 @@
 @preconcurrency import AuthenticationServices
 
-// pointfree
-import ComposableArchitecture
-
 // firebase
 @preconcurrency import FirebaseAuth
-import Firebase
 import FirebaseFirestore
 
 // google
@@ -45,7 +41,8 @@ actor AuthManager {
         .providerAlreadyLinked,
     ]
         
-    var user: UserModel? { UserModel(for: Auth.auth().currentUser) }
+    var authUser: User? { Auth.auth().currentUser }
+    var user: UserModel? { UserModel(for: authUser) }
    
     func authenticator(for provider: String?) throws -> any Authenticator {
         switch try SupportedProviderId(rawValue: provider) {
@@ -67,7 +64,7 @@ actor AuthManager {
                 // Verify provider credentials
                 try await self.verifySignInProvider(provider: provider, providerUserId: providerUserId)
             } catch {
-                logError("signing out because: \(error.localizedDescription)")
+                logger.error("🛑 signing out because: \(error.localizedDescription)")
                 try await signOut()
             }
         }
@@ -96,10 +93,11 @@ actor AuthManager {
     
     // MARK: - Sign-in With Provider
     func signInWithGoogle() async throws  {
-        let user = try await google.signInManager.signIn()
-        let credentials = try await google.credentials(user)
-        let authenticate = authenticateUser
-        try await authenticate(credentials) // TODO Swift bug: https://stackoverflow.com/questions/78745506/why-does-calling-an-async-actor-function-in-a-mainactor-result-in-a-compiler-err
+        let credentials = try await google.signInAndCredentials()
+        // TODO Swift bug: Pattern that the region based isolation checker does not understand how to check. Please file a bug
+        // workaround: cast method to its prototype
+        // https://stackoverflow.com/questions/78745506/why-does-calling-an-async-actor-function-in-a-mainactor-result-in-a-compiler-err
+        try await (authenticateUser as (AuthCredential) async throws -> Void)(credentials)
     }
     
     func handleGoogleURL(url: URL) async {
@@ -112,8 +110,10 @@ actor AuthManager {
     
     func signInWithApple(result: Result<ASAuthorization, any Error>) async throws {
         let credentials = try await apple.credentials(result)
-        let authenticate = authenticateUser
-        try await authenticate(credentials) // TODO Swift bug: https://stackoverflow.com/questions/78745506/why-does-calling-an-async-actor-function-in-a-mainactor-result-in-a-compiler-err
+        // TODO Swift bug: Pattern that the region based isolation checker does not understand how to check. Please file a bug
+        // workaround: cast method to its prototype
+        // https://stackoverflow.com/questions/78745506/why-does-calling-an-async-actor-function-in-a-mainactor-result-in-a-compiler-err
+        try await (authenticateUser as (AuthCredential) async throws -> Void)(credentials)
     }
     
     func signInAsGuest() async throws {
@@ -121,7 +121,7 @@ actor AuthManager {
     }
     
     //MARK: - Authenticate with Firebase
-    private func authenticateUser(credentials: AuthCredential) async throws {
+    func authenticateUser(credentials: AuthCredential) async throws {
         // If we have authenticated user, then link with given credentials.
         // Otherwise, sign in using given credentials.
         if let user = Auth.auth().currentUser {

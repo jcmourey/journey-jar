@@ -2,7 +2,6 @@ import Foundation
 
 // pointfree
 import Tagged
-import IdentifiedCollections
 
 // models
 import UserModel

@@ -111,7 +111,7 @@ public struct TVShowForm: Sendable {
                 guard let team = state.teamSelector.selectedTeam else {
                     return .run { send in
                         let error = TVShowError.noTeamSelected
-                        await send(.error(.detail(error("teamSelector"))))
+                        await send(.error(.detail(error, "teamSelector", #fileID, #function, #line)))
                     }
                 }
                 state.tvShow.teamId = team.id
@@ -141,7 +141,7 @@ public struct TVShowForm: Sendable {
                     }
                     await send(.tvdbDetailResponse(detail))
                 } catch: { error, send in
-                    await send(.error(.detail(error("fetchDetail"))))
+                    await send(.error(.detail(error, "fetchDetail", #fileID, #function, #line)))
                 }
                 .cancellable(id: CancelID.fetchDetailTask, cancelInFlight: true)
 
@@ -195,7 +195,7 @@ public struct TVShowForm: Sendable {
                     }
                     await send(.tvdbSeriesResponse(series))
                 } catch: { error, send in
-                    await send(.error(.detail(error("tvdbSeriesSearch"))))
+                    await send(.error(.detail(error, "tvdbSearch", #fileID, #function, #line)))
                 }
                 .cancellable(id: CancelID.fetchSeriesTask, cancelInFlight: true)
                 

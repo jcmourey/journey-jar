@@ -1,10 +1,11 @@
 // swift-tools-version: 6.0
-// The swift-tools-version declares the minimum version of Swift required to build this package.
 import PackageDescription
 
-let platforms: [SupportedPlatform] = [.iOS(.v18), .macOS(.v15)]
+// Root path (relative to Package.swift) containing all the source files
+let sourceRootPath = "Sources"
 
-// MARK: External dependencies
+let platforms: [SupportedPlatform] = [.iOS(.v18)/*, .macOS(.v15)*/]
+
 let dependencies: [Package.Dependency] = [
     // apple
     .package(url: "https://github.com/apple/swift-log.git", from: "1.6.1"),
@@ -50,409 +51,323 @@ extension Target.Dependency {
     static var kingfisher: Self { .product(name: "Kingfisher", package: "Kingfisher") }
 }
 
-protocol LibraryDescription {
-    var product: Product { get }
-    var targets: [Target] { get }
-    var testTargets: [Target] { get }
+enum ModuleType {
+    case flat           // module sources are directly in group directory
+    case prefixed       // module sources are in a subdirectory, target to be prefixed with group name
+    case nonPrefixed    // module sources are in a subdirectory, target *not* prefixed with group name
 }
+
+/// A Module corresponds to a single Product (library) containing a single target of the same name,
+/// with dependencies and a single optional test target
+struct Module {
+    let name: String
+    let type: ModuleType
+    let dependencies: [Target.Dependency]
+    let testTarget: Target?
+    
+    init(name: String, type: ModuleType = .prefixed, dependencies: [Target.Dependency] = [], testTarget: Target? = nil) {
+        self.name = name
+        self.type = type
+        self.dependencies = dependencies
+        self.testTarget = testTarget
+    }
+    
+    // target name depends whether it's a flat module, prefixed, or nonPrefixed
+    func targetName(groupName: String) -> String {
+        switch type {
+        case .flat: groupName
+        case .nonPrefixed: name
+        case .prefixed: "\(groupName)\(name)"
+        }
+    }
+    
+    // source path depends whether it's a flat module or not
+    func sourcePath(groupName: String) -> String {
+        let relativePath = switch type {
+        case .flat: groupName
+        default: "\(groupName)/\(name)"
+        }
+        return "\(sourceRootPath)/\(relativePath)"
+    }
+}
+
+/// A GroupDescription allows multiple modules to be stored as subdirectories of a group directory
+/// The group directory serves only to organize, it doesn't become a library itself
+/// Naming conventions are typically that the group name becomes a prefix to the subdirectory name -> module name
+///     e.g. User/DatabaseClient -> library name: UserDatabaseClient
+/// This behavior can be avoided by setting type to nonPrefixed:
+///     e.g. UIElements/Rating -> library name: Rating
+/// Single module groups are simplified, have a flat type:
+///     e.g. APIClient (no subdirectory) -> library name: APIClient
+/// Paths are computed automatically
+struct GroupDescription {
+    let name: String
+    var modules: [Module]
+    
+    init(name: String, modules: [Module] = []) {
+        self.name = name
+        self.modules = modules
+    }
+    
+    var modelDependency: Target.Dependency {
+        .init(stringLiteral: "\(name)Model")
+    }
+    
+    func dependencyClient(for clientName: String) -> Target.Dependency {
+        .init(stringLiteral: "\(name)\(clientName)")
+    }
+    
+    static func flatModule(name: String, dependencies: [Target.Dependency] = [], testTarget: Target? = nil) -> Self {
+        .init(name: name)
+        .addingModule(
+            name: name,
+            type: .flat,
+            dependencies: dependencies,
+            testTarget: testTarget
+        )
+    }
+   
+    
+    func addingDependencyClient(
+        name: String = "Client",
+        dependencies: [Target.Dependency] = [],
+        liveDependencies: [Target.Dependency] = []
+    ) -> Self {
+        addingModule(
+            name: name,
+            type: .prefixed,
+            dependencies: [.dependencies, .dependenciesMacros] + dependencies
+        )
+        .addingModule(
+            name: "\(name)Live",
+            type: .prefixed,
+            dependencies: [.dependencies, dependencyClient(for: name)] + liveDependencies
+        )
+    }
+    
+    func addingDatabaseDependencyClient(
+        name: String = "DatabaseClient",
+        dependencies: [Target.Dependency] = [],
+        liveDependencies: [Target.Dependency] = [],
+        modelDependencies: [Target.Dependency] = [],
+        featureDependencies: [Target.Dependency] = [],
+        testTarget: Target? = nil
+    ) -> Self  {
+        addingDependencyClient(
+            name: name,
+            dependencies: [.identifiedCollections, modelDependency] + dependencies,
+            liveDependencies: [modelDependency] + liveDependencies
+        )
+        .addingModel(dependencies: modelDependencies)
+        .addingFeature(dependencies: [modelDependency, dependencyClient(for: name)] + featureDependencies, testTarget: testTarget)
+    }
+
+    func addingFeature(name: String = "Feature", dependencies: [Target.Dependency] = [], testTarget: Target? = nil) -> Self {
+        addingModule(
+            name: name,
+            type: .prefixed,
+            dependencies: [.composableArchitecture] + dependencies,
+            testTarget: testTarget
+        )
+
+    }
+    
+    func addingModel(name: String = "Model", dependencies: [Target.Dependency] = []) -> Self {
+        addingModule(
+            name: name,
+            type: .prefixed,
+            dependencies: [.tagged, .identifiedCollections, "DatabaseRepresentable"] + dependencies
+        )
+    }
+    
+    func addingModule(name: String, type: ModuleType = .nonPrefixed, dependencies: [Target.Dependency] = [], testTarget: Target? = nil) -> Self {
+        var copy = self
+        copy.modules.append(
+            Module(
+                name: name,
+                type: type,
+                dependencies: dependencies,
+                testTarget: testTarget
+            )
+        )
+        return copy
+    }
+    
+}
+
+// MARK: APIClient
+let apiClient = GroupDescription.flatModule(
+    name: "APIClient",
+    dependencies: ["Log"]
+)
 
 // MARK: AppRoot
-struct AppRoot: LibraryDescription {
-    let product: Product = .library(
-        name: "AppRoot",
-        targets: [
-            "AppRoot",
+let appRoot = GroupDescription.flatModule(
+    name: "AppRoot",
+    dependencies: [
+        // pointfree
+        .composableArchitecture,
+        // dependencies
+        "AuthenticationClient",
+        // models
+        "TVShowModel",
+        "UserModel",
+        // features
+        "TVShowFeature",
+        "UserFeature",
+        "TeamFeature",
+        "ErrorFeature",
+        // modules
+        "FirebaseStart",
+        // utilities
+        "Log",
+    ]
+)
+
+// MARK: Firebase
+let firebase = GroupDescription(name: "Firebase")
+    .addingModule(
+        name: "Query",
+        type: .prefixed,
+        dependencies: [
+            // pointfree
+            .identifiedCollections,
+            // firebase
+            .firebaseFirestore,
+            // types
+            "DatabaseRepresentable",
+            // utilities
+            "Log",
         ]
     )
-    
-    let targets: [Target] = [
-        .target(
-            name: "AppRoot",
-            dependencies: [
-                // pointfree
-                .composableArchitecture,
-                // dependencies
-                "AuthenticationClient",
-                // models
-                "TVShowModel",
-                "UserModel",
-                // features
-                "TVShowFeature",
-                "UserFeature",
-                "TeamFeature",
-                "ErrorFeature",
-                // modules
-                "FirebaseStart",
-                // utilities
-                "Log",
-            ]
-        ),
+    .addingModule(
+        name: "Start",
+        type: .prefixed,
+        dependencies: [
+            // firebase
+            .firebaseAppCheck,
+            .firebaseCore,
+            .firebaseFirestore,
+        ]
+    )
 
-    ]
-    
-    let testTargets: [Target] = []
-}
+// MARK: Other
+let other = GroupDescription(name: "Other")
+    .addingModule(
+        name: "CollectionConvenience",
+        dependencies: [.identifiedCollections]
+    )
+    .addingModule(
+        name: "DatabaseRepresentable",
+        dependencies: [.identifiedCollections]
+    )
+    .addingModule(name: "Date")
+    .addingModule(name: "InvitationModel")
+    .addingModule(
+        name: "Log",
+        dependencies: [.logging]
+    )
+    .addingModule(name: "ModelElements")
+    .addingModule(
+        name: "TripAdvisorAPI",
+        dependencies: ["APIClient"]
+    )
 
 // MARK: Authentication
-struct Authentication: LibraryDescription {
-    let product: Product = .library(
-        name: "Authentication",
-        targets: [
-            "AuthenticationClient",
-            "AuthenticationClientLive",
+let authentication = GroupDescription(name: "Authentication")
+    .addingDependencyClient(
+        liveDependencies: [
+            // firebase
+            .firebaseAuth,
+            .firebaseFirestore,
+            .firebaseCore,
+            // google
+            .googleSignIn,
+            // utilities
+            "Log",
         ]
     )
-    
-    let targets: [Target] = [
-        .target(
-            name: "AuthenticationClient",
-            dependencies: [
-                // pointfree
-                .dependencies,
-                .dependenciesMacros,
-                // models
-                "UserModel",
-            ],
-            path: "Sources/Authentication/Client"
-        ),
-        .target(
-            name: "AuthenticationClientLive",
-            dependencies: [
-                // pointfree
-                .dependencies,
-                // firebase
-                .firebaseAuth,
-                .firebaseFirestore,
-                // google
-                .googleSignIn,
-                // dependencies
-                "AuthenticationClient",
-                // models
-                "UserModel",
-                // utilities
-                "Log",
-            ],
-            path: "Sources/Authentication/ClientLive"
-        ),
-    ]
-    
-    let testTargets: [Target] = []
-}
-
-// MARK: Team
-struct Team: LibraryDescription {
-    let product: Product = .library(
-        name: "Team",
-        targets: [
-            "TeamFeature",
-            "TeamDatabaseClient",
-            "TeamDatabaseClientLive",
-            "TeamModel",
-        ]
-    )
-    
-    let targets: [Target] = [
-        .target(
-            name: "TeamFeature",
-            dependencies: [
-                // pointfree
-                .composableArchitecture,
-                .identifiedCollections,
-                // dependencies
-                "TeamDatabaseClient",
-                "AuthenticationClient",
-                // models
-                "UserModel",
-                "TeamModel",
-                // features
-                "ErrorFeature",
-            ],
-            path: "Sources/Team/Feature"
-        ),
-        .target(
-            name: "TeamDatabaseClient",
-            dependencies: [
-                // pointfree
-                .identifiedCollections,
-                .dependencies,
-                .dependenciesMacros,
-                // models
-                "UserModel",
-                "TeamModel",
-            ],
-            path: "Sources/Team/DatabaseClient"
-        ),
-        .target(
-            name: "TeamDatabaseClientLive",
-            dependencies: [
-                // pointfree
-                .dependencies,
-                // firebase
-                .firebaseFirestore,
-                // dependencies
-                "AuthenticationClient",
-                "TeamDatabaseClient",
-                // models
-                "TeamModel",
-                "UserModel",
-                // modules,
-                "FirebaseQuery",
-                // utilities
-                "Log",
-            ],
-            path: "Sources/Team/DatabaseClientLive"
-        ),
-        .target(
-            name: "TeamModel",
-            dependencies: [
-                // pointfree
-                .tagged,
-                .identifiedCollections,
-                // models
-                "UserModel",
-                // types
-                "DatabaseRepresentable",
-            ],
-            path: "Sources/Team/Model"
-        ),
-    ]
-    
-    let testTargets: [Target] = []
-}
 
 // MARK: Error
-struct Error: LibraryDescription {
-    let product: Product = .library(
-        name: "Error",
-        targets: [
-            "ErrorClient",
-            "ErrorClientLive",
+let error = GroupDescription(name: "Error")
+    .addingFeature(
+        dependencies: ["Log"]
+    )
+
+// MARK: Team
+let team = GroupDescription(name: "Team")
+    .addingDatabaseDependencyClient(
+        dependencies: ["UserModel"],
+        liveDependencies: [
+            // firebase
+            .firebaseFirestore,
+            // dependencies
+            "AuthenticationClient",
+            // models
+            "UserModel",
+            // modules,
+            "FirebaseQuery",
+            // utilities
+            "Log",
+        ],
+        modelDependencies:  ["UserModel"],
+        featureDependencies: [
+            // pointfree
+            .identifiedCollections,
+            // dependencies
+            "AuthenticationClient",
+            // models
+            "UserModel",
+            // features
             "ErrorFeature",
         ]
     )
     
-    let targets: [Target] = [
-        .target(
-            name: "ErrorClient",
-            dependencies: [
-                // pointfree
-                .dependencies,
-                .dependenciesMacros,
-            ],
-            path: "Sources/Error/Client"
-        ),
-        .target(
-            name: "ErrorClientLive",
-            dependencies: [
-                // pointfree
-                .dependencies,
-                // dependencies
-                "ErrorClient",
-            ],
-            path: "Sources/Error/ClientLive"
-        ),
-        .target(
-            name: "ErrorFeature",
-            dependencies: [
-                // pointfree
-                .composableArchitecture,
-                // utilities
-                "Log",
-            ],
-            path: "Sources/Error/Feature"
-        ),
-    ]
-    
-    let testTargets: [Target] = []
-}
-
-// MARK: User
-struct User: LibraryDescription {
-    let product: Product = .library(
-        name: "User",
-        targets: [
-            "UserFeature",
-            "UserDatabaseClient",
-            "UserDatabaseClientLive",
-            "UserModel",
-        ]
-    )
-    
-    let targets: [Target] = [
-        .target(
-            name: "UserFeature",
-            dependencies: [
-                // pointfree
-                .composableArchitecture,
-                // google
-                .googleSignInSwift,
-                // dependencies
-                "TVShowDatabaseClient",
-                "AuthenticationClient",
-                // models
-                "UserModel",
-                // features
-                "ErrorFeature",
-                // UI elements
-                "Styleguide",
-            ],
-            path: "Sources/User/Feature"
-        ),
-        .target(
-            name: "UserDatabaseClient",
-            dependencies: [
-                // pointfree
-               .dependencies,
-               .dependenciesMacros,
-               // dependencies
-               "TeamDatabaseClient",
-               // models
-               "UserModel",
-            ],
-            path: "Sources/User/DatabaseClient"
-        ),
-        .target(
-            name: "UserDatabaseClientLive",
-            dependencies: [
-                // pointfree
-                .dependencies,
-                // dependencies
-                "UserDatabaseClient",
-                // models
-                "UserModel",
-                // modules
-                "FirebaseQuery",
-            ],
-            path: "Sources/User/DatabaseClientLive"
-        ),
-        .target(
-            name: "UserModel",
-            dependencies: [
-                // pointfree
-               .tagged,
-               // types
-               "DatabaseRepresentable",
-            ],
-            path: "Sources/User/Model"
-        ),
-    ]
-    
-    let testTargets: [Target] = [
-        .testTarget(name: "UserTests",
-            dependencies: [
-                // pointfree
-                .composableArchitecture,
-                // reducer
-                "UserFeature",
-            ]
-        ),
-    ]
-}
-
 // MARK: TVShow
-struct TVShow: LibraryDescription {
-    let product: Product = .library(
-        name: "TVShow",
-        targets: [
+let tvShow = GroupDescription(name: "TVShow")
+    .addingDatabaseDependencyClient(
+        liveDependencies: [
+            // dependencies
+            "AuthenticationClient",
+            // models
+            "TeamModel",
+            // modules
+            "FirebaseQuery",
+        ],
+        modelDependencies: [
+            // models
+            "TeamModel",
+            "UserModel",
+            // types
+            "ModelElements",
+            // api
             "TheTVDBAPI",
-            "TVShowFeature",
-            "TVShowDatabaseClient",
-            "TVShowDatabaseClientLive",
-            "TVShowModel",
-        ]
-    )
-    
-    let targets: [Target] = [
-        .target(
-            name: "TheTVDBAPI",
-            dependencies: [
-                // pointfree
-                .identifiedCollections,
-                // api
-                "APIClient",
-            ],
-            path: "Sources/TVShow/TheTVDBAPI"
-        ),
-        .target(
-            name: "TVShowFeature",
-            dependencies: [
-                // pointfree
-                .composableArchitecture,
-                .tagged,
-                .identifiedCollections,
-                // dependencies
-                "AuthenticationClient",
-                "TeamDatabaseClient",
-                "TVShowDatabaseClient",
-                // models
-                "TVShowModel",
-                "TeamModel",
-                // features
-                "TeamFeature",
-                "ErrorFeature",
-                // api
-                "TheTVDBAPI",
-                // UI elements
-                "Rating",
-                "Styleguide",
-                // types
-                "ModelElements",
-                "CollectionConvenience",
-                // utilities
-                "Date",
-                "Log",
-            ],
-            path: "Sources/TVShow/Feature"
-        ),
-        .target(
-            name: "TVShowDatabaseClient",
-            dependencies: [
-                // pointfree
-                .dependenciesMacros,
-                .dependencies,
-                .identifiedCollections,
-                // models
-                "TVShowModel",
-            ],
-            path: "Sources/TVShow/DatabaseClient"
-        ),
-        .target(
-            name: "TVShowDatabaseClientLive",
-            dependencies: [
-                // pointfree
-                .dependencies,
-                // dependencies
-                "TVShowDatabaseClient",
-                "AuthenticationClient",
-                // models
-                "TVShowModel",
-                "TeamModel",
-                // modules
-                "FirebaseQuery",
-            ],
-            path: "Sources/TVShow/DatabaseClientLive"
-        ),
-        .target(
-            name: "TVShowModel",
-            dependencies: [
-                // pointfree
-                .tagged,
-                .identifiedCollections,
-                // models
-                "UserModel",
-                "TeamModel",
-                // types
-                "DatabaseRepresentable",
-                "ModelElements",
-                // api
-                "TheTVDBAPI",
-            ],
-            path: "Sources/TVShow/Model"
-        ),
-    ]
-    
-    let testTargets: [Target] = [
-        .testTarget(
+        ],
+        featureDependencies: [
+            // pointfree
+            .tagged,
+            .identifiedCollections,
+            // dependencies
+            "AuthenticationClient",
+            "TeamDatabaseClient",
+            // models
+            "TeamModel",
+            // features
+            "TeamFeature",
+            "ErrorFeature",
+            // api
+            "TheTVDBAPI",
+            // UI elements
+            "Rating",
+            "Styleguide",
+            // types
+            "ModelElements",
+            "CollectionConvenience",
+            // utilities
+            "Date",
+            "Log",
+        ],
+        testTarget: .testTarget(
             name: "TVShowTests",
             dependencies: [
                 // pointfree
@@ -460,142 +375,107 @@ struct TVShow: LibraryDescription {
                 // reducer
                 "TVShowFeature",
             ]
-        ),
-    ]
-}
-
-// MARK: Other
-struct Other: LibraryDescription {
-    let product: Product = .library(
-        name: "Other",
-        targets: [
+        )
+    )
+    .addingModule(
+        name: "TheTVDBAPI",
+        type: .nonPrefixed,
+        dependencies: [
+            // pointfree
+            .identifiedCollections,
+            // api
             "APIClient",
-            "CollectionConvenience",
-            "DatabaseRepresentable",
-            "Date",
-            "FirebaseQuery",
-            "FirebaseStart",
-            "InvitationModel",
-            "ModelElements",
-            "Log",
-            "Rating",
-            "Styleguide",
-            "TripAdvisorAPI",
         ]
     )
-    
-    let targets: [Target] = [
-        .target(
-            name: "APIClient",
-            dependencies: [
-                // utilities
-                "Log",
-            ],
-            path: "Sources/Other/APIClient"
-        ),
-        .target(
-            name: "CollectionConvenience",
-            dependencies: [
-                // pointfree
-                .identifiedCollections
-            ],
-            path: "Sources/Other/CollectionConvenience"
-        ),
-        .target(
-            name: "DatabaseRepresentable",
-            dependencies: [
-                // pointfree
-                .identifiedCollections,
-            ],
-            path: "Sources/Other/DatabaseRepresentable"
-        ),
-        .target(
-            name: "Date",
-            path: "Sources/Other/Date"
-        ),
 
-        .target(
-            name: "FirebaseQuery",
-            dependencies: [
-                // pointfree
-                .identifiedCollections,
-                // firebase
-                .firebaseFirestore,
-                // types
-                "DatabaseRepresentable",
-                // utilities
-                "Log",
-            ],
-            path: "Sources/Other/FirebaseQuery"
-        ),
-        .target(
-            name: "FirebaseStart",
-            dependencies: [
-                // firebase
-                .firebaseAppCheck,
-                .firebaseCore,
-                .firebaseFirestore,
-            ],
-            path: "Sources/Other/FirebaseStart"
-        ),
+// MARK: UIElements
+let uiElements = GroupDescription(name: "UIElements")
+    .addingModule(name: "Rating")
+    .addingModule(
+        name: "Styleguide",
+        dependencies: [
+            // pointfree
+            .composableArchitecture,
+            // kingfisher
+            .kingfisher,
+        ]
+    )
 
-        .target(
-            name: "InvitationModel",
-            path: "Sources/Other/InvitationModel"
-        ),
-        .target(
-            name: "Log",
-            dependencies: [
-                // apple
-                .logging,
-            ],
-            path: "Sources/Other/Log"
-        ),
-        .target(
-            name: "ModelElements",
-            path: "Sources/Other/ModelElements"
-        ),
-        .target(
-            name: "Rating",
-            path: "Sources/Other/Rating"
-        ),
-        .target(
-            name: "Styleguide",
+// MARK: User
+let user = GroupDescription(name: "User")
+    .addingDatabaseDependencyClient(
+        dependencies: ["TeamDatabaseClient"],
+        liveDependencies: ["FirebaseQuery"],
+        featureDependencies: [
+            // google
+            .googleSignInSwift,
+            // dependencies
+            "TVShowDatabaseClient",
+            "AuthenticationClient",
+            // features
+            "ErrorFeature",
+            // UI elements
+            "Styleguide",
+        ],
+        testTarget: .testTarget(
+            name: "UserTests",
             dependencies: [
                 // pointfree
                 .composableArchitecture,
-                // kingfisher
-                .kingfisher,
-            ],
-            path: "Sources/Other/Styleguide"
-        ),
-
-        .target(
-            name: "TripAdvisorAPI",
-            dependencies: [
-                // api
-                "APIClient",
-            ],
-            path: "Sources/Other/TripAdvisorAPI"
-        ),
-    ]
+                // reducer
+                "UserFeature",
+            ]
+        )
+    )
     
-    let testTargets: [Target] = []
-}
 
-let libraries: [any LibraryDescription] = [
-    AppRoot(),
-    Authentication(),
-    Team(),
-    Error(),
-    User(),
-    TVShow(),
-    Other(),
+let groups: [GroupDescription] = [
+    apiClient,
+    appRoot,
+    authentication,
+    error,
+    firebase,
+    other,
+    team,
+    tvShow,
+    uiElements,
+    user,
 ]
 
-let products = libraries.map(\.product)
+let products: [Product] = groups.flatMap { group in
+    group.modules.map { module in
+        let name = module.targetName(groupName: group.name)
+        return .library(
+            name: name,
+            targets: [name]
+        )
+    }
+}
 
-let targets = libraries.flatMap(\.targets) + libraries.flatMap(\.testTargets)
+// Collect module target, and test target if any
+func collectTargets(for module: Module, targetName: String, path: String) -> [Target] {
+    var targets: [Target] = [
+        .target(
+            name: targetName,
+            dependencies: module.dependencies,
+            path: path
+       )
+    ]
+    if let testTarget = module.testTarget {
+        targets.append(testTarget)
+    }
+    return targets
+}
+
+let targets: [Target] = groups.flatMap { group in
+    group.modules.flatMap { module in
+        collectTargets(
+            for: module,
+            targetName: module.targetName(groupName: group.name),
+            path: module.sourcePath(groupName: group.name)
+        )
+    }
+}
 
 let package = Package(
     name: "JourneyJar",

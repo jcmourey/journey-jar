@@ -36,7 +36,7 @@ public struct SignIn: Sendable {
     @Dependency(\.authenticationClient) var auth
 
     public init() {}
-   
+
     public var body: some ReducerOf<Self> {
         Scope(state: \.error, action: \.error) { ErrorFeature() }
         
@@ -47,7 +47,7 @@ public struct SignIn: Sendable {
                     try await auth.signInWithApple(result)
                     await dismiss()
                 } catch: { error, send in
-                    await send(.error(.detail(error("signInWithApple"))))
+                    await send(.error(.detail(error, "signInWithApple", #fileID, #function, #line)))
                 }
                 
             case let .appleSignInOnRequest(request):
@@ -60,7 +60,7 @@ public struct SignIn: Sendable {
                     try await auth.signInWithGoogle()
                     await dismiss()
                 } catch: { error, send in
-                    await send(.error(.detail(error("signInWithGoogle"))))
+                    await send(.error(.detail(error, "signInWithGoogle", #fileID, #function, #line)))
                 }
                 
             case .error:

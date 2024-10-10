@@ -1,6 +1,5 @@
 import SwiftUI
 
-
 public struct KeyContentPair<Content: View>: View {
     let key: String
     let content: () -> Content

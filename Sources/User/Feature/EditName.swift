@@ -8,7 +8,7 @@ public struct EditName: Sendable {
     @ObservableState
     public struct State: Equatable {
         var name: String
-        var focus: Field? = .name
+        var focus: Field?
         
         public enum Field: Hashable {
             case name
@@ -64,4 +64,8 @@ struct EditNameView: View {
         }
         .bind($store.focus, to: $focus)
     }
+}
+
+#Preview {
+    EditNameView(store: Store(initialState: .init(name: "Barbarella")) { EditName() })
 }

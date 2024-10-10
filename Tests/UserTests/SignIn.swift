@@ -32,7 +32,7 @@ struct SignInTests {
             $0.authenticationClient.signInWithGoogle = {
                 throw error
             }
-            $0.errorService.detail = { @Sendable _,_,_,_,_ in errorMsg }
+            $0.errorClient.detail = { @Sendable _,_,_,_,_ in errorMsg }
         }
         await store.send(.signInWithGoogleButtonTapped)
         await store.receive(\.error.detail) {

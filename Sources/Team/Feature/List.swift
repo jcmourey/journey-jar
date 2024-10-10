@@ -8,11 +8,11 @@ import IdentifiedCollections
 import TeamDatabaseClient
 import AuthenticationClient
 
-// features
-import ErrorFeature
-
 // models
 import TeamModel
+
+// features
+import ErrorFeature
 
 @Reducer
 public struct TeamList: Sendable {
@@ -51,7 +51,7 @@ public struct TeamList: Sendable {
                         await send(.teamsUpdated(teams))
                     }
                 } catch: { error, send in
-                    await send(.error(.detail(error("team listen"))))
+                    await send(.error(.detail(error, "team listen", #fileID, #function, #line)))
                 }
                 
             case .error:
